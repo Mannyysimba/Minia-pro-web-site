@@ -647,16 +647,16 @@
       z-index:3;
       max-width:478px;
       margin:0 auto;
-      background:rgba(20,20,20,0.35);
+     background:rgba(0,0,0,0.25);
       border:1.5px solid transparent;
       border-radius:44px;
-      backdrop-filter:blur(24px);
-      -webkit-backdrop-filter:blur(24px);
-      background-image:linear-gradient(rgba(20,20,20,0.35),rgba(20,20,20,0.35)), linear-gradient(160deg, rgba(255,169,108,0.45) 0%, rgba(255,255,255,0.10) 40%, rgba(255,169,108,0.25) 100%);
+      backdrop-filter:blur(5px);
+-webkit-backdrop-filter:blur(5px);
+      background-image:none;
       background-origin:border-box;
       background-clip:padding-box, border-box;
       box-shadow:0px 18px 68px rgba(224,163,98,0.18), 0 0 60px rgba(224,163,98,0.15);
-      padding:36px 40px 56px;
+      padding:36px 40px 70px;
       overflow:hidden;
     }
     /* Card inner lights */
@@ -728,40 +728,28 @@
     .features-list li .chk { color:#fff; font-size:14px; margin-top:2px; flex-shrink:0; }
 
     .card-btn {
-      position:relative;
       display:flex;
       align-items:center;
       justify-content:center;
-      background:#fff;
-      color:#000;
-      font-size:19px;
+      background:rgba(255,255,255,0.12);
+      color:#fff;
+      font-size:17px;
       font-weight:500;
-      height:50px;
+      height:48px;
       padding:0 38px;
       border-radius:86px;
-      border:3px solid #FFA96C;
+      border:1.5px solid rgba(255,255,255,0.3);
       cursor:pointer;
       font-family:'Satoshi', sans-serif;
-      transition:color 0.4s ease, border-color 0.4s ease;
       text-decoration:none;
       width:100%;
-      overflow:hidden;
+      transition:background 0.3s ease, border-color 0.3s ease;
       z-index:1;
     }
-    .card-btn::before {
-      content:'';
-      width:0;
-      height:100%;
-      border-radius:86px;
-      position:absolute;
-      top:0;
-      left:0;
-      background:linear-gradient(90deg, #FFA96C 0%, #FFE7D7 50%, #FFF5ED 100%);
-      transition:width 0.5s ease;
-      z-index:-1;
+    .card-btn:hover {
+      background:rgba(255,255,255,0.2);
+      border-color:rgba(255,255,255,0.5);
     }
-    .card-btn:hover::before { width:100%; }
-    .card-btn:hover { color:#000; border-color:#FFA96C; }
 
     /* ═══════════════════════════════════════════════════════════════
        BONUS
