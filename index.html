@@ -89,8 +89,12 @@
     .nav-pill a:hover { opacity:0.55; }
 
     .nav-btn {
+      position:relative;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
       background:rgba(0,0,0,0.9);
-      border:1.5px solid rgba(255,255,255,0.7);
+      border:1.5px solid #FFA96C;
       border-radius:999px;
       padding:8px 22px;
       font-size:14px;
@@ -98,9 +102,25 @@
       color:#fff;
       cursor:pointer;
       font-family:'Satoshi', sans-serif;
-      transition:opacity 0.2s;
+      text-decoration:none;
+      overflow:hidden;
+      z-index:1;
+      transition:color 0.4s ease, border-color 0.4s ease;
     }
-    .nav-btn:hover { opacity:0.85; }
+    .nav-btn::before {
+      content:'';
+      width:0;
+      height:100%;
+      border-radius:999px;
+      position:absolute;
+      top:0;
+      left:0;
+      background:linear-gradient(90deg, #FFA96C 0%, #FFE7D7 50%, #FFF5ED 100%);
+      transition:width 0.4s ease;
+      z-index:-1;
+    }
+    .nav-btn:hover::before { width:100%; }
+    .nav-btn:hover { color:#000; border-color:#FFA96C; }
 
     /* Hamburger */
     .hamburger {
@@ -286,70 +306,36 @@
   font-weight: 500;
   font-family: 'Satoshi', sans-serif;
   border-radius: 86px;
-  border: 4px solid transparent;
-  background-clip: padding-box;
+  border: 4px solid #FFA96C;
   cursor: pointer;
   text-decoration: none;
-  transition: all 0.3s ease;
-  transform-origin: center center;
-  overflow: visible;
+  overflow: hidden;
   z-index: 1;
+  box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.30);
+  transition: color 0.4s ease, border-color 0.4s ease;
 }
 
-/* Gradient border - only left to middle */
 .hero-btn::before {
   content: '';
+  width: 0;
+  height: 100%;
+  border-radius: 86px;
   position: absolute;
-  inset: -4px;
-  border-radius: 90px;
-  background: linear-gradient(90deg, #FFA96C 0%, rgba(255,231,215,0.8) 30%, rgba(255,255,255,0.2) 55%, transparent 70%);
-  z-index: -2;
-  transition: all 0.3s ease;
+  top: 0;
+  left: 0;
+  background: linear-gradient(90deg, #FFA96C 0%, #FFE7D7 50%, #FFF5ED 100%);
+  transition: width 0.5s ease;
+  display: block;
+  z-index: -1;
 }
 
-/* Inner fill to cover the gradient except the border area */
-.hero-btn::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 86px;
-  background: #fff;
-  z-index: -1;
-  transition: background 0.3s ease;
+.hero-btn:hover::before {
+  width: 100%;
 }
 
 .hero-btn:hover {
-  width: 290px;
-  height: 76px;
-  border-radius: 95px;
-  box-shadow: 0 5.5px 11px 2.2px rgba(0, 0, 0, 0.30);
-  transform: scale(1);
-  transform-origin: center center;
-}
-
-.hero-btn:hover::after {
-  background: rgba(255, 255, 255, 0.90);
-}
-
-/* External glow on hover - left side */
-.hero-btn-glow {
-  position: absolute;
-  top: 50%;
-  left: -20px;
-  transform: translateY(-50%);
-  width: 137px;
-  height: 80px;
-  background: radial-gradient(ellipse, rgba(255,255,255,0.5) 0%, transparent 70%);
-  mix-blend-mode: overlay;
-  border-radius: 50%;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
-  z-index: 2;
-}
-
-.hero-btn:hover .hero-btn-glow {
-  opacity: 1;
+  color: #000;
+  border-color: #FFA96C;
 }
 
     /* Video card */
@@ -604,36 +590,31 @@
       z-index:0;
     }
 
-    /* Spotlight beams */
-    .spotlight-left {
+    /* Light beams (Figma PNG layers) */
+    .light-group {
       position:absolute;
-      left:-300px;
-      bottom:-100px;
-      width:900px;
-      height:1200px;
-      transform:rotate(-28deg);
-      transform-origin:bottom left;
+      top:0;
+      left:0;
+      width:38%;
+      height:100%;
       pointer-events:none;
       z-index:1;
-      animation:beamPulse 4s ease-in-out infinite;
     }
-    .spotlight-right {
+    .light-group.right {
+      left:auto;
+      right:0;
+      transform:scaleX(-1);
+    }
+    .light-group img {
       position:absolute;
-      right:-300px;
-      bottom:-100px;
-      width:900px;
-      height:1200px;
-      transform:rotate(28deg);
-      transform-origin:bottom right;
-      pointer-events:none;
-      z-index:1;
-      animation:beamPulse 4s ease-in-out infinite;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      object-position:left top;
+      mix-blend-mode:plus-lighter;
     }
-    .sl-layer { position:absolute; top:0; height:100%; }
-    .sl-1 { width:60px; left:calc(50% - 30px); background:linear-gradient(to top, rgba(255,140,30,0.7) 0%, rgba(255,160,60,0.4) 40%, transparent 80%); filter:blur(15px); mix-blend-mode:plus-lighter; }
-    .sl-2 { width:120px; left:calc(50% - 60px); background:linear-gradient(to top, rgba(255,120,20,0.4) 0%, rgba(255,140,40,0.2) 40%, transparent 80%); filter:blur(30px); mix-blend-mode:plus-lighter; }
-    .sl-3 { width:300px; left:calc(50% - 150px); background:linear-gradient(to top, rgba(248,100,10,0.25) 0%, rgba(220,80,10,0.1) 50%, transparent 85%); filter:blur(60px); mix-blend-mode:plus-lighter; }
-    .sl-4 { width:600px; left:calc(50% - 300px); background:radial-gradient(ellipse at 50% 90%, rgba(200,80,10,0.15) 0%, transparent 60%); filter:blur(80px); mix-blend-mode:plus-lighter; }
 
     .offre-inner {
       position:relative;
@@ -669,12 +650,15 @@
       z-index:2;
       max-width:478px;
       margin:0 auto;
-      background:rgba(0,0,0,0.25);
-      border:1px solid rgba(255,255,255,0.12);
+      background:rgba(10,10,12,0.55);
+      border:1.5px solid transparent;
       border-radius:44px;
-      backdrop-filter:blur(24px);
-      -webkit-backdrop-filter:blur(24px);
-      box-shadow:0 18px 68px rgba(224,163,98,0.18), 0 0 0 1px rgba(200,140,60,0.15) inset;
+      backdrop-filter:blur(32px);
+      -webkit-backdrop-filter:blur(32px);
+      background-image:linear-gradient(rgba(10,10,12,0.55),rgba(10,10,12,0.55)), linear-gradient(160deg, rgba(255,169,108,0.45) 0%, rgba(255,255,255,0.10) 40%, rgba(255,169,108,0.25) 100%);
+      background-origin:border-box;
+      background-clip:padding-box, border-box;
+      box-shadow:0 24px 80px rgba(200,120,50,0.20), 0 0 60px rgba(248,129,78,0.08);
       padding:36px 40px 44px;
     }
     .brand-pill {
@@ -723,25 +707,40 @@
     .features-list li .chk { color:#f8814e; font-size:13px; margin-top:2px; flex-shrink:0; }
 
     .card-btn {
+      position:relative;
       display:flex;
       align-items:center;
       justify-content:center;
-      background:rgba(255,255,255,0.89);
+      background:#fff;
       color:#000;
       font-size:19px;
       font-weight:500;
-      height:42px;
+      height:50px;
       padding:0 38px;
-      border-radius:42px;
-      border:none;
+      border-radius:86px;
+      border:3px solid #FFA96C;
       cursor:pointer;
       font-family:'Satoshi', sans-serif;
-      mix-blend-mode:color-dodge;
-      transition:transform 0.2s;
+      transition:color 0.4s ease, border-color 0.4s ease;
       text-decoration:none;
       width:100%;
+      overflow:hidden;
+      z-index:1;
     }
-    .card-btn:hover { transform:scale(1.05); }
+    .card-btn::before {
+      content:'';
+      width:0;
+      height:100%;
+      border-radius:86px;
+      position:absolute;
+      top:0;
+      left:0;
+      background:linear-gradient(90deg, #FFA96C 0%, #FFE7D7 50%, #FFF5ED 100%);
+      transition:width 0.5s ease;
+      z-index:-1;
+    }
+    .card-btn:hover::before { width:100%; }
+    .card-btn:hover { color:#000; border-color:#FFA96C; }
 
     /* ═══════════════════════════════════════════════════════════════
        BONUS
@@ -865,24 +864,40 @@
       z-index:1;
     }
     .bonus-btn {
+      position:relative;
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      background:rgba(255,255,255,0.95);
+      background:#fff;
       color:#000;
       font-size:20px;
       font-weight:500;
       height:62px;
       padding:0 52px;
       border-radius:86px;
-      border:3px solid rgba(255,255,255,0.6);
-      box-shadow:0 4px 20px rgba(0,0,0,0.25);
+      border:3px solid #FFA96C;
+      box-shadow:0 5px 10px 2px rgba(0,0,0,0.30);
       cursor:pointer;
       font-family:'Satoshi', sans-serif;
       text-decoration:none;
-      transition:transform 0.2s;
+      overflow:hidden;
+      z-index:1;
+      transition:color 0.4s ease, border-color 0.4s ease;
     }
-    .bonus-btn:hover { transform:scale(1.05); }
+    .bonus-btn::before {
+      content:'';
+      width:0;
+      height:100%;
+      border-radius:86px;
+      position:absolute;
+      top:0;
+      left:0;
+      background:linear-gradient(90deg, #FFA96C 0%, #FFE7D7 50%, #FFF5ED 100%);
+      transition:width 0.5s ease;
+      z-index:-1;
+    }
+    .bonus-btn:hover::before { width:100%; }
+    .bonus-btn:hover { color:#000; border-color:#FFA96C; }
 
     /* ═══════════════════════════════════════════════════════════════
        TESTIMONIALS
@@ -908,6 +923,7 @@
       margin-bottom:64px;
     }
     .avis-btn {
+      position:relative;
       display:inline-flex;
       align-items:center;
       justify-content:center;
@@ -918,14 +934,29 @@
       height:54px;
       padding:0 44px;
       border-radius:86px;
-      border:2px solid rgba(255,255,255,0.3);
+      border:2.5px solid #FFA96C;
       box-shadow:0 4px 20px rgba(0,0,0,0.3);
       cursor:pointer;
       font-family:'Satoshi', sans-serif;
       text-decoration:none;
-      transition:transform 0.2s;
+      overflow:hidden;
+      z-index:1;
+      transition:color 0.4s ease, border-color 0.4s ease;
     }
-    .avis-btn:hover { transform:scale(1.05); }
+    .avis-btn::before {
+      content:'';
+      width:0;
+      height:100%;
+      border-radius:86px;
+      position:absolute;
+      top:0;
+      left:0;
+      background:linear-gradient(90deg, #FFA96C 0%, #FFE7D7 50%, #FFF5ED 100%);
+      transition:width 0.5s ease;
+      z-index:-1;
+    }
+    .avis-btn:hover::before { width:100%; }
+    .avis-btn:hover { color:#000; border-color:#FFA96C; }
 
     .avis-grid {
       display:grid;
@@ -1124,7 +1155,7 @@
   <a href="#offre" class="mobile-link">Offre</a>
   <a href="#bonus" class="mobile-link">Bonus</a>
   <a href="#avis" class="mobile-link">FAQ</a>
-  <a href="#offre" class="mobile-link" style="color:#f8814e;">Rejoindre</a>
+  <a href="https://www.minia-pro.com/-paiment" class="mobile-link" style="color:#f8814e;">Rejoindre</a>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════════
@@ -1141,7 +1172,7 @@
     <a href="#avis">FAQ</a>
   </div>
 
-  <button class="nav-btn" onclick="document.getElementById('offre').scrollIntoView({behavior:'smooth'})">Rejoindre</button>
+  <a class="nav-btn" href="https://www.minia-pro.com/-paiment">Rejoindre</a>
 
   <button class="hamburger" id="hamburger" aria-label="Ouvrir le menu" aria-expanded="false">
     <span></span><span></span><span></span>
@@ -1173,7 +1204,7 @@
     <p class="hero-subtitle">
       La formation compl&egrave;te pour cr&eacute;er des miniatures YouTube qui cartonnent et d&eacute;crocher tes premiers clients freelance.
     </p>
-    <a href="#offre" class="hero-btn">Rejoindre<span class="hero-btn-glow"></span></a>
+    <a href="https://www.minia-pro.com/-paiment" class="hero-btn">Rejoindre<span class="hero-btn-glow"></span></a>
   </div>
 
   <!-- Video card -->
@@ -1420,7 +1451,7 @@
   </div>
 
   <div class="modules-cta fi">
-    <a href="#offre" class="hero-btn">Rejoindre<span class="hero-btn-glow"></span></a>
+    <a href="https://www.minia-pro.com/-paiment" class="hero-btn">Rejoindre<span class="hero-btn-glow"></span></a>
   </div>
 </section>
 
@@ -1431,18 +1462,23 @@
   <div class="offre-dots" aria-hidden="true"></div>
   <div class="offre-mask" aria-hidden="true"></div>
 
-  <!-- Spotlight beams -->
-  <div class="spotlight-left" aria-hidden="true">
-    <div class="sl-layer sl-1"></div>
-    <div class="sl-layer sl-2"></div>
-    <div class="sl-layer sl-3"></div>
-    <div class="sl-layer sl-4"></div>
+  <!-- Light beams – left (Figma PNGs, plus-lighter blend) -->
+  <div class="light-group" aria-hidden="true">
+    <img src="1 Plus lighter.png" alt="" />
+    <img src="2 Plus lighter.png" alt="" />
+    <img src="3 Plus lighter.png" alt="" />
+    <img src="4 Plus lighter.png" alt="" />
+    <img src="5 Plus lighter.png" alt="" />
+    <img src="6 Plus lighter.png" alt="" />
   </div>
-  <div class="spotlight-right" aria-hidden="true">
-    <div class="sl-layer sl-1"></div>
-    <div class="sl-layer sl-2"></div>
-    <div class="sl-layer sl-3"></div>
-    <div class="sl-layer sl-4"></div>
+  <!-- Light beams – right (mirrored) -->
+  <div class="light-group right" aria-hidden="true">
+    <img src="1 Plus lighter.png" alt="" />
+    <img src="2 Plus lighter.png" alt="" />
+    <img src="3 Plus lighter.png" alt="" />
+    <img src="4 Plus lighter.png" alt="" />
+    <img src="5 Plus lighter.png" alt="" />
+    <img src="6 Plus lighter.png" alt="" />
   </div>
 
   <div class="offre-inner">
@@ -1475,7 +1511,7 @@
         <li><span class="chk">&#10003;</span><span>Garantie satisfait ou rembours&eacute; (CVG)</span></li>
       </ul>
 
-      <a href="#" class="card-btn">Rejoindre maintenant</a>
+      <a href="https://www.minia-pro.com/-paiment" class="card-btn">Rejoindre maintenant</a>
     </div>
   </div>
 </section>
@@ -1547,7 +1583,7 @@
   <p class="bonus-note fi">Tout est bien &eacute;videment inclus dans la forma :)</p>
 
   <div class="bonus-cta fi">
-    <a href="#offre" class="bonus-btn">Rejoindre maintenant</a>
+    <a href="https://www.minia-pro.com/-paiment" class="bonus-btn">Rejoindre maintenant</a>
   </div>
 </section>
 
@@ -1560,7 +1596,7 @@
   </div>
 
   <div class="avis-cta-wrap fi">
-    <a href="#offre" class="avis-btn">Rejoindre la formation</a>
+    <a href="https://www.minia-pro.com/-paiment" class="avis-btn">Rejoindre la formation</a>
   </div>
 
   <div class="avis-grid">
