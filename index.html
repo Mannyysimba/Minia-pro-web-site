@@ -34,7 +34,7 @@
     ::-webkit-scrollbar-thumb { background:rgba(248,129,78,0.4); border-radius:3px; }
 
     /* ─── SELECTION ──────────────────────────────────────────────── */
-    ::selection { background:rgba(255, 167, 80,1); color:#fff; }
+    ::selection { background:rgb(255, 211, 80); color:#fff; }
 
     /* ─── FADE-IN ────────────────────────────────────────────────── */
     .fi { opacity:0; transform:translateY(30px); transition:opacity 0.7s ease, transform 0.7s ease; }
@@ -172,6 +172,19 @@
       overflow:hidden;
     }
 
+    /* Hero light wrap */
+    .hero-light-wrap {
+      position:absolute;
+      inset:0;
+      overflow:visible;
+      pointer-events:none;
+      z-index:0;
+    }
+    .hero-light-wrap img {
+      position:absolute;
+      pointer-events:none;
+    }
+
     /* Dot texture */
     .hero-dots {
       position:absolute;
@@ -186,88 +199,15 @@
       z-index:2;
     }
 
-    /* Orange light fountain layers */
-    .beam { position:absolute; pointer-events:none; z-index:1; }
-
-    .beam-1 {
-      left:68%; top:-220px;
-      width:2px; height:1100px;
-      background:linear-gradient(to bottom, transparent 0%, rgba(255,160,50,0.9) 40%, #ff9020 70%, rgba(255,140,30,0.3) 100%);
-      filter:blur(1px);
-      mix-blend-mode:plus-lighter;
-      animation:beamPulse 4s ease-in-out infinite;
-    }
-    .beam-2 {
-      left:calc(68% - 15px); top:-220px;
-      width:30px; height:1100px;
-      background:linear-gradient(to bottom, transparent 0%, rgba(248,129,78,0.5) 40%, rgba(248,110,30,0.7) 70%, rgba(248,100,20,0.15) 100%);
-      filter:blur(8px);
-      mix-blend-mode:plus-lighter;
-      animation:beamPulse 4s ease-in-out infinite 0.2s;
-    }
-    .beam-3 {
-      left:calc(68% - 50px); top:-220px;
-      width:100px; height:1100px;
-      background:linear-gradient(to bottom, transparent 0%, rgba(248,129,78,0.35) 35%, rgba(240,100,20,0.5) 65%, rgba(200,80,10,0.1) 100%);
-      filter:blur(22px);
-      mix-blend-mode:plus-lighter;
-      animation:beamPulse 4s ease-in-out infinite 0.4s;
-    }
-    .beam-4 {
-      left:calc(68% - 150px); top:-200px;
-      width:300px; height:1100px;
-      background:linear-gradient(to bottom, transparent 0%, rgba(248,129,78,0.15) 30%, rgba(220,100,20,0.3) 60%, rgba(180,70,10,0.05) 100%);
-      filter:blur(45px);
-      mix-blend-mode:plus-lighter;
-      animation:beamPulse 4s ease-in-out infinite 0.6s;
-    }
-    .beam-5 {
-      left:calc(68% - 300px); top:-100px;
-      width:600px; height:900px;
-      background:radial-gradient(ellipse at 50% 30%, rgba(248,129,78,0.12) 0%, rgba(200,80,20,0.06) 50%, transparent 70%);
-      filter:blur(60px);
-      mix-blend-mode:plus-lighter;
-      animation:beamPulse 4s ease-in-out infinite 0.8s;
-    }
-    .beam-6 {
-      left:calc(68% - 250px); top:500px;
-      width:500px; height:500px;
-      background:radial-gradient(ellipse at center top, rgba(255,140,30,0.6) 0%, rgba(240,100,10,0.3) 35%, transparent 65%);
-      filter:blur(35px);
-      mix-blend-mode:plus-lighter;
-      animation:beamPulse 4s ease-in-out infinite 1s;
-    }
-    .beam-7 {
-      left:calc(68% - 600px); top:700px;
-      width:1200px; height:200px;
-      background:radial-gradient(ellipse at 50% 50%, rgba(255,130,30,0.2) 0%, rgba(200,80,10,0.08) 40%, transparent 70%);
-      filter:blur(50px);
-      mix-blend-mode:plus-lighter;
-      animation:beamPulse 4s ease-in-out infinite 1.2s;
-    }
-    .beam-8 {
-      left:calc(68% - 8px); top:-200px;
-      width:16px; height:80px;
-      background:linear-gradient(to bottom, rgba(255,220,150,0.9) 0%, rgba(255,180,80,0.5) 60%, transparent 100%);
-      filter:blur(3px);
-      mix-blend-mode:plus-lighter;
-      animation:beamPulse 4s ease-in-out infinite;
-    }
-
-    @keyframes beamPulse {
-      0%, 100% { opacity:0.75; }
-      50% { opacity:1; }
-    }
-
     .hero-content {
       position:relative;
-      z-index:2;
+      z-index:3;
       padding:0 143px;
-      max-width:700px;
+      max-width:1100px;
     }
 
     .hero-content h1 {
-      font-size:70px;
+      font-size:clamp(42px, 4.5vw, 68px);
       line-height:1.1;
       font-weight:900;
       font-style:italic;
@@ -277,7 +217,7 @@
     .hero-content h1 .komika {
       font-family:'Komika Axis', sans-serif;
       font-style:normal;
-      font-size:70px;
+      font-size:clamp(42px, 4.5vw, 68px);
       display:inline;
     }
 
@@ -336,15 +276,19 @@
 
     /* Video card */
     .video-wrap {
-      max-width:1000px;
-      margin:80px auto 0;
-      padding:0 143px;
+      position:relative;
+      z-index:4;
+      width:calc(100% - 80px);
+      max-width:1200px;
+      margin:60px auto 0;
+      padding:0;
     }
     .video-card {
       position:relative;
-      border-radius:40px;
+      border-radius:24px;
       overflow:hidden;
       aspect-ratio:16/9;
+      max-height:75vh;
       cursor:pointer;
       background:#000;
     }
@@ -1197,26 +1141,39 @@
      HERO
 ═══════════════════════════════════════════════════════════ -->
 <section id="hero">
-  <div class="hero-dots" aria-hidden="true"></div>
 
-  <!-- Orange fountain beams -->
-  <div class="beam beam-1" aria-hidden="true"></div>
-  <div class="beam beam-2" aria-hidden="true"></div>
-  <div class="beam beam-3" aria-hidden="true"></div>
-  <div class="beam beam-4" aria-hidden="true"></div>
-  <div class="beam beam-5" aria-hidden="true"></div>
-  <div class="beam beam-6" aria-hidden="true"></div>
-  <div class="beam beam-7" aria-hidden="true"></div>
-  <div class="beam beam-8" aria-hidden="true"></div>
+  <!-- Hero light composition -->
+  <div class="hero-light-wrap" aria-hidden="true">
+    <img src="light hero/01_plus-lighter_X1034_Y0_Vector4.png"       style="left:71.806%;top:0px;mix-blend-mode:plus-lighter" alt="">
+    <img src="light hero/02_plus-lighter_X1034_Y0_Vector5.png"       style="left:71.806%;top:0px;mix-blend-mode:plus-lighter" alt="">
+    <img src="light hero/03_plus-lighter_X1155_Y-191_Rect1.png"       style="left:80.208%;top:-191px;width:40px;height:956px;mix-blend-mode:plus-lighter;filter:blur(25px);opacity:0.8" alt="">
+    <img src="light hero/04_plus-lighter_X1155_Y-191_Rect2.png"       style="left:80.208%;top:-191px;width:40px;height:956px;mix-blend-mode:plus-lighter;filter:blur(25px);opacity:0.8" alt="">
+    <img src="light hero/05_plus-lighter_X1155_Y-191_Rect3.png"       style="left:80.208%;top:-191px;width:40px;height:956px;mix-blend-mode:plus-lighter;filter:blur(15px);opacity:0.3" alt="">
+    <img src="light hero/06_plus-lighter_X1155_Y-191_Rect4.png"       style="left:80.208%;top:-191px;width:40px;height:956px;mix-blend-mode:plus-lighter;filter:blur(15px);opacity:0.3" alt="">
+    <img src="light hero/07_plus-lighter_X1155_Y-191_Rect5.png"       style="left:80.208%;top:-191px;width:40px;height:956px;mix-blend-mode:plus-lighter;filter:blur(15px);opacity:0.3" alt="">
+    <img src="light hero/08_plus-lighter_X1155_Y-191_Rect6.png"       style="left:80.208%;top:-191px;width:40px;height:956px;mix-blend-mode:plus-lighter;filter:blur(15px);opacity:0.3" alt="">
+    <img src="light hero/09_plus-lighter_X1174_Y633_Ellipse2487.png" style="left:81.528%;top:633px;mix-blend-mode:plus-lighter" alt="">
+    <img src="light hero/10_plus-lighter_X1057_Y633_Ellipse2488.png" style="left:73.403%;top:633px;mix-blend-mode:plus-lighter" alt="">
+    <img src="light hero/12_plus-lighter_X1057_Y633_Ellipse2476.png" style="left:73.403%;top:633px;mix-blend-mode:plus-lighter" alt="">
+    <img src="light hero/13_plus-lighter_X1174_Y633_Ellipse2475.png" style="left:81.528%;top:633px;mix-blend-mode:plus-lighter" alt="">
+    <img src="light hero/14_plus-lighter_X1121_Y548_Ellipse2477.png" style="left:77.847%;top:548px;mix-blend-mode:plus-lighter" alt="">
+    <img src="light hero/15_plus-lighter_X388_Y611_Ellipse2478.png"  style="left:26.944%;top:611px;mix-blend-mode:plus-lighter" alt="">
+    <img src="light hero/16_plus-lighter_X388_Y611_Ellipse2481.png"  style="left:26.944%;top:611px;mix-blend-mode:plus-lighter" alt="">
+    <img src="light hero/17_plus-lighter_X388_Y611_Ellipse2482.png"  style="left:26.944%;top:611px;mix-blend-mode:plus-lighter" alt="">
+    <img src="light hero/18_plus-lighter_X1086_Y417_Ellipse2484.png" style="left:75.417%;top:417px;mix-blend-mode:plus-lighter" alt="">
+    <img src="light hero/19_plus-lighter_X1086_Y417_Ellipse2485.png" style="left:75.417%;top:417px;mix-blend-mode:plus-lighter" alt="">
+    <img src="light hero/23_normal_X1102_Y101_Ellipse2489.png"       style="left:76.528%;top:101px" alt="">
+    <img src="light hero/24_normal_X0_Y0_Maskgroup.png"              style="left:0%;top:0px;z-index:1" alt="">
+  </div>
+
+  <div class="hero-dots" aria-hidden="true"></div>
 
   <div class="hero-content fi">
     <h1>
-      30 jours pour devenir<br>
-      <span class="komika">MINIAMAKER</span><br>
-      &agrave; succ&egrave;s
+      30 jours pour devenir <span class="komika">MINIAMAKER</span> &agrave; succ&egrave;s
     </h1>
     <p class="hero-subtitle">
-      La formation compl&egrave;te pour cr&eacute;er des miniatures YouTube qui cartonnent et d&eacute;crocher tes premiers clients freelance.
+      Je t'accompagne sur Photoshop jusqu'&agrave; signer tes premiers clients&nbsp;!
     </p>
     <a href="https://www.minia-pro.com/-paiment" class="hero-btn">Rejoindre<span class="hero-btn-glow"></span></a>
   </div>
