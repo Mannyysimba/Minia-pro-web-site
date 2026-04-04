@@ -3,7 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>minia.pro — Deviens Miniamaker en 30 jours</title>
+  <title>minia.pro — Deviens Miniamaker en 30 jours | Formation miniatures YouTube</title>
+  <meta name="description" content="Forme-toi à la création de miniatures YouTube avec Photoshop en 30 jours. Signe tes premiers clients, génère 500 à 2000€/mois. +35 membres accompagnés." />
+  <meta name="keywords" content="miniatures YouTube, formation miniatures, Photoshop, miniamaker, freelance miniatures, création miniatures YouTube" />
+  <link rel="canonical" href="https://www.minia-pro.com/" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Bitchi" />
+  <meta name="theme-color" content="#131414" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.minia-pro.com/" />
+  <meta property="og:title" content="minia.pro — Deviens Miniamaker en 30 jours" />
+  <meta property="og:description" content="Forme-toi à la création de miniatures YouTube avec Photoshop en 30 jours. Signe tes premiers clients, génère 500 à 2000€/mois." />
+  <meta property="og:image" content="https://www.minia-pro.com/assets/images/Video miniapro miniature.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:site_name" content="minia.pro" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@Bitchiskk" />
+  <meta name="twitter:title" content="minia.pro — Deviens Miniamaker en 30 jours" />
+  <meta name="twitter:description" content="Forme-toi à la création de miniatures YouTube avec Photoshop en 30 jours. Signe tes premiers clients, génère 500 à 2000€/mois." />
+  <meta name="twitter:image" content="https://www.minia-pro.com/assets/images/Video miniapro miniature.png" />
+
+  <link rel="icon" type="image/png" href="assets/images/faviconV2.png" />
+  <link rel="apple-touch-icon" href="assets/images/faviconV2.png" />
 
   <style>
     /* ─── FONTS ─────────────────────────────────────────────────── */
@@ -19,12 +46,11 @@
 
     /* ─── RESET & BASE ───────────────────────────────────────────── */
     *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
-    html { scroll-behavior:smooth; }
+    html { scroll-behavior:smooth; overflow-x:hidden; }
     body {
       font-family:'Satoshi', sans-serif;
       background:#131414;
       color:#fff;
-      overflow-x:hidden;
       line-height:1.5;
     }
 
@@ -35,6 +61,14 @@
 
     /* ─── SELECTION ──────────────────────────────────────────────── */
     ::selection { background:rgb(255, 211, 80); color:#fff; }
+
+    /* ─── CURSOR hehe claude moi aussi je code seul hein dis moi suchi si tu vois ça ─────────────────────────────────────────────── */
+
+          /* Curseur par défaut sur tout le document (plus petit) */
+          body {
+            cursor: url('https://i.imgur.com/SK4K9Z3.png') 16 0, auto !important;
+          }
+
 
     /* ─── FADE-IN ────────────────────────────────────────────────── */
     .fi { opacity:0; transform:translateY(30px); transition:opacity 0.7s ease, transform 0.7s ease; }
@@ -84,49 +118,57 @@
     }
     .nav-pill a:hover { opacity:0.55; }
 
+    /* BOUTON 2 — Nav */
     .nav-btn {
-      position:relative;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      background:rgba(0,0,0,0.9);
-      border:1.5px solid #FFA96C;
-      border-radius:999px;
-      padding:8px 22px;
-      font-size:14px;
-      font-weight:600;
-      color:#fff;
-      cursor:pointer;
-      font-family:'Satoshi', sans-serif;
-      text-decoration:none;
-      overflow:hidden;
-      z-index:1;
-      transition:color 0.4s ease, border-color 0.4s ease;
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      border: none;
+      border-radius: 999px;
+      padding: 8px 22px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #000;
+      cursor: pointer;
+      font-family: 'Satoshi', sans-serif;
+      text-decoration: none;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+      transition: box-shadow 0.35s ease;
     }
     .nav-btn::before {
-      content:'';
-      width:0;
-      height:100%;
-      border-radius:999px;
-      position:absolute;
-      top:0;
-      left:0;
-      background:linear-gradient(90deg, #FFA96C 0%, #FFE7D7 50%, #FFF5ED 100%);
-      transition:width 0.4s ease;
-      z-index:-1;
+      content: '';
+      position: absolute;
+      inset: -2px;
+      border-radius: 999px;
+      background: linear-gradient(105deg, #FFA96C 0%, rgba(255,169,108,0.3) 50%, transparent 100%);
+      z-index: -1;
+      pointer-events: none;
     }
-    .nav-btn:hover::before { width:100%; }
-    .nav-btn:hover { color:#000; border-color:#FFA96C; }
-
-    /* Hamburger */
+    .nav-btn::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 999px;
+      background: radial-gradient(ellipse at 15% 50%, rgba(255,180,100,0.35) 0%, transparent 65%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      pointer-events: none;
+    }
+    .nav-btn:hover::after { opacity: 1; }
+    .nav-btn:hover {
+      box-shadow: 0 5px 15px rgba(0,0,0,0.4), 0 0 20px rgba(255,169,108,0.4);
+    }
     .hamburger {
-      display:none;
-      flex-direction:column;
-      gap:5px;
-      cursor:pointer;
-      background:none;
-      border:none;
-      padding:4px;
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
     }
     .hamburger span {
       display:block;
@@ -169,41 +211,81 @@
       position:relative;
       background:#131414;
       padding-top:160px;
-      overflow:hidden;
     }
 
-    /* Hero light wrap */
+    /* ═══════════════════════════════════════════════════════
+       HERO LIGHT — 1 seule image avec fond noir + plus-lighter
+
+       ╔══════════════════════════════════════════════════════╗
+       ║  POUR AJUSTER L'IMAGE :                             ║
+       ║                                                      ║
+       ║  --lx  : position horizontale (% depuis gauche)     ║
+       ║          ex: 40% = vers gauche / 65% = vers droite  ║
+       ║                                                      ║
+       ║  --ly  : position verticale (px depuis le haut)     ║
+       ║          ex: -100px = remonter / 50px = descendre   ║
+       ║                                                      ║
+       ║  --lw  : largeur de l'image                        ║
+       ║          ex: 800px, 60vw, etc.                      ║
+       ╚══════════════════════════════════════════════════════╝
+    ═══════════════════════════════════════════════════════ */
+
     .hero-light-wrap {
-      position:absolute;
-      inset:0;
-      overflow:visible;
-      pointer-events:none;
-      z-index:0;
-    }
-    .hero-light-wrap img {
-      position:absolute;
-      pointer-events:none;
+      position: absolute;
+      inset: 0;
+      overflow: visible;
+      pointer-events: none;
+
+      /* ↓↓↓ MODIFIE CES 3 VALEURS POUR AJUSTER L'IMAGE ↓↓↓ */
+      --lx: 28%;      /* position horizontale (% depuis gauche) */
+      --ly: -200px;   /* position verticale (px depuis haut du hero) */
+      --lw: 1300px;    /* largeur de l'image */
     }
 
-    /* Dot texture */
+    /* L'image unique de lumière — fond noir + mix-blend-mode: plus-lighter */
+    .hero-light-img {
+  position: absolute;
+  left: var(--lx);
+  top: var(--ly);
+  width: var(--lw);
+  height: auto;
+      mix-blend-mode: plus-lighter;
+  pointer-events: none;
+}
+
+    /* Dot texture 1 */
     .hero-dots {
-      position:absolute;
-      inset:0;
-      background-image:url('assets/Dot.png');
-      background-size:80%;
-      background-position:center;
-      background-repeat:no-repeat;
-      mix-blend-mode:plus-lighter;
-      opacity:0.8;
-      pointer-events:none;
-      z-index:2;
+      position: absolute;
+      inset: 0;
+      background-image: url('assets/Dot.png');
+      background-size: 80%;
+      background-position: center;
+      background-repeat: no-repeat;
+      mix-blend-mode: plus-lighter;
+      opacity: 0.8;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    /* Dot texture 2 — légère, au-dessus */
+    .hero-dots-2 {
+      position: absolute;
+      inset: 0;
+      background-image: url('assets/Dot.png');
+      background-size: 80%;
+      background-position: center top;
+      background-repeat: no-repeat;
+      mix-blend-mode: plus-lighter;
+      opacity: 0.35;
+      pointer-events: none;
+      z-index: 3;
     }
 
     .hero-content {
       position:relative;
       z-index:3;
-      padding:0 143px;
-      max-width:1100px;
+      padding:0 143px 0 300px;
+      max-width:1400px;
     }
 
     .hero-content h1 {
@@ -229,6 +311,7 @@
       font-weight:400;
     }
 
+ /* BOUTON 1 — Blanc pur, border gradient, glow externe au hover */
  .hero-btn {
   position: relative;
   display: inline-flex;
@@ -242,36 +325,22 @@
   font-weight: 500;
   font-family: 'Satoshi', sans-serif;
   border-radius: 86px;
-  border: 4px solid #FFA96C;
+  border: none;
   cursor: pointer;
   text-decoration: none;
-  overflow: hidden;
-  z-index: 1;
-  box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.30);
-  transition: color 0.4s ease, border-color 0.4s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+  transition: box-shadow 0.35s ease;
 }
-
 .hero-btn::before {
   content: '';
-  width: 0;
-  height: 100%;
-  border-radius: 86px;
   position: absolute;
-  top: 0;
-  left: 0;
-  background: linear-gradient(90deg, #FFA96C 0%, #FFE7D7 50%, #FFF5ED 100%);
-  transition: width 0.5s ease;
-  display: block;
+  inset: -2.5px;
+  border-radius: 89px;
+  background: linear-gradient(105deg, #FFA96C 0%, rgba(255,169,108,0.4) 50%, transparent 100%);
   z-index: -1;
 }
-
-.hero-btn:hover::before {
-  width: 100%;
-}
-
 .hero-btn:hover {
-  color: #000;
-  border-color: #FFA96C;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.4), 0 0 24px rgba(255,169,108,0.5), 0 0 50px rgba(255,169,108,0.2);
 }
 
     /* Video card */
@@ -390,9 +459,23 @@
       gap:12px;
       width:max-content;
     }
-    .thumb-track.row1 { animation:scrollLeft 38s linear infinite; }
-    .thumb-track.row2 { animation:scrollRight 42s linear infinite; }
-    .thumb-track.row3 { animation:scrollLeft 36s linear infinite; }
+    .thumb-track.row1 { animation:scrollLeft 50s linear infinite; }
+    .thumb-track.row2 { animation:scrollRight 50s linear infinite; }
+    .thumb-track.row3 { animation:scrollLeft 50s linear infinite; }
+    .thumb-track.row4 { animation:scrollRight 50s linear infinite; }
+
+    /* Row 4 — quasi invisible, fondu fort vers le bas */
+    .thumb-row-wrap-fade {
+      overflow: hidden;
+      opacity: 0.2; /* ← quasi invisible — ajuste entre 0.1 et 0.4 */
+      -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent),
+                          linear-gradient(to bottom, black 20%, transparent 100%);
+      mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent),
+                  linear-gradient(to bottom, black 20%, transparent 100%);
+      -webkit-mask-composite: intersect;
+      mask-composite: intersect;
+    }
+
     .thumb-track img {
       width:360px;
       height:202px;
@@ -400,6 +483,8 @@
       overflow:hidden;
       object-fit:cover;
       flex-shrink:0;
+      opacity: 1; /* ← légèrement désaturé au repos */
+     
     }
 
     /* ═══════════════════════════════════════════════════════════════
@@ -408,6 +493,21 @@
     #modules {
       background:#131414;
       padding:100px 0 80px;
+      position:relative;
+    }
+
+    /* ── Lumière modules — Modules.png centrée ──
+       Pour ajuster : top (haut/bas), left (gauche/droite), width (taille)
+    ── */
+    .modules-light {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      pointer-events: none;
+      mix-blend-mode: plus-lighter;
+      z-index: 0;
     }
     #modules .section-header {
       text-align:center;
@@ -490,14 +590,14 @@
       0%, 100% { opacity:0.6; transform:scale(1); }
       50% { opacity:1; transform:scale(1.3); }
     }
-    .mod-card-desc { font-size:12px; opacity:0.85; line-height:1.45; }
+    .mod-card-desc { font-size:11px; opacity:0.85; line-height:1.45; }
 
     .modules-cta {
       text-align:center;
       padding:60px 0;
     }
 
-    /* ═══════════════════════════════════════════════════════════════
+      /* ═══════════════════════════════════════════════════════════════
        OFFRE / PRICING
     ═══════════════════════════════════════════════════════════════ */
     #offre {
@@ -579,14 +679,28 @@
       font-weight:500;
       margin-bottom:16px;
     }
+    @keyframes starTwinkle {
+      0%, 100% { text-shadow:0 0 12px rgba(255,240,178,0.4); }
+      25% { text-shadow:0 0 20px rgba(255,240,178,0.8), 0 0 40px rgba(255,240,178,0.3); }
+      75% { text-shadow:0 0 8px rgba(255,240,178,0.3); }
+    }
     .offre-stars {
       font-size:32px;
       color:#FFF0B2;
       letter-spacing:3px;
       text-shadow:0 0 12px rgba(255,240,178,0.4);
+      animation:starTwinkle 4s ease-in-out infinite;
     }
 
     /* Pricing card */
+    @keyframes cardFloat {
+      0%, 100% { transform:translateY(0); }
+      50% { transform:translateY(-8px); }
+    }
+    @keyframes cardGlow {
+      0%, 100% { box-shadow:0px 0px 68px rgba(202, 93, 50, 0.28), 0px 30px 30px rgba(0, 0, 0, 0.50); }
+      50% { box-shadow:0px 0px 90px rgba(202, 93, 50, 0.4), 0px 30px 40px rgba(0, 0, 0, 0.50), 0 0 60px rgba(255,169,108,0.15); }
+    }
     .price-card {
       position:relative;
       z-index:4;
@@ -603,6 +717,7 @@
       box-shadow:0px 0px 68px rgba(202, 93, 50, 0.28), 0px 30px 30px rgba(0, 0, 0, 0.50);
       padding:26px 50px 90px;
       overflow:hidden;
+       animation:cardFloat 6s ease-in-out infinite, cardGlow 4s ease-in-out infinite;
     }
     /* Card inner lights */
     .card-lights {
@@ -670,9 +785,15 @@
     .features-label { position:relative; z-index:1; font-size:16px; font-weight:700; margin-bottom:16px; }
     .features-label .colon { color:#e02020; }
     .features-list { position:relative; z-index:1; list-style:none; display:flex; flex-direction:column; gap:0px; margin-bottom:40px; }
-    .features-list li { display:flex; gap:10px; font-size:16px; line-height:1.5; align-items:flex-start; }
-    .features-list li .chk { color:#fff; font-size:14px; margin-top:2px; flex-shrink:0; }
+    .features-list li { display:flex; gap:10px; font-size:16px; line-height:1.5; align-items:flex-start; transition:transform 0.3s ease; }
+    .features-list li:hover { transform:translateX(6px); }
+    .features-list li .chk { color:#ffffff; font-size:14px; margin-top:2px; flex-shrink:0; transition:transform 0.3s ease; }
+    .features-list li:hover .chk { transform:scale(1.3); }
 
+    @keyframes cardBtnShine {
+      0% { left:-100%; }
+      100% { left:200%; }
+    }
         .card-btn {
       display:flex;
       align-items:center;
@@ -693,21 +814,148 @@
       backdrop-filter:blur(12px) saturate(1.4) brightness(1.2);
       -webkit-backdrop-filter:blur(12px) saturate(1.4) brightness(1.2);
       box-shadow:inset 0 1px 1px rgba(255,255,255,0.3), inset 0 -1px 1px rgba(0,0,0,0.1), 0 2px 8px rgba(0,0,0,0.15);
-      transition:background 0.3s ease;
+      transition:background 0.3s ease, transform 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s ease;
       z-index:0;
+      position:relative;
+      overflow:hidden;
+    }
+    .card-btn::after {
+      content:'';
+      position:absolute;
+      top:0;
+      left:-100%;
+      width:60%;
+      height:100%;
+      background:linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+      animation:cardBtnShine 4s ease-in-out infinite;
+      pointer-events:none;
     }
     .card-btn:hover {
       background:rgba(255,255,255,1);
-    }
-
-    /* ═══════════════════════════════════════════════════════════════
+      transform:scale(1.05);
+      box-shadow:inset 0 1px 1px rgba(255,255,255,0.3), inset 0 -1px 1px rgba(0,0,0,0.1), 0 8px 24px rgba(0,0,0,0.25);
+    }   /* ═══════════════════════════════════════════════════════════════
        BONUS
     ═══════════════════════════════════════════════════════════════ */
+    /* ── Avis simples entre offre et bonus ── */
+    #avis-simple {
+      background: #131414;
+      padding: 10px 0 40px;
+      scroll-margin-top: 80px;
+    }
+    .avis-simple-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 80px;
+    }
+    .avis-simple-item {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      text-align: center;
+      padding:24px;
+    }
+    .avis-simple-item:hover {
+      transform:translateY(-4px);
+      transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
+    }
+    .avis-simple-quote {
+      font-size: 17px;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.65;
+      font-style: italic;
+    }
+    /* Typewriter effect — quote text clips via max-width */
+    .avis-simple-quote .typewriter-inner {
+      display:inline;
+      border-right:2px solid rgba(255,255,255,0.5);
+    }
+    @keyframes cursorBlink {
+      0%, 100% { border-color:rgba(255,255,255,0.5); }
+      50% { border-color:transparent; }
+    }
+    .avis-simple-quote .typewriter-inner.typing {
+      animation:cursorBlink 0.6s step-end infinite;
+    }
+    .avis-simple-quote .typewriter-inner.done {
+      border-color:transparent;
+    }
+    .avis-simple-author {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      opacity:0;
+      transition:opacity 0.4s ease;
+    }
+    .avis-simple-author.visible { opacity:1; }
+    .avis-simple-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      transition:transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .avis-simple-item:hover .avis-simple-avatar {
+      transform:scale(1.15);
+      box-shadow:0 0 12px rgba(255,169,108,0.3);
+    }
+    .avis-simple-name {
+      font-size: 15px;
+      font-weight: 600;
+      color: #fff;
+    }
+    .avis-simple-sep {
+      color: rgba(255,255,255,0.3);
+    }
+    .avis-simple-stars {
+      color: #FFA96C;
+      font-size: 14px;
+      letter-spacing: 2px;
+    }
+
     #bonus {
       background:#131414;
       padding:100px 0 120px;
       overflow:hidden;
       position:relative;
+    }
+
+    /* ── Lumière bonus PNG — BONUS.png en bas de la section ──
+       Pour ajuster :
+       - bottom    : remonter/descendre (ex: -50px pour déborder)
+       - left      : centrage horizontal (ex: 40% pour gauche)
+       - width     : taille de l'image (ex: 120% pour agrandir)
+    ── */
+    .bonus-light {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      pointer-events: none;
+      mix-blend-mode: plus-lighter;
+      z-index: 0;
+    }
+
+    /* ── Texture dots bonus — par-dessus la lumière, sous le contenu ──
+       Pour ajuster : change opacity (ex: 0.5), background-size (ex: 60%)
+    ── */
+    .bonus-dots {
+      position: absolute;
+      inset: 0;
+      background-image: url('assets/Dot.png');
+      background-size: 90%;
+      background-position: 80% bottom; /* ← centré vers le bas comme la lumière */
+      background-repeat: no-repeat;
+      mix-blend-mode: plus-lighter;
+      opacity: 0.8;
+      pointer-events: none;
+      z-index: 1; /* au-dessus de .bonus-light (z:0) mais sous le contenu */
     }
     .bonus-orb {
       position:absolute;
@@ -792,6 +1040,10 @@
       gap:8px;
     }
     .bonus-title { font-size:17px; font-weight:700; color:#fff; }
+    @keyframes greenPulse {
+      0%, 100% { box-shadow:0 0 10px rgba(83,255,49,0.4); }
+      50% { box-shadow:0 0 18px rgba(83,255,49,0.7), 0 0 30px rgba(83,255,49,0.2); }
+    }
     .green-badge {
       background:#67ff48;
       border:1px solid rgba(50,180,30,0.7);
@@ -803,6 +1055,7 @@
       box-shadow:0 0 10px rgba(83,255,49,0.4);
       white-space:nowrap;
       flex-shrink:0;
+      animation:greenPulse 3s ease-in-out infinite;
     }
     .bonus-desc { font-size:13px; color:rgba(255,255,255,0.75); }
 
@@ -821,131 +1074,135 @@
       position:relative;
       z-index:1;
     }
+    /* BOUTON 2 — bonus */
     .bonus-btn {
-      position:relative;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      background:#fff;
-      color:#000;
-      font-size:20px;
-      font-weight:500;
-      height:62px;
-      padding:0 52px;
-      border-radius:86px;
-      border:3px solid #FFA96C;
-      box-shadow:0 5px 10px 2px rgba(0,0,0,0.30);
-      cursor:pointer;
-      font-family:'Satoshi', sans-serif;
-      text-decoration:none;
-      overflow:hidden;
-      z-index:1;
-      transition:color 0.4s ease, border-color 0.4s ease;
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      color: #000;
+      font-size: 20px;
+      font-weight: 500;
+      height: 62px;
+      padding: 0 52px;
+      border-radius: 86px;
+      border: none;
+      cursor: pointer;
+      font-family: 'Satoshi', sans-serif;
+      text-decoration: none;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+      transition: box-shadow 0.35s ease;
     }
     .bonus-btn::before {
-      content:'';
-      width:0;
-      height:100%;
-      border-radius:86px;
-      position:absolute;
-      top:0;
-      left:0;
-      background:linear-gradient(90deg, #FFA96C 0%, #FFE7D7 50%, #FFF5ED 100%);
-      transition:width 0.5s ease;
-      z-index:-1;
+      content: '';
+      position: absolute;
+      inset: -2.5px;
+      border-radius: 89px;
+      background: linear-gradient(105deg, #FFA96C 0%, rgba(255,169,108,0.3) 50%, transparent 100%);
+      z-index: -1;
+      pointer-events: none;
     }
-    .bonus-btn:hover::before { width:100%; }
-    .bonus-btn:hover { color:#000; border-color:#FFA96C; }
+    .bonus-btn::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 86px;
+      background: radial-gradient(ellipse at 15% 50%, rgba(255,180,100,0.35) 0%, transparent 65%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      pointer-events: none;
+    }
+    .bonus-btn:hover::after { opacity: 1; }
+    .bonus-btn:hover {
+      box-shadow: 0 5px 15px rgba(0,0,0,0.4), 0 0 20px rgba(255,169,108,0.4);
+    }
+    .bonus-btn { animation:bonusBtnGlow 3.5s ease-in-out infinite; }
 
     /* ═══════════════════════════════════════════════════════════════
        TESTIMONIALS
     ═══════════════════════════════════════════════════════════════ */
-    #avis {
-      background:#ffffff;
-      border-radius:60px 60px 0 0;
-      padding:80px 0 0;
+    /* ═══════════════════════════════════════════════════════════
+       FAQ
+    ═══════════════════════════════════════════════════════════ */
+    #faq {
+      background: #ffffff;
+      padding: 100px 0 120px;
     }
-    #avis .section-header {
-      text-align:center;
-      padding:0 20px;
-      margin-bottom:40px;
+    #faq .section-header {
+      text-align: center;
+      padding: 0 20px;
+      margin-bottom: 60px;
     }
-    #avis .section-header h2 {
-      font-size:56px;
-      font-weight:700;
-      color:#000;
-      line-height:1.1;
+    #faq .section-header h2 {
+      font-size: 48px;
+      font-weight: 700;
+      color: #000;
+      line-height: 1.1;
     }
-    .avis-cta-wrap {
-      text-align:center;
-      margin-bottom:64px;
+    .faq-list {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 40px;
     }
-    .avis-btn {
-      position:relative;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      background:#000;
-      color:#fff;
-      font-size:18px;
-      font-weight:500;
-      height:54px;
-      padding:0 44px;
-      border-radius:86px;
-      border:2.5px solid #FFA96C;
-      box-shadow:0 4px 20px rgba(0,0,0,0.3);
-      cursor:pointer;
-      font-family:'Satoshi', sans-serif;
-      text-decoration:none;
-      overflow:hidden;
-      z-index:1;
-      transition:color 0.4s ease, border-color 0.4s ease;
+    .faq-item {
+      border-bottom: 1.5px solid #e5e5e5;
     }
-    .avis-btn::before {
-      content:'';
-      width:0;
-      height:100%;
-      border-radius:86px;
-      position:absolute;
-      top:0;
-      left:0;
-      background:linear-gradient(90deg, #FFA96C 0%, #FFE7D7 50%, #FFF5ED 100%);
-      transition:width 0.5s ease;
-      z-index:-1;
+    .faq-item:first-child {
+      border-top: 1.5px solid #e5e5e5;
     }
-    .avis-btn:hover::before { width:100%; }
-    .avis-btn:hover { color:#000; border-color:#FFA96C; }
-
-    .avis-grid {
-      display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:24px;
-      max-width:1440px;
-      margin:0 auto;
-      padding:0 80px 80px;
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 26px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      cursor: pointer;
+      font-family: 'Satoshi', sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: #000;
+      text-align: left;
+      transition:color 0.3s ease, padding-left 0.3s cubic-bezier(0.16,1,0.3,1);
     }
-    .avis-col { display:flex; flex-direction:column; gap:24px; }
-
-    .review-card {
-      background:#ffffff;
-      border:2px solid #f2f4ff;
-      border-radius:30px;
-      padding:28px 28px 24px;
-      box-shadow:0 2px 12px rgba(0,0,0,0.04);
+    .faq-question:hover { color:#c55a20; padding-left:8px; }
+    /* Chevron SVG animé */
+    .faq-chevron {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      transition: transform 0.35s ease;
     }
-    .review-stars { font-size:18px; color:#F5A623; letter-spacing:1px; }
-    .review-text { font-size:14px; color:#000; line-height:1.6; margin:12px 0; }
-    .review-author { display:flex; align-items:center; gap:12px; }
-    .review-avatar {
-      width:44px;
-      height:44px;
-      border-radius:50%;
-      overflow:hidden;
-      flex-shrink:0;
+    .faq-chevron path {
+      stroke: #000;
+      stroke-width: 2;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
-    .review-avatar img { width:100%; height:100%; object-fit:cover; display:block; }
-    .review-name { font-size:14px; font-weight:600; color:#000; }
-    .review-role { font-size:12px; color:rgba(0,0,0,0.52); }
+    .faq-item.open .faq-chevron {
+      transform: rotate(180deg);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s cubic-bezier(0.16,1,0.3,1), opacity 0.4s ease;
+      opacity:0;
+    }
+    .faq-item.open .faq-answer { opacity:1; }
+    .faq-answer p {
+      padding-bottom: 28px;
+      font-size: 16px;
+      color: #555;
+      line-height: 1.75;
+    }
+    .faq-item.open .faq-answer {
+      max-height: 300px;
+    }
 
     /* ═══════════════════════════════════════════════════════════════
        FOOTER
@@ -1036,73 +1293,346 @@
     }
 
     /* ═══════════════════════════════════════════════════════════════
-       RESPONSIVE
+       ANIMATIONS
+    ═══════════════════════════════════════════════════════════════ */
+
+    /* 1. Hero light — pulsation douce */
+    @keyframes heroPulse {
+      0%, 100% { opacity:1; transform:scale(1); }
+      50% { opacity:0.88; transform:scale(1.025); }
+    }
+    .hero-light-img {
+      animation: heroPulse 6s ease-in-out infinite;
+      transform-origin: center bottom;
+    }
+
+    /* 2. Bouton hero — glow pulsé */
+    @keyframes btnGlow {
+      0%, 100% { box-shadow: 0 0 0 2.5px #FFA96C, 0 5px 18px rgba(0,0,0,0.4); }
+      50% { box-shadow: 0 0 0 2.5px #FFA96C, 0 0 18px rgba(255,169,108,0.7), 0 0 40px rgba(255,169,108,0.3); }
+    }
+
+    /* 3. Staggered scroll delays — modules */
+    .mod-card:nth-child(1) { transition-delay:0s; }
+    .mod-card:nth-child(2) { transition-delay:0.08s; }
+    .mod-card:nth-child(3) { transition-delay:0.16s; }
+    .mod-card:nth-child(4) { transition-delay:0.08s; }
+    .mod-card:nth-child(5) { transition-delay:0.16s; }
+    .mod-card:nth-child(6) { transition-delay:0.24s; }
+
+    /* Staggered scroll delays — bonus */
+    .bonus-card:nth-child(1) { transition-delay:0s; }
+    .bonus-card:nth-child(2) { transition-delay:0.08s; }
+    .bonus-card:nth-child(3) { transition-delay:0.16s; }
+    .bonus-card:nth-child(4) { transition-delay:0.24s; }
+
+    /* Staggered scroll delays — avis */
+    .avis-simple-item:nth-child(1) { transition-delay:0s; }
+    .avis-simple-item:nth-child(2) { transition-delay:0.1s; }
+    .avis-simple-item:nth-child(3) { transition-delay:0.2s; }
+
+    /* 4. Empêcher le zoom image séparé sur les mod-cards (le 3D tilt bouge tout) */
+    .mod-card:hover .mod-card-img img { transform:none; }
+
+    /* Staggered features list */
+    .features-list li:nth-child(1) { transition-delay:0s; }
+    .features-list li:nth-child(2) { transition-delay:0.05s; }
+    .features-list li:nth-child(3) { transition-delay:0.1s; }
+    .features-list li:nth-child(4) { transition-delay:0.15s; }
+    .features-list li:nth-child(5) { transition-delay:0.2s; }
+    .features-list li:nth-child(6) { transition-delay:0.25s; }
+    .features-list li:nth-child(7) { transition-delay:0.3s; }
+    .features-list li:nth-child(8) { transition-delay:0.35s; }
+
+    /* Brand pill glow */
+    @keyframes pillGlow {
+      0%, 100% { border-color:rgba(255,255,255,0.3); }
+      50% { border-color:rgba(255,169,108,0.5); box-shadow:0 0 15px rgba(255,169,108,0.1); }
+    }
+    .brand-pill { animation:pillGlow 4s ease-in-out infinite; }
+
+    /* ═══════════════════════════════════════════════════════════════
+       RESPONSIVE — TABLET (768px)
     ═══════════════════════════════════════════════════════════════ */
     @media (max-width:768px) {
+      /* Navbar */
       #navbar { gap:16px; padding:8px 16px; }
       .nav-pill { display:none; }
       .nav-btn { display:none; }
       .hamburger { display:flex; }
 
-      #hero { padding-top:100px; }
+      /* Hero */
+      #hero { padding-top:80px; }
       .hero-content {
-        padding:0 20px;
+        padding:0 32px;
         max-width:100%;
         text-align:center;
       }
-      .hero-content h1 { font-size:32px; }
-      .hero-content h1 .komika { font-size:32px; }
+      .hero-content h1 { font-size:36px; }
+      .hero-content h1 .komika { font-size:36px; }
       .hero-subtitle { font-size:16px; max-width:100%; margin-left:auto; margin-right:auto; }
-      .video-wrap { padding:0 16px; margin-top:48px; }
+      .hero-btn { margin:0 auto; display:flex; width:auto; }
+      .hero-light-wrap { display:none; }
+      .hero-dots, .hero-dots-2 { display:none; }
+
+      /* Video */
+      .video-wrap { width:calc(100% - 32px); margin-top:48px; }
       .video-card { border-radius:20px; }
 
-      .beam-1, .beam-2, .beam-3, .beam-4,
-      .beam-5, .beam-6, .beam-7, .beam-8 { display:none; }
+      /* Clients */
+      #clients { padding:80px 0 0; }
+      #clients .section-header h2 { font-size:28px; }
+      #clients .section-header p { font-size:15px; }
+      .avatar-track img { width:48px; height:48px; }
+      .thumb-track img { width:180px; height:101px; }
+      .thumb-rows { gap:6px; }
+      .thumb-row-wrap-fade { display:none; }
 
-      #clients .section-header h2 { font-size:26px; }
-      .thumb-track img { width:200px; height:112px; }
-
+      /* Modules */
+      #modules { padding:80px 0 60px; }
+      #modules .section-header h2 { font-size:32px; }
       .modules-grid {
         grid-template-columns:repeat(2, 1fr);
-        padding:0 16px;
-        gap:12px;
+        padding:0 24px;
+        gap:14px;
       }
-      .mod-card { height:220px; }
+      .mod-card { height:auto; }
+      .modules-light { display:none; }
 
+      /* Offre */
       #offre { padding:80px 20px 120px; }
-      .offre-header h2 { font-size:30px; }
-      .price-card { padding:24px 20px; border-radius:28px; }
+      .offre-header h2 { font-size:32px; }
+      .offre-header .sub { font-size:16px; }
+      .price-card {
+        width:calc(100% - 40px);
+        max-width:100%;
+        padding:24px 28px 70px;
+        border-radius:28px;
+        margin:0 auto;
+      }
+      .card-btn { width:60%; }
+      .price-main { font-size:38px; }
+      .price-old { font-size:28px; }
 
+      /* Avis simples — mobile carousel */
+      .avis-simple-grid {
+        display:block;
+        position:relative;
+        padding:0 32px;
+      }
+      .avis-simple-item {
+        transition:opacity 0.5s ease;
+      }
+      .avis-simple-item.avis-hidden {
+        position:absolute;
+        top:0; left:32px; right:32px;
+        opacity:0;
+        visibility:hidden;
+        pointer-events:none;
+      }
+      .avis-simple-item.avis-visible {
+        position:relative;
+        opacity:1;
+        visibility:visible;
+        pointer-events:auto;
+      }
+
+      /* Bonus */
+      #bonus { padding:80px 0 80px; }
+      #bonus .section-header h2 { font-size:32px; }
       .bonus-grid {
-        grid-template-columns:repeat(2, 1fr);
-        padding:0 16px;
-        gap:12px;
-      }
-      .bonus-card { height:180px; }
-      .bonus-note { font-size:16px; }
-
-      #avis { border-radius:40px 40px 0 0; }
-      #avis .section-header h2 { font-size:32px; }
-      .avis-grid {
         grid-template-columns:1fr;
-        padding:0 16px 60px;
+        padding:0 24px;
+        gap:14px;
       }
+      .bonus-card { height:200px; }
+      .bonus-note { font-size:17px; }
+      .bonus-light { display:none; }
 
+      /* FAQ */
+      #faq { padding:60px 0 80px; }
+      #faq .section-header h2 { font-size:32px; }
+      .faq-list { padding:0 20px; }
+      .faq-question { font-size:16px; }
+
+      /* Footer */
       .footer-inner {
         padding:40px 24px 80px;
         border-radius:36px 36px 0 0;
       }
-      .footer-top { flex-direction:column; gap:32px; }
+      .footer-top { flex-direction:column; gap:32px; align-items:center; }
+      .footer-social-icons { justify-content:center; }
+      .footer-legal-links { text-align:center; }
       #footer-outer { padding:0 12px 0; }
     }
 
+    /* ═══════════════════════════════════════════════════════════════
+       RESPONSIVE — MOBILE (375px)
+    ═══════════════════════════════════════════════════════════════ */
     @media (max-width:480px) {
-      .bonus-grid { grid-template-columns:1fr; }
-      .modules-grid { grid-template-columns:1fr; }
+      /* Hero */
+      #hero { padding-top:80px; }
+      .hero-content { padding:0 20px; }
+      .hero-content h1 { font-size:28px; line-height:1.15; }
+      .hero-content h1 .komika { font-size:28px; }
+      .hero-subtitle { font-size:15px; margin-bottom:32px; }
+
+      /* Video */
+      .video-wrap { width:calc(100% - 24px); margin-top:36px; }
+      .video-card { border-radius:16px; }
+      .play-btn-circle { width:56px; height:56px; }
+      .play-btn-circle svg { width:20px; height:24px; }
+
+      /* Clients */
+      #clients { padding:60px 0 0; }
+      #clients .section-header { margin-bottom:40px; }
+      #clients .section-header h2 { font-size:22px; }
+      #clients .section-header p { font-size:14px; }
+      .avatar-carousel-wrap { margin-bottom:40px; }
+
+      /* Modules */
+      #modules { padding:60px 0 40px; }
+      #modules .section-header h2 { font-size:26px; }
+      .modules-grid {
+        grid-template-columns:1fr;
+        padding:0 16px;
+        gap:12px;
+      }
+      .modules-cta { padding:40px 0; }
+
+      /* Offre */
+      #offre { padding:60px 16px 100px; }
+      .offre-header h2 { font-size:26px; }
+      .offre-header .sub { font-size:15px; }
+      .offre-header .members { font-size:18px; }
+      .offre-stars { font-size:26px; }
+      .price-card {
+        width:calc(100% - 40px);
+        padding:20px 18px 60px;
+        border-radius:24px;
+      }
+      .brand-pill { font-size:14px; padding:5px 18px; }
+      .card-tagline { font-size:14px; }
+      .price-row { gap:16px; }
+      .price-main { font-size:36px; }
+      .price-old { font-size:26px; }
+      .payment-note { font-size:13px; }
+      .features-label { font-size:15px; }
+      .features-list li { font-size:14px; }
+      .card-btn { width:70%; font-size:17px; }
+
+      /* Avis simples */
+      #avis-simple { padding:10px 0 30px; }
+      .avis-simple-grid {
+        gap:24px;
+        padding:0 20px;
+      }
+      .avis-simple-quote { font-size:15px; }
+
+      /* Bonus */
+      #bonus { padding:60px 0 80px; }
+      #bonus .section-header h2 { font-size:26px; }
+      .bonus-grid { padding:0 16px; gap:12px; }
+      .bonus-card { height:180px; }
+      .bonus-note { font-size:15px; }
+      .bonus-btn { font-size:17px; height:54px; padding:0 36px; }
+
+      /* FAQ */
+      #faq { padding:50px 0 60px; }
+      #faq .section-header h2 { font-size:26px; }
+      .faq-question { padding:20px 0; }
+      .faq-answer p { font-size:14px; }
+
+      /* Footer */
+      .footer-inner {
+        padding:32px 20px 70px;
+        border-radius:28px 28px 0 0;
+      }
+      .footer-top { text-align:center; }
+      .footer-legal-links { align-items:center; }
+      .footer-copy { font-size:12px; }
+      #footer-outer { padding:0 8px 0; }
+    }
+    /* Smooth cursor glow trail */
+    .cursor-glow {
+      position:fixed;
+      width:200px;
+      height:200px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(248,129,78,0.04) 0%, transparent 70%);
+      pointer-events:none;
+      z-index:9999;
+      transform:translate(-50%,-50%);
+      transition:left 0.05s linear, top 0.05s linear;
+      mix-blend-mode:plus-lighter;
     }
   </style>
+  <!-- Schema.org — Course -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "minia.pro — Formation Miniamaker",
+    "description": "Formation complète à la création de miniatures YouTube avec Photoshop. 6 modules, 30h de vidéos, accompagnement WhatsApp.",
+    "provider": {
+      "@type": "Person",
+      "name": "Bitchi",
+      "sameAs": ["https://x.com/Bitchiskk", "https://www.instagram.com/bitchi_92/", "https://www.youtube.com/@bitchiskk"]
+    },
+    "url": "https://www.minia-pro.com",
+    "offers": {
+      "@type": "Offer",
+      "price": "197",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+
+  <!-- Schema.org — FAQPage (AEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Comment gagner de l'argent avec les miniatures YouTube ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "En devenant Miniamaker freelance. Une miniature se facture entre 50€ et 300€. Avec 2-3 clients réguliers tu génères 500 à 2000€/mois. La formation minia.pro t'accompagne de zéro à ton premier client en 30 jours."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quelle est la meilleure formation pour créer des miniatures YouTube ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "minia.pro est une formation complète de 6 modules et +30h de vidéos sur Photoshop, animée par Bitchi, créateur de miniatures depuis plus de 3 ans pour des chaînes françaises. +35 membres accompagnés, garantie satisfait ou remboursé."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Combien coûte la formation minia.pro ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "197€ en paiement unique, accès à vie. Zéro abonnement, zéro upsell. Inclut 6 modules, 4 bonus, WhatsApp perso et sessions live privées."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Faut-il savoir utiliser Photoshop pour rejoindre minia.pro ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Non, le Module 1 part de zéro absolu. La formation est conçue pour les débutants complets comme pour ceux qui veulent passer au niveau supérieur."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
+<div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
 
 <!-- ═══════════════════════════════════════════════════════════
      MOBILE MENU
@@ -1111,9 +1641,10 @@
   <a href="#hero" class="mobile-link">Accueil</a>
   <a href="#modules" class="mobile-link">Modules</a>
   <a href="#offre" class="mobile-link">Offre</a>
+  <a href="#avis-simple" class="mobile-link">Avis</a>
   <a href="#bonus" class="mobile-link">Bonus</a>
-  <a href="#avis" class="mobile-link">FAQ</a>
-  <a href="https://www.minia-pro.com/-paiment" class="mobile-link" style="color:#f8814e;">Rejoindre</a>
+  <a href="#faq" class="mobile-link">FAQ</a>
+  <a href="https://www.minia-pro.com/-paiment" class="mobile-link" target="_blank" rel="noopener noreferrer" style="color:#f8814e;">Rejoindre</a>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════════
@@ -1126,11 +1657,12 @@
     <a href="#hero">Accueil</a>
     <a href="#modules">Modules</a>
     <a href="#offre">Offre</a>
+    <a href="#avis-simple">Avis</a>
     <a href="#bonus">Bonus</a>
-    <a href="#avis">FAQ</a>
+    <a href="#faq">FAQ</a>
   </div>
 
-  <a class="nav-btn" href="https://www.minia-pro.com/-paiment">Rejoindre</a>
+  <a class="nav-btn" href="https://www.minia-pro.com/-paiment" target="_blank" rel="noopener noreferrer">Rejoindre</a>
 
   <button class="hamburger" id="hamburger" aria-label="Ouvrir le menu" aria-expanded="false">
     <span></span><span></span><span></span>
@@ -1142,40 +1674,24 @@
 ═══════════════════════════════════════════════════════════ -->
 <section id="hero">
 
-  <!-- Hero light composition -->
+  <!-- Image lumière unique — fond noir + mix-blend-mode: plus-lighter -->
+  <!-- Pour ajuster : modifie --lx (position gauche/droite), --ly (haut/bas), --lw (taille) dans .hero-light-wrap -->
   <div class="hero-light-wrap" aria-hidden="true">
-    <img src="light hero/01_plus-lighter_X1034_Y0_Vector4.png"       style="left:71.806%;top:0px;mix-blend-mode:plus-lighter" alt="">
-    <img src="light hero/02_plus-lighter_X1034_Y0_Vector5.png"       style="left:71.806%;top:0px;mix-blend-mode:plus-lighter" alt="">
-    <img src="light hero/03_plus-lighter_X1155_Y-191_Rect1.png"       style="left:80.208%;top:-191px;width:40px;height:956px;mix-blend-mode:plus-lighter;filter:blur(25px);opacity:0.8" alt="">
-    <img src="light hero/04_plus-lighter_X1155_Y-191_Rect2.png"       style="left:80.208%;top:-191px;width:40px;height:956px;mix-blend-mode:plus-lighter;filter:blur(25px);opacity:0.8" alt="">
-    <img src="light hero/05_plus-lighter_X1155_Y-191_Rect3.png"       style="left:80.208%;top:-191px;width:40px;height:956px;mix-blend-mode:plus-lighter;filter:blur(15px);opacity:0.3" alt="">
-    <img src="light hero/06_plus-lighter_X1155_Y-191_Rect4.png"       style="left:80.208%;top:-191px;width:40px;height:956px;mix-blend-mode:plus-lighter;filter:blur(15px);opacity:0.3" alt="">
-    <img src="light hero/07_plus-lighter_X1155_Y-191_Rect5.png"       style="left:80.208%;top:-191px;width:40px;height:956px;mix-blend-mode:plus-lighter;filter:blur(15px);opacity:0.3" alt="">
-    <img src="light hero/08_plus-lighter_X1155_Y-191_Rect6.png"       style="left:80.208%;top:-191px;width:40px;height:956px;mix-blend-mode:plus-lighter;filter:blur(15px);opacity:0.3" alt="">
-    <img src="light hero/09_plus-lighter_X1174_Y633_Ellipse2487.png" style="left:81.528%;top:633px;mix-blend-mode:plus-lighter" alt="">
-    <img src="light hero/10_plus-lighter_X1057_Y633_Ellipse2488.png" style="left:73.403%;top:633px;mix-blend-mode:plus-lighter" alt="">
-    <img src="light hero/12_plus-lighter_X1057_Y633_Ellipse2476.png" style="left:73.403%;top:633px;mix-blend-mode:plus-lighter" alt="">
-    <img src="light hero/13_plus-lighter_X1174_Y633_Ellipse2475.png" style="left:81.528%;top:633px;mix-blend-mode:plus-lighter" alt="">
-    <img src="light hero/14_plus-lighter_X1121_Y548_Ellipse2477.png" style="left:77.847%;top:548px;mix-blend-mode:plus-lighter" alt="">
-    <img src="light hero/15_plus-lighter_X388_Y611_Ellipse2478.png"  style="left:26.944%;top:611px;mix-blend-mode:plus-lighter" alt="">
-    <img src="light hero/16_plus-lighter_X388_Y611_Ellipse2481.png"  style="left:26.944%;top:611px;mix-blend-mode:plus-lighter" alt="">
-    <img src="light hero/17_plus-lighter_X388_Y611_Ellipse2482.png"  style="left:26.944%;top:611px;mix-blend-mode:plus-lighter" alt="">
-    <img src="light hero/18_plus-lighter_X1086_Y417_Ellipse2484.png" style="left:75.417%;top:417px;mix-blend-mode:plus-lighter" alt="">
-    <img src="light hero/19_plus-lighter_X1086_Y417_Ellipse2485.png" style="left:75.417%;top:417px;mix-blend-mode:plus-lighter" alt="">
-    <img src="light hero/23_normal_X1102_Y101_Ellipse2489.png"       style="left:76.528%;top:101px" alt="">
-    <img src="light hero/24_normal_X0_Y0_Maskgroup.png"              style="left:0%;top:0px;z-index:1" alt="">
+    <img class="hero-light-img" src="assets/images/hero/Light Hero principale.png" alt="">
   </div>
 
+  <!-- Dot textures -->
   <div class="hero-dots" aria-hidden="true"></div>
+  <div class="hero-dots-2" aria-hidden="true"></div>
 
   <div class="hero-content fi">
     <h1>
-      30 jours pour devenir <span class="komika">MINIAMAKER</span> &agrave; succ&egrave;s
+      30 jours pour devenir<br><span class="komika">MINIAMAKER</span> &agrave; succ&egrave;s
     </h1>
     <p class="hero-subtitle">
       Je t'accompagne sur Photoshop jusqu'&agrave; signer tes premiers clients&nbsp;!
     </p>
-    <a href="https://www.minia-pro.com/-paiment" class="hero-btn">Rejoindre<span class="hero-btn-glow"></span></a>
+    <a href="https://www.minia-pro.com/-paiment" class="hero-btn" target="_blank" rel="noopener noreferrer">Rejoindre</a>
   </div>
 
   <!-- Video card -->
@@ -1194,6 +1710,7 @@
       </video>
     </div>
   </div>
+
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
@@ -1201,8 +1718,8 @@
 ═══════════════════════════════════════════════════════════ -->
 <section id="clients">
   <div class="section-header fi">
-    <h2>Depuis plus de trois ans, j'ai cr&eacute;&eacute; leurs miniatures</h2>
-    <p>Maintenant c'est toi qui vas les cr&eacute;er&hellip; et qui encaisses</p>
+    <h2>+3 ans &agrave; facturer des miniatures pour eux</h2>
+    <p>Maintenant c&rsquo;est toi qui encaisses, je te montre exactement comment</p>
   </div>
 
   <!-- Avatar carousel -->
@@ -1244,84 +1761,94 @@
     </div>
   </div>
 
-  <!-- 3 thumbnail rows -->
+  <!-- 4 rangées de miniatures — 0 doublon entre rangées -->
   <div class="thumb-rows" aria-hidden="true">
+
     <!-- Row 1 – scrollLeft -->
-    <div class="thumb-row-wrap">
-      <div class="thumb-track row1">
-        <img src="assets/images/68b15a2b61b0b_MINIAPOURMANGER1915 1.png" alt="" loading="lazy" />
-        <img src="assets/images/68bb978d312cf_MINIAPOURMANGER1447 1.png" alt="" loading="lazy" />
-        <img src="assets/images/68b15b24e08cd_MINIAPOURMANGER1823 1.png" alt="" loading="lazy" />
-        <img src="assets/images/68b15b1f02e8b_MINIAPOURMANGER1828 1.png" alt="" loading="lazy" />
-        <img src="assets/images/MINIA POUR MANGER 2107 1.png" alt="" loading="lazy" />
-        <img src="assets/images/MINIA POUR MANGER 2128 1.png" alt="" loading="lazy" />
-        <img src="assets/images/68bce48ae2624_MINIAPOURMANGER1715 1.png" alt="" loading="lazy" />
-        <!-- Duplicate -->
-        <img src="assets/images/68b15a2b61b0b_MINIAPOURMANGER1915 1.png" alt="" loading="lazy" />
-        <img src="assets/images/68bb978d312cf_MINIAPOURMANGER1447 1.png" alt="" loading="lazy" />
-        <img src="assets/images/68b15b24e08cd_MINIAPOURMANGER1823 1.png" alt="" loading="lazy" />
-        <img src="assets/images/68b15b1f02e8b_MINIAPOURMANGER1828 1.png" alt="" loading="lazy" />
-        <img src="assets/images/MINIA POUR MANGER 2107 1.png" alt="" loading="lazy" />
-        <img src="assets/images/MINIA POUR MANGER 2128 1.png" alt="" loading="lazy" />
-        <img src="assets/images/68bce48ae2624_MINIAPOURMANGER1715 1.png" alt="" loading="lazy" />
-      </div>
-    </div>
+<div class="thumb-row-wrap">
+  <div class="thumb-track row1">
+    <img src="assets/images/minia/68b15a2b61b0b_MINIAPOURMANGER1915 1.png" alt="" loading="lazy" />
+    <img src="assets/images/minia/68b15b1f02e8b_MINIAPOURMANGER1828 1.png" alt="" loading="lazy" />
+    <img src="assets/images/minia/68b15b24e08cd_MINIAPOURMANGER1823 1.png" alt="" loading="lazy" />
+    <img src="assets/images/minia/68b15b2b54e9e_MINIAPOURMANGER1812 1.png" alt="" loading="lazy" />
+    <img src="assets/images/minia/68b86ac16f0d3_MINIAPOURMANGER1970 1.png" alt="" loading="lazy" />
+    <img src="assets/images/minia/68b86afabcfcc_MINIAPOURMANGER1973 1.png" alt="" loading="lazy" />
+    <img src="assets/images/minia/68bb976ea70c6_MINIAPOURMANGER1430 1.png" alt="" loading="lazy" />
+    <!-- Duplicate -->
+    <img src="assets/images/minia/68b15a2b61b0b_MINIAPOURMANGER1915 1.png" alt="" loading="lazy" />
+    <img src="assets/images/minia/68b15b1f02e8b_MINIAPOURMANGER1828 1.png" alt="" loading="lazy" />
+    <img src="assets/images/minia/68b15b24e08cd_MINIAPOURMANGER1823 1.png" alt="" loading="lazy" />
+    <img src="assets/images/minia/68b15b2b54e9e_MINIAPOURMANGER1812 1.png" alt="" loading="lazy" />
+    <img src="assets/images/minia/68b86ac16f0d3_MINIAPOURMANGER1970 1.png" alt="" loading="lazy" />
+    <img src="assets/images/minia/68b86afabcfcc_MINIAPOURMANGER1973 1.png" alt="" loading="lazy" />
+    <img src="assets/images/minia/68bb976ea70c6_MINIAPOURMANGER1430 1.png" alt="" loading="lazy" />
+  </div>
+</div>
 
-    <!-- Row 2 – scrollRight -->
-    <div class="thumb-row-wrap">
-      <div class="thumb-track row2">
-        <img src="assets/images/68b15b2b54e9e_MINIAPOURMANGER1812 1.png" alt="" loading="lazy" />
-        <img src="assets/images/MINIA POUR MANGER 2202 1.png" alt="" loading="lazy" />
-        <img src="assets/images/MINIA POUR MANGER 2207 1.png" alt="" loading="lazy" />
-        <img src="assets/images/MINIA POUR SANS PERMISSION 99 1.png" alt="" loading="lazy" />
-        <img src="assets/images/68bcebe5f08ea_MINIAPOURMANGER1377 1.png" alt="" loading="lazy" />
-        <img src="assets/images/MINIA POUR YOMI 520 V3 1.png" alt="" loading="lazy" />
-        <img src="assets/images/MINIA POUR MANGER 2209 1.png" alt="" loading="lazy" />
-        <!-- Duplicate -->
-        <img src="assets/images/68b15b2b54e9e_MINIAPOURMANGER1812 1.png" alt="" loading="lazy" />
-        <img src="assets/images/MINIA POUR MANGER 2202 1.png" alt="" loading="lazy" />
-        <img src="assets/images/MINIA POUR MANGER 2207 1.png" alt="" loading="lazy" />
-        <img src="assets/images/MINIA POUR SANS PERMISSION 99 1.png" alt="" loading="lazy" />
-        <img src="assets/images/68bcebe5f08ea_MINIAPOURMANGER1377 1.png" alt="" loading="lazy" />
-        <img src="assets/images/MINIA POUR YOMI 520 V3 1.png" alt="" loading="lazy" />
-        <img src="assets/images/MINIA POUR MANGER 2209 1.png" alt="" loading="lazy" />
-      </div>
-    </div>
+<!-- Row 2 – scrollRight -->
+<div class="thumb-row-wrap">
+  <div class="thumb-track row2">
+    <img src="assets/images/minia/68bb978d312cf_MINIAPOURMANGER1447 1.png" alt="" loading="lazy" />
+    <img src="assets/images/minia/68bb98126bc17_MINIAPOURMANGER1474 1.png" alt="" loading="lazy" />
+    <img src="assets/images/minia/68bce48ae2624_MINIAPOURMANGER1715 1.png" alt="" loading="lazy" />
+    <img src="assets/images/minia/68bcebe5f08ea_MINIAPOURMANGER1377 1.png" alt="" loading="lazy" />
+    <img src="assets/images/minia/ARABIE SAOUDITE 1.png" alt="" loading="lazy" />
+    <img src="assets/images/minia/EMPLOYE TO MILLIONAIRE 1.png" alt="" loading="lazy" />
+    <img src="assets/images/minia/image 25.png" alt="" loading="lazy" />
+    <!-- Duplicate -->
+    <img src="assets/images/minia/68bb978d312cf_MINIAPOURMANGER1447 1.png" alt="" loading="lazy" />
+    <img src="assets/images/minia/68bb98126bc17_MINIAPOURMANGER1474 1.png" alt="" loading="lazy" />
+    <img src="assets/images/minia/68bce48ae2624_MINIAPOURMANGER1715 1.png" alt="" loading="lazy" />
+    <img src="assets/images/minia/68bcebe5f08ea_MINIAPOURMANGER1377 1.png" alt="" loading="lazy" />
+    <img src="assets/images/minia/ARABIE SAOUDITE 1.png" alt="" loading="lazy" />
+    <img src="assets/images/minia/EMPLOYE TO MILLIONAIRE 1.png" alt="" loading="lazy" />
+    <img src="assets/images/minia/image 25.png" alt="" loading="lazy" />
+  </div>
+</div>
 
-    <!-- Row 3 – scrollLeft -->
-    <div class="thumb-row-wrap">
-      <div class="thumb-track row3">
-        <img src="assets/images/68b86afabcfcc_MINIAPOURMANGER1973 1.png" alt="" loading="lazy" />
-        <img src="assets/images/MINIA POUR MANGER 2190 1.png" alt="" loading="lazy" />
-        <img src="assets/images/MINIA POUR MANGER 2195 1.png" alt="" loading="lazy" />
-        <img src="assets/images/ARABIE SAOUDITE 1.png" alt="" loading="lazy" />
-        <img src="assets/images/EMPLOYE TO MILLIONAIRE 1.png" alt="" loading="lazy" />
-        <img src="assets/images/68b86ac16f0d3_MINIAPOURMANGER1970 1.png" alt="" loading="lazy" />
-        <img src="assets/images/MINIA POUR MANGER 2194 1.png" alt="" loading="lazy" />
-        <img src="assets/images/68bb98126bc17_MINIAPOURMANGER1474 1.png" alt="" loading="lazy" />
-        <img src="assets/images/68bb976ea70c6_MINIAPOURMANGER1430 1.png" alt="" loading="lazy" />
-        <img src="assets/images/image 25.png" alt="" loading="lazy" />
-        <img src="assets/images/MINIA POUR MANGER 2162 1.png" alt="" loading="lazy" />
-        <img src="assets/images/MINIA POUR YOMI 515 1.png" alt="" loading="lazy" />
-        <img src="assets/images/MINIA POUR MANGER 2171 1.png" alt="" loading="lazy" />
-        <img src="assets/images/MINIA POUR YOMI 533 V2 1.png" alt="" loading="lazy" />
-        <!-- Duplicate -->
-        <img src="assets/images/68b86afabcfcc_MINIAPOURMANGER1973 1.png" alt="" loading="lazy" />
-        <img src="assets/images/MINIA POUR MANGER 2190 1.png" alt="" loading="lazy" />
-        <img src="assets/images/MINIA POUR MANGER 2195 1.png" alt="" loading="lazy" />
-        <img src="assets/images/ARABIE SAOUDITE 1.png" alt="" loading="lazy" />
-        <img src="assets/images/EMPLOYE TO MILLIONAIRE 1.png" alt="" loading="lazy" />
-        <img src="assets/images/68b86ac16f0d3_MINIAPOURMANGER1970 1.png" alt="" loading="lazy" />
-        <img src="assets/images/MINIA POUR MANGER 2194 1.png" alt="" loading="lazy" />
-        <img src="assets/images/68bb98126bc17_MINIAPOURMANGER1474 1.png" alt="" loading="lazy" />
-        <img src="assets/images/68bb976ea70c6_MINIAPOURMANGER1430 1.png" alt="" loading="lazy" />
-        <img src="assets/images/image 25.png" alt="" loading="lazy" />
-        <img src="assets/images/MINIA POUR MANGER 2162 1.png" alt="" loading="lazy" />
-        <img src="assets/images/MINIA POUR YOMI 515 1.png" alt="" loading="lazy" />
-        <img src="assets/images/MINIA POUR MANGER 2171 1.png" alt="" loading="lazy" />
-        <img src="assets/images/MINIA POUR YOMI 533 V2 1.png" alt="" loading="lazy" />
-      </div>
-    </div>
+<!-- Row 3 – scrollLeft -->
+<div class="thumb-row-wrap">
+  <div class="thumb-track row3">
+    <img src="assets/images/minia/MINIA POUR MANGER 2107 1.png" alt="" loading="lazy" />
+    <img src="assets/images/minia/MINIA POUR MANGER 2128 1.png" alt="" loading="lazy" />
+    <img src="assets/images/minia/MINIA POUR MANGER 2162 1.png" alt="" loading="lazy" />
+    <img src="assets/images/minia/MINIA POUR MANGER 2171 1.png" alt="" loading="lazy" />
+    <img src="assets/images/minia/MINIA POUR MANGER 2190 1.png" alt="" loading="lazy" />
+    <img src="assets/images/minia/MINIA POUR MANGER 2194 1.png" alt="" loading="lazy" />
+    <img src="assets/images/minia/MINIA POUR MANGER 2195 1.png" alt="" loading="lazy" />
+    <!-- Duplicate -->
+    <img src="assets/images/minia/MINIA POUR MANGER 2107 1.png" alt="" loading="lazy" />
+    <img src="assets/images/minia/MINIA POUR MANGER 2128 1.png" alt="" loading="lazy" />
+    <img src="assets/images/minia/MINIA POUR MANGER 2162 1.png" alt="" loading="lazy" />
+    <img src="assets/images/minia/MINIA POUR MANGER 2171 1.png" alt="" loading="lazy" />
+    <img src="assets/images/minia/MINIA POUR MANGER 2190 1.png" alt="" loading="lazy" />
+    <img src="assets/images/minia/MINIA POUR MANGER 2194 1.png" alt="" loading="lazy" />
+    <img src="assets/images/minia/MINIA POUR MANGER 2195 1.png" alt="" loading="lazy" />
+  </div>
+</div>
+
+<!-- Row 4 – scrollRight — quasi invisible, fondu vers le bas -->
+<div class="thumb-row-wrap-fade">
+  <div class="thumb-track row4">
+    <img src="assets/images/minia/MINIA POUR MANGER 2202 1.png" alt="" loading="lazy" />
+    <img src="assets/images/minia/MINIA POUR MANGER 2207 1.png" alt="" loading="lazy" />
+    <img src="assets/images/minia/MINIA POUR MANGER 2209 1.png" alt="" loading="lazy" />
+    <img src="assets/images/minia/MINIA POUR SANS PERMISSION 99 1.png" alt="" loading="lazy" />
+    <img src="assets/images/minia/MINIA POUR YOMI 515 1.png" alt="" loading="lazy" />
+    <img src="assets/images/minia/MINIA POUR YOMI 520 V3 1.png" alt="" loading="lazy" />
+    <img src="assets/images/minia/MINIA POUR YOMI 533 V2 1.png" alt="" loading="lazy" />
+    <!-- Duplicate -->
+    <img src="assets/images/minia/MINIA POUR MANGER 2202 1.png" alt="" loading="lazy" />
+    <img src="assets/images/minia/MINIA POUR MANGER 2207 1.png" alt="" loading="lazy" />
+    <img src="assets/images/minia/MINIA POUR MANGER 2209 1.png" alt="" loading="lazy" />
+    <img src="assets/images/minia/MINIA POUR SANS PERMISSION 99 1.png" alt="" loading="lazy" />
+    <img src="assets/images/minia/MINIA POUR YOMI 515 1.png" alt="" loading="lazy" />
+    <img src="assets/images/minia/MINIA POUR YOMI 520 V3 1.png" alt="" loading="lazy" />
+    <img src="assets/images/minia/MINIA POUR YOMI 533 V2 1.png" alt="" loading="lazy" />
+  </div>
+</div>
+
+  </div>
   </div>
 </section>
 
@@ -1329,8 +1856,12 @@
      MODULES
 ═══════════════════════════════════════════════════════════ -->
 <section id="modules">
+
+  <!-- Lumière modules — ajuste top/left/width dans .modules-light dans le CSS -->
+  <img class="modules-light" src="assets/images/hero/Modules.png" alt="" aria-hidden="true">
+
   <div class="section-header fi">
-    <h2>Avec un plan bien pens&eacute;</h2>
+    <h2>6 modules, 1 seul objectif&nbsp;: ton premier client</h2>
   </div>
 
   <div class="modules-grid">
@@ -1345,7 +1876,7 @@
           <span class="mod-card-name">Les Bases</span>
           <div class="mod-badge"><span class="dot-pulse"></span>Module 1</div>
         </div>
-        <p class="mod-card-desc">Ma&icirc;trise les fondamentaux, les raccourcis et l&rsquo;interface, m&ecirc;me si tu n&rsquo;as jamais utilis&eacute; le logiciel</p>
+        <p class="mod-card-desc">De z&eacute;ro &agrave; autonome sur Photoshop en quelques jours, m&ecirc;me si tu n&rsquo;as jamais ouvert le logiciel</p>
       </div>
     </div>
 
@@ -1359,7 +1890,7 @@
           <span class="mod-card-name">La Th&eacute;orie</span>
           <div class="mod-badge"><span class="dot-pulse"></span>Module 2</div>
         </div>
-        <p class="mod-card-desc">Apprends les principes de design, la psychologie des couleurs et la composition visuelle qui font le succ&egrave;s des miniatures</p>
+        <p class="mod-card-desc">Les principes de design qui font qu&rsquo;un cr&eacute;ateur facture 80&euro; et un autre 300&euro; pour la m&ecirc;me minia</p>
       </div>
     </div>
 
@@ -1373,7 +1904,7 @@
           <span class="mod-card-name">Les Miniatures</span>
           <div class="mod-badge"><span class="dot-pulse"></span>Module 3</div>
         </div>
-        <p class="mod-card-desc">Cr&eacute;e des visuels qui convertissent, avec les techniques utilis&eacute;es par les plus grands Miniamaker</p>
+        <p class="mod-card-desc">Cr&eacute;e des minias que les YouTubeurs veulent acheter, les techniques exactes que j&rsquo;utilise pour mes propres clients</p>
       </div>
     </div>
 
@@ -1387,7 +1918,7 @@
           <span class="mod-card-name">Ma&icirc;triser l&rsquo;IA</span>
           <div class="mod-badge"><span class="dot-pulse"></span>Module 4</div>
         </div>
-        <p class="mod-card-desc">Utilise l&rsquo;IA et les outils d&rsquo;automatisation pour gagner en productivit&eacute; et en cr&eacute;ativit&eacute;</p>
+        <p class="mod-card-desc">Produis 2x plus vite gr&acirc;ce &agrave; l&rsquo;IA, plus de minias livr&eacute;es = plus de revenus chaque mois</p>
       </div>
     </div>
 
@@ -1401,7 +1932,7 @@
           <span class="mod-card-name">Ta carri&egrave;re Freelance</span>
           <div class="mod-badge"><span class="dot-pulse"></span>Module 5</div>
         </div>
-        <p class="mod-card-desc">Construis ton personal branding et d&eacute;veloppe ta pr&eacute;sence sur les r&eacute;seaux pour attirer des clients naturellement</p>
+        <p class="mod-card-desc">Construis une pr&eacute;sence qui attire les clients &agrave; toi, fini de courir apr&egrave;s les DMs sans r&eacute;ponse</p>
       </div>
     </div>
 
@@ -1415,14 +1946,14 @@
           <span class="mod-card-name">Les Clients</span>
           <div class="mod-badge"><span class="dot-pulse"></span>Module 6</div>
         </div>
-        <p class="mod-card-desc">Techniques concr&egrave;tes pour d&eacute;marcher, convaincre et cr&eacute;er des relations durables avec tes clients</p>
+        <p class="mod-card-desc">Comment signer, fid&eacute;liser et transformer un premier client en revenu r&eacute;current chaque mois</p>
       </div>
     </div>
 
   </div>
 
   <div class="modules-cta fi">
-    <a href="https://www.minia-pro.com/-paiment" class="hero-btn">Rejoindre<span class="hero-btn-glow"></span></a>
+    <a href="https://www.minia-pro.com/-paiment" class="hero-btn" target="_blank" rel="noopener noreferrer">Rejoindre<span class="hero-btn-glow"></span></a>
   </div>
 </section>
 
@@ -1435,42 +1966,42 @@
 
   <!-- Light beams – left (Figma PNGs, plus-lighter blend) -->
   <div class="light-group" aria-hidden="true">
-    <img src="1 Plus lighter.png" alt="" />
-    <img src="2 Plus lighter.png" alt="" />
-    <img src="3 Plus lighter.png" alt="" />
-    <img src="4 Plus lighter.png" alt="" />
-    <img src="5 Plus lighter.png" alt="" />
-    <img src="6 Plus lighter.png" alt="" />
+    <img src="assets/images/lights/1 Plus lighter.png" alt="" />
+    <img src="assets/images/lights/2 Plus lighter.png" alt="" />
+    <img src="assets/images/lights/3 Plus lighter.png" alt="" />
+    <img src="assets/images/lights/4 Plus lighter.png" alt="" />
+    <img src="assets/images/lights/5 Plus lighter.png" alt="" />
+    <img src="assets/images/lights/6 Plus lighter.png" alt="" />
   </div>
   <!-- Light beams – right (mirrored) -->
   <div class="light-group right" aria-hidden="true">
-    <img src="1 Plus lighter.png" alt="" />
-    <img src="2 Plus lighter.png" alt="" />
-    <img src="3 Plus lighter.png" alt="" />
-    <img src="4 Plus lighter.png" alt="" />
-    <img src="5 Plus lighter.png" alt="" />
-    <img src="6 Plus lighter.png" alt="" />
+    <img src="assets/images/lights/1 Plus lighter.png" alt="" />
+    <img src="assets/images/lights/2 Plus lighter.png" alt="" />
+    <img src="assets/images/lights/3 Plus lighter.png" alt="" />
+    <img src="assets/images/lights/4 Plus lighter.png" alt="" />
+    <img src="assets/images/lights/5 Plus lighter.png" alt="" />
+    <img src="assets/images/lights/6 Plus lighter.png" alt="" />
   </div>
 
   <div class="offre-inner">
     <div class="offre-header fi">
-      <h2>Commence ton aventure d&egrave;s aujourd&rsquo;hui</h2>
-      <p class="sub">Rejoins les membres qui transforment leur passion en revenus.</p>
-      <p class="members">+35 membres accompagn&eacute;s</p>
+      <h2>Investis 197&euro;, rembourse les d&egrave;s ton premier client</h2>
+      <p class="sub">+35 personnes l&rsquo;ont fait avant toi. Certains en moins de 10 jours.</p>
+      <p class="members">+35 membres qui facturent d&eacute;j&agrave;</p>
       <div class="offre-stars" aria-label="5 &eacute;toiles sur 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
     </div>
 
     <div class="price-card fi">
       <!-- Card inner lights -->
       <div class="card-lights" aria-hidden="true">
-        <img src="Card light Plus lighter/Card 1.png" alt="" />
-        <img src="Card light Plus lighter/Card 2.png" alt="" />
-        <img src="Card light Plus lighter/Card 3.png" alt="" />
-        <img src="Card light Plus lighter/Card 4.png" alt="" />
-        <img src="Card light Plus lighter/Card 5.png" alt="" />
+        <img src="assets/images/card-lights/Card 1.png" alt="" />
+        <img src="assets/images/card-lights/Card 2.png" alt="" />
+        <img src="assets/images/card-lights/Card 3.png" alt="" />
+        <img src="assets/images/card-lights/Card 4.png" alt="" />
+        <img src="assets/images/card-lights/Card 5.png" alt="" />
       </div>
       <span class="brand-pill">minia<span class="dot">.</span>pro</span>
-      <p class="card-tagline">La formation Miniamaker n&deg;1 en France</p>
+      <p class="card-tagline">Le raccourci vers tes premiers revenus en miniatures</p>
 
       <div class="price-row">
         <span class="price-main">197.00&euro;</span>
@@ -1478,20 +2009,62 @@
       </div>
       <p class="payment-note">Paiement unique, acc&egrave;s &agrave; vie</p>
 
-      <p class="features-label">Tu y retrouveras <span class="colon">:</span></p>
+      <p class="features-label">Ce qui est inclus <span class="colon">:</span></p>
       <ul class="features-list">
-        <li><span class="chk">&#10003;</span><span>Acc&egrave;s illimit&eacute; &agrave; la formation compl&egrave;te</span></li>
-        <li><span class="chk">&#10003;</span><span>Plus de 30 heures de vid&eacute;os o&ugrave; je te montre tout sans filtre</span></li>
-        <li><span class="chk">&#10003;</span><span>4 Modules bonus inclus dans la formation</span></li>
-        <li><span class="chk">&#10003;</span><span>Le plan d&rsquo;action ultime &ndash; chaque &eacute;tape d&eacute;taill&eacute;e</span></li>
-        <li><span class="chk">&#10003;</span><span>Mon WhatsApp perso, tu m&rsquo;as en direct, tout le temps</span></li>
-        <li><span class="chk">&#10003;</span><span>Des sessions live priv&eacute;es en petit comit&eacute;, o&ugrave; on bosse ensemble en direct</span></li>
-        <li><span class="chk">&#10003;</span><span>4 ans de ressources donner dans le google drive of all time</span></li>
-        <li><span class="chk">&#10003;</span><span>Garantie satisfait ou rembours&eacute; (CVG)</span></li>
+        <li><span class="chk">&#10003;</span><span>Acc&egrave;s &agrave; vie &agrave; la formation compl&egrave;te (6 modules + 4 bonus)</span></li>
+        <li><span class="chk">&#10003;</span><span>+30h de vid&eacute;os sans filtre - tu vois tout, m&ecirc;me mes erreurs</span></li>
+        <li><span class="chk">&#10003;</span><span>Le plan d&rsquo;action pour signer ton premier client en 30 jours</span></li>
+        <li><span class="chk">&#10003;</span><span>Mon WhatsApp perso - tu m&rsquo;as en direct quand tu bloques</span></li>
+        <li><span class="chk">&#10003;</span><span>Sessions live priv&eacute;es o&ugrave; on bosse ensemble sur tes minias</span></li>
+        <li><span class="chk">&#10003;</span><span>4 ans de ressources, templates et fichiers source dans le Drive</span></li>
+        <li><span class="chk">&#10003;</span><span>Mises &agrave; jour gratuites &agrave; vie - le contenu &eacute;volue avec le march&eacute;</span></li>
+        <li><span class="chk">&#10003;</span><span>Garantie satisfait ou rembours&eacute; - z&eacute;ro risque pour toi</span></li>
       </ul>
 
-      <a href="https://www.minia-pro.com/-paiment" class="card-btn">Rejoindre</a>
+      <a href="https://www.minia-pro.com/-paiment" class="card-btn" target="_blank" rel="noopener noreferrer">Rejoindre</a>
     </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     AVIS SIMPLES
+═══════════════════════════════════════════════════════════ -->
+<section id="avis-simple">
+  <div class="avis-simple-grid">
+
+    <!-- Avis 1 — Evan -->
+    <div class="avis-simple-item fi">
+      <p class="avis-simple-quote"><span class="typewriter-inner" data-text="&quot;960€ contractés en une semaine, 1 client signé, 1 deal à +500€/mois en cours. Et j'étais à 50% de forme.&quot;"></span></p>
+      <div class="avis-simple-author">
+        <img src="assets/images/PDP/Centre.jpg" alt="Evan" class="avis-simple-avatar" />
+        <span class="avis-simple-name">Evan</span>
+        <span class="avis-simple-sep">|</span>
+        <span class="avis-simple-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      </div>
+    </div>
+
+    <!-- Avis 2 — Malass -->
+    <div class="avis-simple-item fi">
+      <p class="avis-simple-quote"><span class="typewriter-inner" data-text="&quot;Grâce au mentorat j'ai eu mon premier client pendant la formation. Aujourd'hui je travaille avec une chaîne de 380K. Sans Bitchi j'aurais pas imaginé commencer aussi bien.&quot;"></span></p>
+      <div class="avis-simple-author">
+        <img src="assets/images/PDP/Malasse.jpg" alt="Malass" class="avis-simple-avatar" />
+        <span class="avis-simple-name">Malass</span>
+        <span class="avis-simple-sep">|</span>
+        <span class="avis-simple-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      </div>
+    </div>
+
+    <!-- Avis 3 — Smokoue -->
+    <div class="avis-simple-item fi">
+      <p class="avis-simple-quote"><span class="typewriter-inner" data-text="&quot;10 jours de mentorat et j'ai déjà fait 500€. Je m'étais engagé à 1500€/mois en 6 mois, j'ai fait le tiers en 10 jours.&quot;"></span></p>
+      <div class="avis-simple-author">
+        <img src="assets/images/PDP/smokoue.jpg" alt="Smokoue" class="avis-simple-avatar" />
+        <span class="avis-simple-name">Smokoue</span>
+        <span class="avis-simple-sep">|</span>
+        <span class="avis-simple-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -1499,12 +2072,19 @@
      BONUS
 ═══════════════════════════════════════════════════════════ -->
 <section id="bonus">
+
+  <!-- ── Lumière BONUS.png — pour ajuster : modifie bottom / left / width dans .bonus-light dans le CSS ── -->
+  <img class="bonus-light" src="assets/images/hero/Bonus.png" alt="" aria-hidden="true">
+
+  <!-- ── Texture dots bonus — par-dessus la lumière, sous le contenu — modifie opacity dans .bonus-dots ── -->
+  <div class="bonus-dots" aria-hidden="true"></div>
+
   <div class="bonus-orb bonus-orb-left" aria-hidden="true"></div>
   <div class="bonus-orb bonus-orb-right" aria-hidden="true"></div>
 
   <div class="section-header fi">
-    <p class="bonus-sub">Sans oublier&hellip;</p>
-    <h2>Les Bonus puissants</h2>
+    <p class="bonus-sub">Et ce n&rsquo;est pas fini&hellip;</p>
+    <h2>4 bonus qui acc&eacute;l&egrave;rent tes r&eacute;sultats</h2>
   </div>
 
   <div class="bonus-grid">
@@ -1517,7 +2097,7 @@
           <span class="bonus-title">Uncut stream minia</span>
           <span class="green-badge">Save 397&euro;</span>
         </div>
-        <p class="bonus-desc">Sessions compl&egrave;tes de cr&eacute;ation en temps r&eacute;el pour voir mon workflow exact</p>
+        <p class="bonus-desc">Regarde par-dessus mon &eacute;paule pendant que je livre de vraies commandes clients</p>
       </div>
     </div>
 
@@ -1529,7 +2109,7 @@
           <span class="bonus-title">Tricks pour les nuls</span>
           <span class="green-badge">Save 47&euro;</span>
         </div>
-        <p class="bonus-desc">Techniques et effets avanc&eacute;s et secret pour dominer le game</p>
+        <p class="bonus-desc">Les effets qui font passer tes minias de &laquo;&nbsp;correct&nbsp;&raquo; &agrave; &laquo;&nbsp;combien tu factures&nbsp;?&nbsp;&raquo;</p>
       </div>
     </div>
 
@@ -1541,7 +2121,7 @@
           <span class="bonus-title">Critiques personnalis&eacute;es</span>
           <span class="green-badge">Save 197&euro;</span>
         </div>
-        <p class="bonus-desc">Feedbacks vid&eacute;o sur tes cr&eacute;ations pour progresser 10x plus vite</p>
+        <p class="bonus-desc">J&rsquo;analyse tes minias en vid&eacute;o et te dis exactement quoi changer pour facturer plus</p>
       </div>
     </div>
 
@@ -1553,191 +2133,76 @@
           <span class="bonus-title">L&rsquo;actu du Miniamaker</span>
           <span class="green-badge">Save 97&euro;</span>
         </div>
-        <p class="bonus-desc">Tendances, actus, outils &mdash; tu restes &agrave; jour sans avoir &agrave; rechercher les derni&egrave;res modes</p>
+        <p class="bonus-desc">Ce qui marche maintenant sur YouTube, tu restes toujours un coup d&rsquo;avance sur les autres miniamakers</p>
       </div>
     </div>
 
   </div>
 
-  <p class="bonus-note fi">Tout est bien &eacute;videment inclus dans la forma :)</p>
+  <p class="bonus-note fi">Tout est inclus dans les 197&euro;, z&eacute;ro frais cach&eacute;s, z&eacute;ro upsell</p>
 
   <div class="bonus-cta fi">
-    <a href="https://www.minia-pro.com/-paiment" class="bonus-btn">Rejoindre maintenant</a>
+    <a href="https://www.minia-pro.com/-paiment" class="bonus-btn" target="_blank" rel="noopener noreferrer">D&eacute;bloquer mon acc&egrave;s</a>
   </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
      TESTIMONIALS / AVIS
 ═══════════════════════════════════════════════════════════ -->
-<section id="avis">
+<section id="faq">
   <div class="section-header fi">
-    <h2>Ils ont becter pourquoi pas toi</h2>
+    <h2>Questions fr&eacute;quentes</h2>
   </div>
+  <div class="faq-list">
 
-  <div class="avis-cta-wrap fi">
-    <a href="https://www.minia-pro.com/-paiment" class="avis-btn">Rejoindre la formation</a>
-  </div>
-
-  <div class="avis-grid">
-
-    <!-- Column 1 -->
-    <div class="avis-col">
-
-      <div class="review-card fi">
-        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="review-text">J&rsquo;ai d&eacute;croch&eacute; mes premiers clients en moins de 3 semaines apr&egrave;s avoir termin&eacute; les modules. La progression est incroyablement rapide.</p>
-        <div class="review-author">
-          <div class="review-avatar"><img src="assets/images/Ellipse 11800.png" alt="Maxime" loading="lazy" /></div>
-          <div>
-            <div class="review-name">Maxime</div>
-            <div class="review-role">Miniamaker Freelance</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="review-card fi">
-        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="review-text">Je passais des heures &agrave; faire des miniatures m&eacute;diocres. Maintenant j&rsquo;en cr&eacute;e des professionnelles en moins de 30 min. La diff&eacute;rence est dingue.</p>
-        <div class="review-author">
-          <div class="review-avatar"><img src="assets/images/Ellipse 11801.png" alt="Sarah" loading="lazy" /></div>
-          <div>
-            <div class="review-name">Sarah</div>
-            <div class="review-role">Cr&eacute;atrice de contenu</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="review-card fi">
-        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="review-text">Game-changer&hellip; La meilleure formation Photoshop francophone sans aucun doute. Ultra complet.</p>
-        <div class="review-author">
-          <div class="review-avatar"><img src="assets/images/Ellipse 11802.png" alt="Thomas" loading="lazy" /></div>
-          <div>
-            <div class="review-name">Thomas</div>
-            <div class="review-role">Designer Freelance</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="review-card fi">
-        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="review-text">Le module sur les clients est incroyable. 3 contrats sign&eacute;s en 1 mois gr&acirc;ce aux techniques de d&eacute;marchage.</p>
-        <div class="review-author">
-          <div class="review-avatar"><img src="assets/images/Ellipse 11803.png" alt="Julie" loading="lazy" /></div>
-          <div>
-            <div class="review-name">Julie</div>
-            <div class="review-role">Freelance Design</div>
-          </div>
-        </div>
-      </div>
-
+    <div class="faq-item">
+      <button class="faq-question">
+        Dans combien de temps je peux commencer &agrave; gagner de l&rsquo;argent&nbsp;?
+        <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer"><p>Certains membres signent leur premier client en moins de 2 semaines. Tout d&eacute;pend de ton engagement, mais le module 6 est con&ccedil;u pour que tu d&eacute;marches d&egrave;s que tes premi&egrave;res minias sont pr&ecirc;tes, pas &agrave; la fin de la formation, pendant.</p></div>
     </div>
 
-    <!-- Column 2 -->
-    <div class="avis-col">
-
-      <div class="review-card fi">
-        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="review-text">Super formation, j&rsquo;ai tout absorb&eacute; d&egrave;s le premier module. La p&eacute;dagogie est au top.</p>
-        <div class="review-author">
-          <div class="review-avatar"><img src="assets/images/Ellipse 11804.png" alt="Kevin" loading="lazy" /></div>
-          <div>
-            <div class="review-name">Kevin</div>
-            <div class="review-role">&Eacute;tudiant en design</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="review-card fi">
-        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="review-text">0 exp&eacute;rience en design au d&eacute;part. Aujourd&rsquo;hui je g&eacute;n&egrave;re plus de 2000&euro;/mois en freelance. Cette formation a chang&eacute; ma vie.</p>
-        <div class="review-author">
-          <div class="review-avatar"><img src="assets/images/Ellipse 11805.png" alt="Amira" loading="lazy" /></div>
-          <div>
-            <div class="review-name">Amira</div>
-            <div class="review-role">Miniamaker ind&eacute;pendante</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="review-card fi">
-        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="review-text">La meilleure formation Photoshop francophone, sans aucun doute. Ultra complet, p&eacute;dagogie au top.</p>
-        <div class="review-author">
-          <div class="review-avatar"><img src="assets/images/Ellipse 11806.png" alt="Lucas" loading="lazy" /></div>
-          <div>
-            <div class="review-name">Lucas</div>
-            <div class="review-role">Cr&eacute;ateur YouTube</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="review-card fi">
-        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="review-text">Game-changer&hellip; It&rsquo;s literally my unfair advantage. No other tool shows this level of detail on shops and ads. 10/10</p>
-        <div class="review-author">
-          <div class="review-avatar"><img src="assets/images/Ellipse 11807.png" alt="Emma" loading="lazy" /></div>
-          <div>
-            <div class="review-name">Emma</div>
-            <div class="review-role">Graphiste Freelance</div>
-          </div>
-        </div>
-      </div>
-
+    <div class="faq-item">
+      <button class="faq-question">
+        197&euro; c&rsquo;est un paiement unique ou il y a des frais apr&egrave;s&nbsp;?
+        <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer"><p>Paiement unique, acc&egrave;s &agrave; vie. Z&eacute;ro abonnement, z&eacute;ro upsell, z&eacute;ro surprise. Tu paies une fois et tout est &agrave; toi pour toujours, y compris les futures mises &agrave; jour.</p></div>
     </div>
 
-    <!-- Column 3 -->
-    <div class="avis-col">
-
-      <div class="review-card fi">
-        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="review-text">L&rsquo;acc&egrave;s WhatsApp direct c&rsquo;est la folie, toutes mes questions sont r&eacute;pondues en moins de 2h. Un accompagnement vraiment premium.</p>
-        <div class="review-author">
-          <div class="review-avatar"><img src="assets/images/Ellipse 11808.png" alt="Rayan" loading="lazy" /></div>
-          <div>
-            <div class="review-name">Rayan</div>
-            <div class="review-role">Miniamaker Pro</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="review-card fi">
-        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="review-text">Game-changer&hellip; It&rsquo;s literally my unfair advantage. No other tool shows this level of detail. 10/10</p>
-        <div class="review-author">
-          <div class="review-avatar"><img src="assets/images/Ellipse 11809.png" alt="In&egrave;s" loading="lazy" /></div>
-          <div>
-            <div class="review-name">In&egrave;s</div>
-            <div class="review-role">Cr&eacute;atrice de contenu</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="review-card fi">
-        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="review-text">Super formation. Contenu de qualit&eacute;, explications claires, j&rsquo;ai pu cr&eacute;er mes premi&egrave;res miniatures pro en 2 semaines.</p>
-        <div class="review-author">
-          <div class="review-avatar"><img src="assets/images/Ellipse 11810.png" alt="Hugo" loading="lazy" /></div>
-          <div>
-            <div class="review-name">Hugo</div>
-            <div class="review-role">YouTubeur en herbe</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="review-card fi">
-        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="review-text">Super formation. Je recommande &agrave; tous ceux qui veulent se lancer dans la cr&eacute;ation de miniatures YouTube.</p>
-        <div class="review-author">
-          <div class="review-avatar"><img src="assets/images/Ellipse 11811.png" alt="Lisa" loading="lazy" /></div>
-          <div>
-            <div class="review-name">Lisa</div>
-            <div class="review-role">Freelance cr&eacute;ative</div>
-          </div>
-        </div>
-      </div>
-
+    <div class="faq-item">
+      <button class="faq-question">
+        Je n&rsquo;ai jamais ouvert Photoshop, c&rsquo;est pour moi&nbsp;?
+        <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer"><p>C&rsquo;est exactement pour toi. Le Module 1 part de z&eacute;ro absolu. Et si t&rsquo;es d&eacute;j&agrave; &agrave; l&rsquo;aise, les modules avanc&eacute;s et les bonus te feront passer au niveau sup&eacute;rieur, celui o&ugrave; tu factures vraiment.</p></div>
     </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        Combien je peux esp&eacute;rer gagner par mois&nbsp;?
+        <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer"><p>Une miniature se facture entre 50&euro; et 300&euro;+. Avec 2-3 clients r&eacute;guliers, tu peux g&eacute;n&eacute;rer 500 &agrave; 2&nbsp;000&euro;/mois en compl&eacute;ment. Certains membres en vivent &agrave; plein temps - tout d&eacute;pend du temps que tu y consacres.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        Est-ce que tu m&rsquo;aides vraiment &agrave; trouver des clients&nbsp;?
+        <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer"><p>Oui. Le module 5 et 6 sont enti&egrave;rement d&eacute;di&eacute;s au business&nbsp;: d&eacute;marchage, pricing, personal branding, fid&eacute;lisation. Et tu as mon WhatsApp perso - si tu bloques, je suis l&agrave;.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        Et si la formation ne me convient pas&nbsp;?
+        <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer"><p>Garantie satisfait ou rembours&eacute;. Si tu sens que c&rsquo;est pas fait pour toi, tu demandes un remboursement. Z&eacute;ro risque. Le seul risque c&rsquo;est de ne pas essayer et de rester au m&ecirc;me point dans 6 mois.</p></div>
+    </div>
+
   </div>
 </section>
 
@@ -1756,25 +2221,14 @@
       <div>
         <p class="footer-social-label">Vous pouvez me suivre sur :</p>
         <div class="footer-social-icons">
-          <!-- X / Twitter -->
-          <a href="#" aria-label="X (Twitter)">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.258 5.63 5.906-5.63Zm-1.161 17.52h1.833L7.084 4.126H5.117Z"/>
-            </svg>
+          <a href="https://x.com/Bitchiskk" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.258 5.63 5.906-5.63Zm-1.161 17.52h1.833L7.084 4.126H5.117Z"/></svg>
           </a>
-          <!-- Instagram -->
-          <a href="#" aria-label="Instagram">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-              <circle cx="12" cy="12" r="4"/>
-              <circle cx="17.5" cy="6.5" r="0.7" fill="currentColor" stroke="none"/>
-            </svg>
+          <a href="https://www.instagram.com/bitchi_92/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.7" fill="currentColor" stroke="none"/></svg>
           </a>
-          <!-- YouTube -->
-          <a href="#" aria-label="YouTube">
-            <svg width="24" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-            </svg>
+          <a href="https://www.youtube.com/@bitchiskk" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <svg width="24" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
           </a>
         </div>
       </div>
@@ -1783,16 +2237,15 @@
       <div>
         <p class="footer-legal-label">L&eacute;gales :</p>
         <div class="footer-legal-links">
-          <a href="#">Mentions l&eacute;gales</a>
-          <a href="#">CVG</a>
-          <a href="#">Condition g&eacute;n&eacute;rale de vente</a>
+          <a href="https://www.minia-pro.com/mentionslegales" target="_blank" rel="noopener noreferrer">Mentions l&eacute;gales</a>
+          <a href="https://www.minia-pro.com/termes/conditionsdevente" target="_blank" rel="noopener noreferrer">Conditions de vente</a>
+          <a href="https://www.minia-pro.com/politiquedeconfidentialite-3669e309" target="_blank" rel="noopener noreferrer">Politique de confidentialit&eacute;</a>
         </div>
       </div>
     </div>
 
     <p class="footer-copy">&copy; www.minia-pro.com | Tous droits r&eacute;serv&eacute;s</p>
 
-    <!-- Watermark image at the very bottom -->
     <div class="footer-watermark" aria-hidden="true">
       <img src="assets/minia.pro.png" alt="" loading="lazy" />
     </div>
@@ -1859,7 +2312,7 @@
 
   fiEls.forEach(el => observer.observe(el));
 
-  /* ── Smooth scroll anchor links ── */
+  /* ── Smooth scroll anchor links — offset for fixed navbar ── */
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', e => {
       const href = anchor.getAttribute('href');
@@ -1867,7 +2320,9 @@
       const target = document.querySelector(href);
       if (target) {
         e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth' });
+        const navH = document.getElementById('navbar').offsetHeight;
+        const y = target.getBoundingClientRect().top + window.scrollY - navH - 20;
+        window.scrollTo({ top: y, behavior: 'smooth' });
       }
     });
   });
@@ -1879,6 +2334,196 @@
       t.style.animationPlayState = document.hidden ? 'paused' : 'running';
     });
   });
+
+  /* ── FAQ accordion ── */
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+
+  /* ── 4. Effet 3D sur les mod-cards ── */
+  let _3dRaf = null;
+  document.querySelectorAll('.mod-card').forEach(card => {
+    card.addEventListener('mousemove', e => {
+      if (_3dRaf) cancelAnimationFrame(_3dRaf);
+      _3dRaf = requestAnimationFrame(() => {
+        const r = card.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width - 0.5;
+        const y = (e.clientY - r.top) / r.height - 0.5;
+        card.style.transform = `perspective(700px) rotateY(${x * 8}deg) rotateX(${-y * 8}deg) translateZ(4px)`;
+      });
+    });
+    card.addEventListener('mouseleave', () => {
+      if (_3dRaf) cancelAnimationFrame(_3dRaf);
+      card.style.transform = '';
+    });
+  });
+
+  /* ── 5. Carousel miniatures — ralentissement au hover ── */
+  const thumbRows = document.querySelector('.thumb-rows');
+  if (thumbRows) {
+    thumbRows.addEventListener('mouseenter', () => {
+      document.querySelectorAll('.thumb-track').forEach(t => t.style.animationDuration = '120s');
+    });
+    thumbRows.addEventListener('mouseleave', () => {
+      document.querySelectorAll('.thumb-track').forEach(t => t.style.animationDuration = '60s');
+    });
+  }
+
+  /* ── 6. Typewriter effect on avis quotes ── */
+  function typewrite(el, text, speed, cb) {
+    let i = 0;
+    el.textContent = '';
+    el.classList.add('typing');
+    function tick() {
+      if (i < text.length) {
+        el.textContent += text.charAt(i);
+        i++;
+        setTimeout(tick, speed);
+      } else {
+        el.classList.remove('typing');
+        el.classList.add('done');
+        if (cb) cb();
+      }
+    }
+    tick();
+  }
+
+  
+  let avisAnimated = false;
+  const avisSection = document.getElementById('avis-simple');
+  if (avisSection) {
+    const avisObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !avisAnimated) {
+          avisAnimated = true;
+          avisObs.unobserve(entry.target);
+          const items = avisSection.querySelectorAll('.avis-simple-item');
+          items.forEach((item, idx) => {
+            const tw = item.querySelector('.typewriter-inner');
+            const author = item.querySelector('.avis-simple-author');
+            const text = tw.getAttribute('data-text');
+            /* ~12ms per char = fast but readable */
+            setTimeout(() => {
+              typewrite(tw, text, 12, () => {
+                author.classList.add('visible');
+              });
+            }, idx * 400);
+          });
+        }
+      });
+    }, { threshold: 0.2 });
+    avisObs.observe(avisSection);
+  }
+
+  /* ── Mobile avis carousel — 1 avis at a time, rotate every 7s ── */
+  const mobileAvisMq = window.matchMedia('(max-width:768px)');
+  let avisInterval = null;
+
+  function initMobileAvisCarousel() {
+    const section = document.getElementById('avis-simple');
+    if (!section) return;
+    const items = section.querySelectorAll('.avis-simple-item');
+    if (items.length < 2) return;
+    let current = 0;
+
+    function showOnly(idx) {
+      items.forEach((item, i) => {
+        if (i === idx) {
+          item.classList.remove('avis-hidden');
+          item.classList.add('avis-visible');
+        } else {
+          item.classList.remove('avis-visible');
+          item.classList.add('avis-hidden');
+        }
+      });
+    }
+
+    function activate() {
+      showOnly(current);
+      avisInterval = setInterval(() => {
+        current = (current + 1) % items.length;
+        showOnly(current);
+      }, 7000);
+    }
+
+    function deactivate() {
+      if (avisInterval) { clearInterval(avisInterval); avisInterval = null; }
+      items.forEach(item => {
+        item.classList.remove('avis-hidden', 'avis-visible');
+      });
+    }
+
+    if (mobileAvisMq.matches) activate();
+    mobileAvisMq.addEventListener('change', e => {
+      if (e.matches) activate();
+      else deactivate();
+    });
+  }
+  initMobileAvisCarousel();
+
+  /* ── Cursor glow trail ── */
+  const cursorGlow = document.getElementById('cursor-glow');
+  if (cursorGlow && window.matchMedia('(pointer:fine)').matches) {
+    document.addEventListener('mousemove', e => {
+      cursorGlow.style.left = e.clientX + 'px';
+      cursorGlow.style.top  = e.clientY + 'px';
+    });
+  }
+
+  /* ── Number counter animation for price ── */
+  function animateCounter(el, target, duration) {
+    const start = 0;
+    const startTime = performance.now();
+    function step(now) {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = start + (target - start) * eased;
+      el.textContent = current.toFixed(2) + '\u20AC';
+      if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  const priceMain = document.querySelector('.price-main');
+  const priceOld = document.querySelector('.price-old');
+  let priceAnimated = false;
+  const priceObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !priceAnimated) {
+        priceAnimated = true;
+        animateCounter(priceMain, 197, 1800);
+        animateCounter(priceOld, 797, 1800);
+        priceObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  if (priceMain) priceObserver.observe(priceMain);
+
+  /* ── 3D tilt on mod-cards & bonus-cards ── */
+  function initTilt(selector, intensity) {
+    document.querySelectorAll(selector).forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        card.style.transform = `perspective(600px) rotateY(${x * intensity}deg) rotateX(${-y * intensity}deg) translateY(-6px) scale(1.02)`;
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+      });
+    });
+  }
+  if (window.matchMedia('(pointer:fine)').matches) {
+    initTilt('.mod-card', 6);
+    initTilt('.bonus-card', 8);
+  }
+
 </script>
 
 </body>
