@@ -285,8 +285,9 @@
     .hero-content {
       position:relative;
       z-index:3;
-      padding:0 143px 0 300px;
-      max-width:1400px;
+      max-width:1200px;
+      margin:0 auto;
+      padding:0 40px 0 40px;
     }
 
     .hero-content h1 {
@@ -1345,6 +1346,34 @@
       50% { border-color:rgba(255,169,108,0.5); box-shadow:0 0 15px rgba(255,169,108,0.1); }
     }
     .brand-pill { animation:pillGlow 4s ease-in-out infinite; }
+
+    /* ═══════════════════════════════════════════════════════════════
+       LUMIÈRE HERO — suit le coin supérieur droit de la vidéo
+    ═══════════════════════════════════════════════════════════════ */
+    @media (max-width:1600px) {
+      .hero-light-wrap { --lx: 30%; --ly: -180px; --lw: 1200px; }
+    }
+    @media (max-width:1400px) {
+      .hero-light-wrap { --lx: 33%; --ly: -160px; --lw: 1050px; }
+    }
+    @media (max-width:1280px) {
+      .hero-light-wrap { --lx: 36%; --ly: -150px; --lw: 950px; }
+    }
+    @media (max-width:1100px) {
+      .hero-light-wrap { --lx: 38%; --ly: -130px; --lw: 850px; }
+    }
+    @media (max-width:900px) {
+      .hero-light-wrap { --lx: 40%; --ly: -120px; --lw: 750px; }
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       RESPONSIVE — INTERMÉDIAIRE (1024px → 1400px)
+    ═══════════════════════════════════════════════════════════════ */
+    @media (min-width:769px) and (max-width:1400px) {
+      .hero-content {
+        padding:0 40px;
+      }
+    }
 
     /* ═══════════════════════════════════════════════════════════════
        RESPONSIVE — TABLET (768px)
