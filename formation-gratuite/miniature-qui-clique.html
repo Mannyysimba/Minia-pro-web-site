@@ -41,7 +41,9 @@
 
     *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
     html { scroll-behavior:smooth; overflow-x:hidden; }
-    body { font-family:'Satoshi', sans-serif; background:#ffffff; color:#0a0a0a; line-height:1.7; }
+    body { position:relative; font-family:'Satoshi', sans-serif; background:#ffffff; color:#0a0a0a; line-height:1.7; }
+    body::before { content:''; position:fixed; inset:0; background-image:url('../assets/DOT%20BLACK%20NEW.png'); background-repeat:repeat; background-size:600px auto; opacity:0.7; pointer-events:none; z-index:0; }
+    body > * { position:relative; z-index:1; }
     ::-webkit-scrollbar { width:6px; }
     ::-webkit-scrollbar-track { background:#ffffff; }
     ::-webkit-scrollbar-thumb { background:rgba(248,129,78,0.4); border-radius:3px; }
@@ -71,12 +73,7 @@
     #mobile-menu a { color:#0a0a0a; text-decoration:none; font-size:28px; font-weight:500; transition:opacity 0.2s; }
     #mobile-menu a:hover { opacity:0.6; }
 
-    .article-hero { position:relative; padding:160px 20px 60px; text-align:center; max-width:800px; margin:0 auto; }
-    .article-hero::after {
-      content:''; position:absolute; inset:0;
-      background-image:url('../assets/Dot.png'); background-size:60%; background-position:center; background-repeat:no-repeat;
-      mix-blend-mode:multiply; opacity:0.06; pointer-events:none;
-    }
+    .article-hero { padding:160px 20px 60px; text-align:center; max-width:800px; margin:0 auto; }
     .article-hero h1 { font-size:42px; font-weight:900; line-height:1.15; margin-bottom:20px; color:#0a0a0a; }
     .article-hero h1 span { color:#FFA96C; }
     .article-meta { font-size:15px; color:rgba(0,0,0,0.5); display:flex; align-items:center; justify-content:center; gap:16px; }
@@ -127,6 +124,7 @@
     .footer-copy { text-align:center; font-size:14px; color:rgba(255,255,255,0.5); position:relative; z-index:1; }
 
     @media (max-width:768px) {
+      body::before { background-size:200vw auto; background-repeat:repeat; }
       #navbar { gap:16px; padding:8px 16px; }
       .nav-pill { display:none; }
       .nav-btn { display:none; }
@@ -224,7 +222,7 @@
 
   <div class="mid-cta">
     <p>Les principes de design qui font qu'un Miniamaker facture 80&euro; et un autre 300&euro; pour la m&ecirc;me minia ? C'est dans la formation.</p>
-    <a href="https://pay.minia-pro.com/-paiment?utm_source=formation-gratuite&utm_content=miniature-clique" class="cta-btn" target="_blank" rel="noopener noreferrer">Je veux conna&icirc;tre le secret</a>
+    <a href="https://pay.minia-pro.com/-paiement?utm_source=formation-gratuite&utm_content=miniature-clique" class="cta-btn" target="_blank" rel="noopener noreferrer">Je veux conna&icirc;tre le secret</a>
   </div>
 
   <h2>R&egrave;gle 3 : 3 mots max. Point.</h2>
@@ -287,7 +285,7 @@
 
 <section class="article-cta">
   <p>Tu veux ma&icirc;triser ces techniques et les appliquer sur de vraies commandes clients ? Avec +30h de vid&eacute;o, +50 templates PSD et un acc&egrave;s direct &agrave; moi quand tu bloques.</p>
-  <a href="https://pay.minia-pro.com/-paiment?utm_source=formation-gratuite&utm_content=miniature-clique" class="cta-btn" target="_blank" rel="noopener noreferrer">Rejoindre minia.pro</a>
+  <a href="https://pay.minia-pro.com/-paiement?utm_source=formation-gratuite&utm_content=miniature-clique" class="cta-btn" target="_blank" rel="noopener noreferrer">Rejoindre minia.pro</a>
 </section>
 
 </main>
