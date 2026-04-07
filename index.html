@@ -55,6 +55,23 @@
       background:#131414;
       color:#fff;
       line-height:1.5;
+      position: relative;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url('assets/Dot.png');
+      background-repeat: repeat;
+      background-size: 300px auto;
+      opacity: 0.25;
+      pointer-events: none;
+      z-index: 0;
+      mix-blend-mode: plus-lighter;
+    }
+    body > * {
+      position: relative;
+      z-index: 1;
     }
 
     /* ─── SCROLLBAR ──────────────────────────────────────────────── */
@@ -104,6 +121,9 @@
     #navbar.scrolled { background:rgba(19,20,20,0.35); }
 
     .nav-pill {
+      position:absolute;
+      left:50%;
+      transform:translateX(-50%);
       display:flex;
       align-items:center;
       gap:8px;
@@ -130,7 +150,7 @@
       background: #fff;
       border: none;
       border-radius: 999px;
-      padding: 8px 22px;
+      padding: 12px 20px;
       font-size: 14px;
       font-weight: 600;
       color: #000;
@@ -505,7 +525,7 @@
       width: 100%;
       pointer-events: none;
       mix-blend-mode: plus-lighter;
-      z-index: 0;
+      z-index: 2;
     }
     #modules .section-header {
       text-align:center;
@@ -937,7 +957,7 @@
       width: 100%;
       pointer-events: none;
       mix-blend-mode: plus-lighter;
-      z-index: 0;
+      z-index: 2;
     }
 
     /* ── Texture dots bonus — par-dessus la lumière, sous le contenu ──
@@ -1378,6 +1398,24 @@
     }
 
     /* ═══════════════════════════════════════════════════════════════
+       RESPONSIVE — MEDIUM (1050px) — évite le chevauchement navbar
+    ═══════════════════════════════════════════════════════════════ */
+    @media (max-width:1050px) {
+      #navbar { padding:14px 24px; }
+      .nav-pill a { font-size:13px; padding:8px 10px; }
+      .nav-formation-btn { padding:10px 14px !important; font-size:13px !important; }
+      .nav-btn { padding:10px 14px; font-size:13px; }
+    }
+
+    @media (max-width:900px) {
+      .nav-pill { display:none; }
+      .hamburger { display:flex; }
+      .nav-right { display:none; }
+      .nav-btn { display:none; }
+      .nav-formation-btn { display:none !important; }
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
        RESPONSIVE — TABLET (768px)
     ═══════════════════════════════════════════════════════════════ */
     @media (max-width:768px) {
@@ -1391,8 +1429,8 @@
 
       /* Hero */
       #hero { padding-top:80px; }
-      .hero-btns { flex-direction:column; align-items:center; gap:12px; width:100%; }
-      .hero-btn-secondary { width:auto; height:48px; padding:0 24px; font-size:15px; }
+      .hero-btns { flex-direction:column; align-items:stretch; gap:12px; width:100%; }
+      .hero-btn-secondary { width:100%; justify-content:center; height:56px; font-size:16px; }
       .hero-content {
         padding:0 32px;
         max-width:100%;
@@ -1401,7 +1439,7 @@
       .hero-content h1 { font-size:36px; }
       .hero-content h1 .komika { font-size:36px; }
       .hero-subtitle { font-size:16px; max-width:100%; margin-left:auto; margin-right:auto; }
-      .hero-btn { margin:0 auto; display:flex; width:auto; justify-content:center; }
+      .hero-btn { width:100%; justify-content:center; }
       .hero-light-wrap { display:none; }
       .hero-dots, .hero-dots-2 { display:none; }
 
@@ -1597,10 +1635,17 @@
       mix-blend-mode:plus-lighter;
     }
     .nav-formation-btn {
-      height: auto;
-      padding: 8px 22px;
-      font-size: 14px;
+      height: auto !important;
+      padding: 12px 20px !important;
+      font-size: 14px !important;
       font-weight: 600;
+      line-height: 1.5 !important;
+      border-radius: 999px;
+      border-width: 0;
+      box-shadow: none;
+    }
+    .nav-formation-btn::before {
+      display: none;
     }
     .hero-btns {
       display: flex;
