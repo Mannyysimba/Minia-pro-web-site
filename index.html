@@ -5,10 +5,12 @@
   <meta name="google-site-verification" content="l9qBAl9egACkAux_fM5eGRHdtBcrnHglrMVOQMJDcW8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>minia.pro — Deviens Miniamaker en 30 jours | Formation miniatures YouTube</title>
-  <meta name="description" content="Forme-toi à la création de miniatures YouTube avec Photoshop en 30 jours. Signe tes premiers clients, génère 500 à 2000€/mois. +35 membres accompagnés." />
-  <meta name="keywords" content="miniatures YouTube, formation miniatures, Photoshop, miniamaker, freelance miniatures, création miniatures YouTube" />
+  <meta name="description" content="Forme-toi à la création de miniatures YouTube avec Photoshop en 30 jours. Signe tes premiers clients, génère 500 à 2000€/mois. +35 membres accompagnés. Formation minia.pro par Bitchi." />
+  <meta name="keywords" content="miniatures YouTube, formation miniatures, Photoshop, miniamaker, freelance miniatures, création miniatures YouTube, gagner argent miniatures, thumbnail YouTube, devenir miniamaker, formation thumbnail, créer miniatures YouTube freelance, revenu complémentaire créatif" />
   <link rel="canonical" href="https://www.minia-pro.com/" />
-  <meta name="robots" content="index, follow" />
+  <link rel="alternate" hreflang="fr" href="https://www.minia-pro.com/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.minia-pro.com/" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <meta name="author" content="Bitchi" />
   <meta name="theme-color" content="#131414" />
 
@@ -114,7 +116,7 @@
       text-decoration:none;
       font-size:15px;
       font-weight:500;
-      padding:8px 18px;
+      padding:8px 14px;
       transition:opacity 0.2s;
     }
     .nav-pill a:hover { opacity:0.55; }
@@ -1383,6 +1385,7 @@
       #navbar { gap:16px; padding:8px 16px; }
       .nav-pill { display:none; }
       .nav-btn { display:none; }
+      .nav-right { display:none; }
       .hamburger { display:flex; }
 
       /* Hero */
@@ -1590,30 +1593,183 @@
       transition:left 0.05s linear, top 0.05s linear;
       mix-blend-mode:plus-lighter;
     }
+    .nav-formation {
+      color: #fff;
+      border: 1.5px solid rgba(255,255,255,0.4);
+      border-radius: 999px;
+      padding: 7px 18px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: border-color 0.2s, background 0.2s;
+      white-space: nowrap;
+    }
+    .nav-formation:hover {
+      border-color: #FFA96C;
+      color: #FFA96C;
+    }
+    .hero-btns {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .hero-btn-secondary {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 69px;
+      padding: 0 36px;
+      background: transparent;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 500;
+      font-family: 'Satoshi', sans-serif;
+      border-radius: 86px;
+      text-decoration: none;
+      border: 1.5px solid rgba(255,255,255,0.35);
+      box-shadow: inset 0 0 20px rgba(255,255,255,0.04), 0 0 20px rgba(255,255,255,0.04);
+      transition: border-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+      overflow: hidden;
+    }
+    .hero-btn-secondary::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -30%;
+      width: 40%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
+      border-radius: 50%;
+      filter: blur(8px);
+      pointer-events: none;
+    }
+    .hero-btn-secondary:hover {
+      border-color: rgba(255,255,255,0.7);
+      box-shadow: inset 0 0 24px rgba(255,255,255,0.07), 0 0 28px rgba(255,255,255,0.08);
+      color: #fff;
+    }
   </style>
-  <!-- Schema.org — Course -->
+  <!-- Schema.org — Course (enrichi SEO/AEO) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Course",
     "name": "minia.pro — Formation Miniamaker",
-    "description": "Formation complète à la création de miniatures YouTube avec Photoshop. 6 modules, 30h de vidéos, accompagnement WhatsApp.",
+    "alternateName": "Formation miniatures YouTube minia.pro",
+    "description": "Formation complète à la création de miniatures YouTube avec Photoshop. 6 modules, +30h de vidéos, accompagnement WhatsApp personnel par Bitchi. De zéro à ton premier client en 30 jours. +35 membres accompagnés.",
     "provider": {
       "@type": "Person",
       "name": "Bitchi",
+      "alternateName": "Bitchiskk",
+      "jobTitle": "Miniamaker professionnel & formateur",
       "sameAs": ["https://x.com/Bitchiskk", "https://www.instagram.com/bitchi_92/", "https://www.youtube.com/@bitchiskk"]
     },
     "url": "https://www.minia-pro.com",
+    "image": "https://www.minia-pro.com/assets/images/Video miniapro miniature.jpg",
+    "inLanguage": "fr",
+    "coursePrerequisites": "Aucun prérequis. Le Module 1 part de zéro absolu sur Photoshop.",
+    "educationalLevel": "Débutant à Avancé",
+    "numberOfCredits": "6 modules + 4 bonus",
+    "timeRequired": "PT30H",
+    "hasCourseInstance": {
+      "@type": "CourseInstance",
+      "courseMode": "online",
+      "courseWorkload": "PT30H"
+    },
+    "syllabusSections": [
+      "Module 1 : Les Bases — De zéro à autonome sur Photoshop",
+      "Module 2 : La Théorie — Les principes de design qui font la différence",
+      "Module 3 : Les Miniatures — Techniques pro pour créer des minias vendables",
+      "Module 4 : Maîtriser l'IA — Produire 2x plus vite",
+      "Module 5 : Ta carrière Freelance — Personal branding et présence en ligne",
+      "Module 6 : Les Clients — Signer, fidéliser et générer du revenu récurrent"
+    ],
+    "teaches": ["Création de miniatures YouTube", "Photoshop", "Intelligence artificielle pour le design", "Freelance créatif", "Démarchage clients YouTubeurs", "Personal branding"],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "bestRating": "5",
+      "ratingCount": "35",
+      "reviewCount": "3"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "author": {"@type": "Person", "name": "Evan"},
+        "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+        "reviewBody": "960€ contractés en une semaine, 1 client signé, 1 deal à +500€/mois en cours. Et j'étais à 50% de forme."
+      },
+      {
+        "@type": "Review",
+        "author": {"@type": "Person", "name": "Malass"},
+        "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+        "reviewBody": "Grâce au mentorat j'ai eu mon premier client pendant la formation. Aujourd'hui je travaille avec une chaîne de 380K. Sans Bitchi j'aurais pas imaginé commencer aussi bien."
+      },
+      {
+        "@type": "Review",
+        "author": {"@type": "Person", "name": "Smokoue"},
+        "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+        "reviewBody": "10 jours de mentorat et j'ai déjà fait 500€. Je m'étais engagé à 1500€/mois en 6 mois, j'ai fait le tiers en 10 jours."
+      }
+    ],
     "offers": {
       "@type": "Offer",
       "price": "197",
       "priceCurrency": "EUR",
-      "availability": "https://schema.org/InStock"
+      "availability": "https://schema.org/InStock",
+      "url": "https://pay.minia-pro.com/-paiement",
+      "validFrom": "2024-01-01",
+      "priceValidUntil": "2026-12-31",
+      "category": "Formation en ligne"
     }
   }
   </script>
 
-  <!-- Schema.org — FAQPage (AEO) -->
+  <!-- Schema.org — VideoObject (AEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "minia.pro — La formation miniatures YouTube n°1 en France",
+    "description": "Présentation de la formation minia.pro pour devenir Miniamaker freelance. Apprends à créer des miniatures YouTube pro avec Photoshop et signe tes premiers clients en 30 jours.",
+    "thumbnailUrl": "https://www.minia-pro.com/assets/images/Video miniapro miniature.jpg",
+    "uploadDate": "2024-01-01",
+    "contentUrl": "https://www.youtube.com/watch?v=XUtLB_a4wmI",
+    "embedUrl": "https://www.youtube.com/embed/XUtLB_a4wmI",
+    "inLanguage": "fr"
+  }
+  </script>
+
+  <!-- Schema.org — WebPage + Speakable (AEO — voice search) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "minia.pro — Deviens Miniamaker en 30 jours | Formation miniatures YouTube",
+    "description": "Forme-toi à la création de miniatures YouTube avec Photoshop en 30 jours. Signe tes premiers clients, génère 500 à 2000€/mois. +35 membres accompagnés.",
+    "url": "https://www.minia-pro.com/",
+    "inLanguage": "fr",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "minia.pro",
+      "url": "https://www.minia-pro.com/"
+    },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": ["#hero .hero-content h1", "#hero .hero-subtitle", "#modules .section-header h2", "#offre .offre-header h2"]
+    },
+    "about": {
+      "@type": "Thing",
+      "name": "Formation à la création de miniatures YouTube",
+      "description": "minia.pro est la formation francophone de référence pour devenir Miniamaker freelance et gagner de l'argent en créant des miniatures YouTube avec Photoshop."
+    }
+  }
+  </script>
+
+  <!-- Schema.org — FAQPage (AEO — enrichi avec toutes les questions visibles) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -1650,6 +1806,62 @@
           "@type": "Answer",
           "text": "Non, le Module 1 part de zéro absolu. La formation est conçue pour les débutants complets comme pour ceux qui veulent passer au niveau supérieur."
         }
+      },
+      {
+        "@type": "Question",
+        "name": "Dans combien de temps je peux commencer à gagner de l'argent avec minia.pro ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Certains membres signent leur premier client en moins de 2 semaines. Le module 6 est conçu pour que tu démarches dès que tes premières minias sont prêtes, pendant la formation et non à la fin."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Combien peut-on gagner par mois en créant des miniatures YouTube ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Une miniature se facture entre 50€ et 300€+. Avec 2-3 clients réguliers, tu peux générer 500 à 2000€/mois en complément. Certains membres en vivent à plein temps."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Est-ce que minia.pro aide à trouver des clients pour les miniatures YouTube ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui. Les modules 5 et 6 sont entièrement dédiés au business : démarchage, pricing, personal branding, fidélisation. Et tu as le WhatsApp perso de Bitchi — si tu bloques, il est là."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Qu'est-ce qu'un Miniamaker ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Un Miniamaker est un freelance spécialisé dans la création de miniatures (thumbnails) pour les vidéos YouTube. C'est un métier créatif qui permet de facturer entre 50€ et 300€ par miniature. La formation minia.pro enseigne ce métier de A à Z."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "La formation minia.pro est-elle garantie satisfait ou remboursé ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui, garantie satisfait ou remboursé. Si la formation ne te convient pas, tu demandes un remboursement. Zéro risque."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Schema.org — BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Accueil",
+        "item": "https://www.minia-pro.com/"
       }
     ]
   }
@@ -1668,6 +1880,7 @@
   <a href="#avis-simple" class="mobile-link">Avis</a>
   <a href="#bonus" class="mobile-link">Bonus</a>
   <a href="#faq" class="mobile-link">FAQ</a>
+  <a href="/formation-gratuite/" class="mobile-link" style="color:#FFA96C;">Formation Gratuite</a>
   <a href="https://pay.minia-pro.com/-paiement" class="mobile-link" target="_blank" rel="noopener noreferrer" style="color:#f8814e;">Rejoindre</a>
 </div>
 
@@ -1686,13 +1899,17 @@
     <a href="#faq">FAQ</a>
   </div>
 
-  <a class="nav-btn" href="https://pay.minia-pro.com/-paiement" target="_blank" rel="noopener noreferrer">Rejoindre</a>
+  <div class="nav-right" style="display:flex;align-items:center;gap:12px;">
+    <a href="/formation-gratuite/" class="nav-formation">Formation Gratuite</a>
+    <a class="nav-btn" href="https://pay.minia-pro.com/-paiement" target="_blank" rel="noopener noreferrer">Rejoindre</a>
+  </div>
 
   <button class="hamburger" id="hamburger" aria-label="Ouvrir le menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
 </nav>
 
+<main>
 <!-- ═══════════════════════════════════════════════════════════
      HERO
 ═══════════════════════════════════════════════════════════ -->
@@ -1715,13 +1932,16 @@
     <p class="hero-subtitle">
       Je t'accompagne sur Photoshop jusqu'&agrave; signer tes premiers clients&nbsp;!
     </p>
-    <a href="https://pay.minia-pro.com/-paiement" class="hero-btn" target="_blank" rel="noopener noreferrer">Rejoindre</a>
+    <div class="hero-btns">
+      <a href="https://pay.minia-pro.com/-paiement" class="hero-btn" target="_blank" rel="noopener noreferrer">Rejoindre</a>
+      <a href="/formation-gratuite/" class="hero-btn-secondary">Formation Gratuite &rarr;</a>
+    </div>
   </div>
 
   <!-- Video card -->
   <div class="video-wrap fi">
     <div class="video-card" id="video-card">
-      <img src="assets/images/Video miniapro miniature.jpg" alt="Aper&ccedil;u de la formation minia.pro" class="vid-thumb" loading="lazy" />
+      <img src="assets/images/Video miniapro miniature.jpg" alt="Aperçu vidéo de la formation minia.pro — devenir Miniamaker freelance en 30 jours avec Photoshop" class="vid-thumb" loading="lazy" />
       <div class="play-overlay" id="play-overlay" role="button" aria-label="Lire la vid&eacute;o" tabindex="0">
         <div class="play-btn-circle">
           <svg width="28" height="32" viewBox="0 0 28 32" fill="none" aria-hidden="true">
@@ -1890,7 +2110,7 @@
     <!-- Module 1 -->
     <div class="mod-card fi">
       <div class="mod-card-img">
-        <img src="assets/images/MODULE 1 1.jpg" alt="Les Bases" loading="lazy" />
+        <img src="assets/images/MODULE 1 1.jpg" alt="Module 1 minia.pro : Les Bases de Photoshop pour miniatures YouTube" loading="lazy" />
       </div>
       <div class="mod-card-body">
         <div class="mod-card-row">
@@ -1904,7 +2124,7 @@
     <!-- Module 2 -->
     <div class="mod-card fi">
       <div class="mod-card-img">
-        <img src="assets/images/MODULE 1 2.jpg" alt="La Th&eacute;orie" loading="lazy" />
+        <img src="assets/images/MODULE 1 2.jpg" alt="Module 2 minia.pro : La Théorie du design de miniatures" loading="lazy" />
       </div>
       <div class="mod-card-body">
         <div class="mod-card-row">
@@ -1918,7 +2138,7 @@
     <!-- Module 3 -->
     <div class="mod-card fi">
       <div class="mod-card-img">
-        <img src="assets/images/MODULE 1 3.jpg" alt="Les Miniatures" loading="lazy" />
+        <img src="assets/images/MODULE 1 3.jpg" alt="Module 3 minia.pro : Créer des miniatures YouTube professionnelles" loading="lazy" />
       </div>
       <div class="mod-card-body">
         <div class="mod-card-row">
@@ -1932,7 +2152,7 @@
     <!-- Module 4 -->
     <div class="mod-card fi">
       <div class="mod-card-img">
-        <img src="assets/images/MODULE 1 4.jpg" alt="Ma&icirc;triser l'Intelligence Artificielle" loading="lazy" />
+        <img src="assets/images/MODULE 1 4.jpg" alt="Module 4 minia.pro : Maîtriser l'IA pour créer des miniatures plus vite" loading="lazy" />
       </div>
       <div class="mod-card-body">
         <div class="mod-card-row">
@@ -1946,7 +2166,7 @@
     <!-- Module 5 -->
     <div class="mod-card fi">
       <div class="mod-card-img">
-        <img src="assets/images/MODULE 1 5.jpg" alt="Ta carri&egrave;re de Freelance" loading="lazy" />
+        <img src="assets/images/MODULE 1 5.jpg" alt="Module 5 minia.pro : Lancer ta carrière de Miniamaker freelance" loading="lazy" />
       </div>
       <div class="mod-card-body">
         <div class="mod-card-row">
@@ -1960,7 +2180,7 @@
     <!-- Module 6 -->
     <div class="mod-card fi">
       <div class="mod-card-img">
-        <img src="assets/images/MODULE 1 6.jpg" alt="Les Clients" loading="lazy" />
+        <img src="assets/images/MODULE 1 6.jpg" alt="Module 6 minia.pro : Signer et fidéliser des clients YouTubeurs" loading="lazy" />
       </div>
       <div class="mod-card-body">
         <div class="mod-card-row">
@@ -2112,7 +2332,7 @@
 
     <!-- Bonus 1 -->
     <div class="bonus-card fi">
-      <img src="assets/images/Bonus 1.jpg" alt="Uncut stream minia" loading="lazy" />
+      <img src="assets/images/Bonus 1.jpg" alt="Bonus 1 minia.pro : Uncut stream — création de miniatures YouTube en direct" loading="lazy" />
       <div class="bonus-overlay">
         <div class="bonus-title-row">
           <span class="bonus-title">Uncut stream minia</span>
@@ -2124,7 +2344,7 @@
 
     <!-- Bonus 2 -->
     <div class="bonus-card fi">
-      <img src="assets/images/Bonus 2.jpg" alt="Tricks pour les nuls" loading="lazy" />
+      <img src="assets/images/Bonus 2.jpg" alt="Bonus 2 minia.pro : Tricks Photoshop pour améliorer tes miniatures" loading="lazy" />
       <div class="bonus-overlay">
         <div class="bonus-title-row">
           <span class="bonus-title">Tricks pour les nuls</span>
@@ -2136,7 +2356,7 @@
 
     <!-- Bonus 3 -->
     <div class="bonus-card fi">
-      <img src="assets/images/Bonus 3.jpg" alt="Critiques personnalis&eacute;es" loading="lazy" />
+      <img src="assets/images/Bonus 3.jpg" alt="Bonus 3 minia.pro : Critiques personnalisées de tes miniatures" loading="lazy" />
       <div class="bonus-overlay">
         <div class="bonus-title-row">
           <span class="bonus-title">Critiques personnalis&eacute;es</span>
@@ -2148,7 +2368,7 @@
 
     <!-- Bonus 4 -->
     <div class="bonus-card fi">
-      <img src="assets/images/Bonus 4.jpg" alt="L'actu du Miniamaker" loading="lazy" />
+      <img src="assets/images/Bonus 4.jpg" alt="Bonus 4 minia.pro : L'actualité du Miniamaker et tendances YouTube" loading="lazy" />
       <div class="bonus-overlay">
         <div class="bonus-title-row">
           <span class="bonus-title">L&rsquo;actu du Miniamaker</span>
@@ -2227,6 +2447,8 @@
   </div>
 </section>
 
+</main>
+
 <!-- ═══════════════════════════════════════════════════════════
      FOOTER
 ═══════════════════════════════════════════════════════════ -->
@@ -2262,6 +2484,7 @@
           <a href="/cgv.html">Conditions de vente</a>
           <a href="/politique-confidentialite.html">Politique de confidentialit&eacute;</a>
           <a href="/blog/devenir-miniamaker.html">Blog</a>
+          <a href="/formation-gratuite/">Formation Gratuite</a>
         </div>
       </div>
     </div>
