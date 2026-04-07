@@ -38,7 +38,10 @@
     html { scroll-behavior:smooth; overflow-x:hidden; }
     body {
       font-family:'Satoshi', sans-serif;
-      background:#ffffff;
+      background-color:#ffffff;
+      background-image:url('DOT%20BLACK%20NEW.png');
+      background-repeat:repeat;
+      background-size:auto;
       color:#0a0a0a;
       line-height:1.6;
     }
@@ -93,30 +96,10 @@
        HERO
     ═══════════════════════════════════════════════════════════════ */
     .fg-hero {
-      position:relative;
       padding:160px 20px 48px;
       text-align:center;
-      max-width:100%;
+      max-width:800px;
       margin:0 auto;
-      background-image: radial-gradient(circle, rgba(255,169,108,0.15) 1px, transparent 1px);
-      background-size: 32px 32px;
-    }
-    .fg-hero-label,
-    .fg-hero h1,
-    .fg-hero p { max-width:800px; margin-left:auto; margin-right:auto; }
-    .fg-hero > * { position:relative; z-index:1; }
-    .fg-hero::after {
-      content:'';
-      position:absolute;
-      inset:0;
-      background-image:url('../assets/Dot.png'),url('../assets/Dot.png'),url('../assets/Dot.png');
-      background-size:70%,70%,70%;
-      background-position:center,center top,center bottom;
-      background-repeat:no-repeat,no-repeat,no-repeat;
-      mix-blend-mode:normal;
-      opacity:0.18;
-      pointer-events:none;
-      z-index:0;
     }
     .fg-hero-label {
       display:inline-flex;
