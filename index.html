@@ -1893,7 +1893,6 @@
       padding: 0;
       transition: border-color 0.3s, background 0.3s;
       flex-shrink: 0;
-      order: 99;
     }
     .theme-toggle:hover {
       border-color: var(--accent);
@@ -2166,18 +2165,17 @@
     <a href="#faq">FAQ</a>
   </div>
 
-  <div class="nav-right" style="display:flex;align-items:center;gap:12px;">
+  <div class="nav-right" style="display:flex;align-items:center;gap:12px;margin-left:auto;">
     <a href="/formation-gratuite/" class="hero-btn-secondary nav-formation-btn">Formation Gratuite</a>
     <a class="nav-btn" href="https://pay.minia-pro.com/-paiement" target="_blank" rel="noopener noreferrer">Rejoindre</a>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Changer le thème">
+      <svg class="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
   </div>
 
   <button class="hamburger" id="hamburger" aria-label="Ouvrir le menu" aria-expanded="false">
     <span></span><span></span><span></span>
-  </button>
-
-  <button class="theme-toggle" id="theme-toggle" aria-label="Changer le thème">
-    <svg class="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-    <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
   </button>
 </nav>
 
