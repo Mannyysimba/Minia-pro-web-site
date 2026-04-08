@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="google-site-verification" content="l9qBAl9egACkAux_fM5eGRHdtBcrnHglrMVOQMJDcW8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CGV — minia.pro</title>
+  <meta name="robots" content="noindex, follow" />
+  <link rel="icon" type="image/png" href="assets/images/faviconV2.png" />
+  <style>
+    @font-face { font-family:'Satoshi'; src:url('assets/fonts/Satoshi/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Regular.woff2') format('woff2'); font-weight:400; font-display:swap; }
+    @font-face { font-family:'Satoshi'; src:url('assets/fonts/Satoshi/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Medium.woff2') format('woff2'); font-weight:500; font-display:swap; }
+    @font-face { font-family:'Satoshi'; src:url('assets/fonts/Satoshi/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Bold.woff2') format('woff2'); font-weight:700; font-display:swap; }
+    @font-face { font-family:'Satoshi'; src:url('assets/fonts/Satoshi/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Light.woff2') format('woff2'); font-weight:300; font-display:swap; }
+
+    *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+    html { scroll-behavior:smooth; }
+    body { font-family:'Satoshi', sans-serif; background:#131414; color:#fff; line-height:1.7; }
+    ::selection { background:rgba(255, 32, 7, 0.707); color:#fff; }
+    ::-webkit-scrollbar { width:6px; }
+    ::-webkit-scrollbar-track { background:#131414; }
+    ::-webkit-scrollbar-thumb { background:rgba(248,129,78,0.4); border-radius:3px; }
+
+    /* Navbar */
+    #navbar {
+      position:fixed; top:0; left:0; right:0; z-index:1000;
+      display:flex; align-items:center; justify-content:space-between;
+      background:rgba(19,20,20,0.20); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px);
+      border-bottom:1px solid rgba(255,255,255,0.06);
+      padding:14px 60px; transition:background 0.3s;
+    }
+    #navbar.scrolled { background:rgba(19,20,20,0.35); }
+    .logo { font-size:18px; font-weight:300; color:#fff; text-decoration:none; letter-spacing:0.01em; }
+    .logo .dot { color:#e02020; }
+    .nav-btn {
+      position:relative; display:inline-flex; align-items:center; justify-content:center;
+      background:#fff; border:none; border-radius:999px; padding:8px 22px;
+      font-size:14px; font-weight:600; color:#000; font-family:'Satoshi', sans-serif;
+      text-decoration:none; overflow:hidden; box-shadow:0 5px 15px rgba(0,0,0,0.4);
+    }
+
+    /* Content */
+    .legal-content {
+      max-width:800px; margin:0 auto; padding:140px 40px 80px;
+    }
+    .legal-content h1 {
+      font-size:32px; font-weight:700; margin-bottom:8px;
+    }
+    .legal-content .date {
+      font-size:14px; color:rgba(255,255,255,0.4); margin-bottom:48px;
+    }
+    .legal-content .intro {
+      font-size:16px; color:rgba(255,255,255,0.7); margin-bottom:40px;
+    }
+    .legal-content h2 {
+      font-size:20px; font-weight:600; margin-top:40px; margin-bottom:12px;
+    }
+    .legal-content p {
+      font-size:15px; color:rgba(255,255,255,0.65); margin-bottom:16px;
+    }
+    .legal-content a { color:#FFA96C; text-decoration:none; }
+    .legal-content a:hover { text-decoration:underline; }
+
+    /* Footer */
+    #footer-outer { padding:0 40px; }
+    .footer-inner { max-width:1200px; margin:0 auto; padding:40px 0 24px; }
+    .footer-hr { border:none; border-top:1px solid rgba(255,255,255,0.08); margin-bottom:40px; }
+    .footer-top { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:32px; margin-bottom:32px; }
+    .footer-social-label, .footer-legal-label { font-size:13px; color:rgba(255,255,255,0.35); margin-bottom:12px; }
+    .footer-social-icons { display:flex; gap:16px; }
+    .footer-social-icons a { color:rgba(255,255,255,0.5); transition:opacity 0.2s; }
+    .footer-social-icons a:hover { opacity:1; }
+    .footer-legal-links { display:flex; flex-direction:column; gap:6px; }
+    .footer-legal-links a { color:rgba(255,255,255,0.45); text-decoration:none; font-size:14px; transition:opacity 0.2s; }
+    .footer-legal-links a:hover { opacity:0.6; }
+    .footer-copy { font-size:13px; color:rgba(255,255,255,0.2); text-align:center; margin-top:24px; }
+
+    @media (max-width:768px) {
+      #navbar { padding:14px 20px; }
+      .legal-content { padding:120px 20px 60px; }
+      .legal-content h1 { font-size:24px; }
+      .footer-top { flex-direction:column; align-items:center; text-align:center; }
+    }
+  </style>
+</head>
+<body>
+
+<nav id="navbar">
+  <a href="/" class="logo">minia<span class="dot">.</span>pro</a>
+  <a class="nav-btn" href="https://pay.minia-pro.com/-paiement" target="_blank" rel="noopener noreferrer">Rejoindre</a>
+</nav>
+
+<main class="legal-content">
+  <h1>Conditions G&eacute;n&eacute;rales de Vente (CGV)</h1>
+  <p class="date">Derni&egrave;re mise &agrave; jour : 6 avril 2026</p>
+
+  <p class="intro">Bienvenue sur MINIAPRO. Les pr&eacute;sentes Conditions G&eacute;n&eacute;rales de Vente (CGV) r&eacute;gissent les relations entre Manil Belkacem, micro-entrepreneur immatricul&eacute; sous le num&eacute;ro SIRET&nbsp;: 10041620500019 (ci-apr&egrave;s d&eacute;nomm&eacute; &laquo;&nbsp;le Vendeur&nbsp;&raquo;), et toute personne physique ou morale souhaitant proc&eacute;der &agrave; un achat de produits ou services propos&eacute;s via le Site (ci-apr&egrave;s d&eacute;nomm&eacute; &laquo;&nbsp;le Client&nbsp;&raquo;).</p>
+
+  <h2>1. Objet</h2>
+  <p>Les pr&eacute;sentes CGV ont pour objet de d&eacute;finir les conditions dans lesquelles le Vendeur propose et vend ses formations en ligne, notamment en cr&eacute;ation de miniatures YouTube et autres produits ou services associ&eacute;s.</p>
+
+  <h2>2. Produits et Services</h2>
+  <p>Les produits et services disponibles sur le Site sont des formations en ligne dans le domaine de la cr&eacute;ation de miniatures pour YouTube, et toute autre prestation pouvant &ecirc;tre propos&eacute;e par le Vendeur. Chaque formation est d&eacute;crite dans une fiche d&eacute;taill&eacute;e pr&eacute;cisant son contenu, ses objectifs, et son prix.</p>
+
+  <h2>3. Tarifs</h2>
+  <p>Les prix sont indiqu&eacute;s en euros, toutes taxes comprises (TTC). Le Vendeur se r&eacute;serve le droit de modifier ses prix &agrave; tout moment, mais les produits seront factur&eacute;s sur la base des tarifs en vigueur au moment de la validation de la commande.</p>
+
+  <h2>4. Commande et Paiement</h2>
+  <p><strong>Commande&nbsp;:</strong> Pour passer commande, le Client doit s&eacute;lectionner la formation ou le service de son choix, suivre le processus de commande en ligne, et accepter les pr&eacute;sentes CGV.</p>
+  <p><strong>Paiement&nbsp;:</strong> Le paiement est d&ucirc; d&egrave;s la commande. Le Client peut r&eacute;gler par carte bancaire, PayPal, ou tout autre moyen de paiement s&eacute;curis&eacute; propos&eacute; par le Site.</p>
+  <p><strong>Confirmation de commande&nbsp;:</strong> Une confirmation de commande est envoy&eacute;e par e-mail au Client apr&egrave;s validation du paiement. Cette confirmation fait office de preuve d&rsquo;achat.</p>
+
+  <h2>5. Droit de R&eacute;tractation</h2>
+  <p>Conform&eacute;ment &agrave; l&rsquo;article L121-21-8 du Code de la consommation, le droit de r&eacute;tractation ne peut &ecirc;tre exerc&eacute; pour les contrats de fourniture de contenus num&eacute;riques non fournis sur un support mat&eacute;riel, si l&rsquo;ex&eacute;cution a commenc&eacute; apr&egrave;s accord pr&eacute;alable du consommateur. En validant sa commande, le Client accepte de renoncer &agrave; son droit de r&eacute;tractation pour les formations num&eacute;riques, dont l&rsquo;acc&egrave;s est imm&eacute;diatement activ&eacute; apr&egrave;s le paiement.</p>
+
+  <h2>6. Politique de Remboursement</h2>
+  <p>Si, dans un d&eacute;lai de 3 mois apr&egrave;s l&rsquo;achat de la formation, le Client a suivi l&rsquo;int&eacute;gralit&eacute; des modules et appliqu&eacute; tous les &laquo;&nbsp;action steps&nbsp;&raquo; sans obtenir de r&eacute;sultats concrets (comme signer ses premiers clients), le Vendeur s&rsquo;engage &agrave; rembourser le montant de la formation.</p>
+  <p>Cette garantie est conditionn&eacute;e au respect scrupuleux de toutes les &eacute;tapes recommand&eacute;es, et &agrave; la fourniture de preuves claires de mise en application.</p>
+
+  <h2>7. Acc&egrave;s &agrave; la Formation</h2>
+  <p>Le Client dispose d&rsquo;un acc&egrave;s personnel et non transf&eacute;rable &agrave; la formation apr&egrave;s paiement de celle-ci. Cet acc&egrave;s est limit&eacute; au Client et ne peut &ecirc;tre partag&eacute;. Tout partage d&rsquo;acc&egrave;s ou tentative de reproduction de la formation est formellement interdit.</p>
+
+  <h2>8. Responsabilit&eacute;s</h2>
+  <p>Le Vendeur met tout en &oelig;uvre pour assurer la qualit&eacute; des informations et formations propos&eacute;es. Toutefois, le Vendeur ne peut &ecirc;tre tenu responsable de l&rsquo;&eacute;chec du Client &agrave; obtenir des r&eacute;sultats ou &agrave; atteindre les objectifs, qui d&eacute;pendent de l&rsquo;engagement et de l&rsquo;application du Client.</p>
+
+  <h2>9. Propri&eacute;t&eacute; Intellectuelle</h2>
+  <p>Les contenus de la formation, y compris les textes, vid&eacute;os, graphiques, et autres ressources p&eacute;dagogiques, sont la propri&eacute;t&eacute; exclusive du Vendeur. Toute reproduction, diffusion, ou utilisation sans autorisation pr&eacute;alable est strictement interdite.</p>
+
+  <h2>10. Protection des Donn&eacute;es Personnelles</h2>
+  <p>Les informations personnelles recueillies sont n&eacute;cessaires pour le traitement des commandes et la gestion de la relation client. Elles sont trait&eacute;es conform&eacute;ment &agrave; notre <a href="/politique-confidentialite.html">Politique de Confidentialit&eacute;</a>, disponible sur le Site.</p>
+
+  <h2>11. Loi Applicable et Juridiction Comp&eacute;tente</h2>
+  <p>Les pr&eacute;sentes CGV sont soumises au droit fran&ccedil;ais. En cas de litige, et &agrave; d&eacute;faut d&rsquo;accord amiable, les tribunaux fran&ccedil;ais seront seuls comp&eacute;tents pour statuer.</p>
+
+  <p>Pour toute question relative aux pr&eacute;sentes CGV, vous pouvez nous contacter &agrave; l&rsquo;adresse suivante&nbsp;: <a href="mailto:miniapro.team@gmail.com">miniapro.team@gmail.com</a></p>
+</main>
+
+<footer id="footer-outer">
+  <div class="footer-inner">
+    <hr class="footer-hr" />
+    <div class="footer-top">
+      <a href="/" class="logo">minia<span class="dot">.</span>pro</a>
+      <div>
+        <p class="footer-social-label">Vous pouvez me suivre sur :</p>
+        <div class="footer-social-icons">
+          <a href="https://x.com/Bitchiskk" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.258 5.63 5.906-5.63Zm-1.161 17.52h1.833L7.084 4.126H5.117Z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/bitchi_92/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.7" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@bitchiskk" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <svg width="24" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-legal-label">L&eacute;gales :</p>
+        <div class="footer-legal-links">
+          <a href="/mentions-legales.html">Mentions l&eacute;gales</a>
+          <a href="/cgv.html">Conditions de vente</a>
+          <a href="/politique-confidentialite.html">Politique de confidentialit&eacute;</a>
+        </div>
+      </div>
+    </div>
+    <p class="footer-copy">&copy; www.minia-pro.com | Tous droits r&eacute;serv&eacute;s</p>
+  </div>
+</footer>
+
+<script>
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+</script>
+</body>
+</html>

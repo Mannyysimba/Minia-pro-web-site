@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formation Gratuite Miniamaker — Techniques Photoshop & Business | minia.pro</title>
+  <meta name="description" content="Apprends à créer des miniatures YouTube et à trouver tes premiers clients. Les techniques de Bitchi, 3 ans d'expérience, 100% gratuit." />
+  <link rel="canonical" href="https://www.minia-pro.com/formation-gratuite/" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Bitchi" />
+  <meta name="theme-color" content="#ffffff" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.minia-pro.com/formation-gratuite/" />
+  <meta property="og:title" content="Formation Gratuite Miniamaker | minia.pro" />
+  <meta property="og:description" content="Les techniques que j'utilise depuis 3 ans pour facturer des miniatures YouTube. Gratuitement. Sans bullshit." />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:site_name" content="minia.pro" />
+
+  <meta property="og:image" content="https://www.minia-pro.com/assets/images/faviconV2.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Formation Gratuite Miniamaker | minia.pro" />
+  <meta name="twitter:site" content="@Bitchiskk" />
+
+  <link rel="icon" type="image/png" href="../assets/images/faviconV2.png" />
+  <link rel="apple-touch-icon" href="../assets/images/faviconV2.png" />
+
+  <style>
+    /* ─── FONTS ─────────────────────────────────────────────────── */
+    @font-face { font-family:'Satoshi'; src:url('../assets/fonts/Satoshi/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Light.woff2') format('woff2'); font-weight:300; font-display:swap; }
+    @font-face { font-family:'Satoshi'; src:url('../assets/fonts/Satoshi/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Regular.woff2') format('woff2'); font-weight:400; font-display:swap; }
+    @font-face { font-family:'Satoshi'; src:url('../assets/fonts/Satoshi/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Medium.woff2') format('woff2'); font-weight:500; font-display:swap; }
+    @font-face { font-family:'Satoshi'; src:url('../assets/fonts/Satoshi/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Bold.woff2') format('woff2'); font-weight:700; font-display:swap; }
+    @font-face { font-family:'Satoshi'; src:url('../assets/fonts/Satoshi/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Black.woff2') format('woff2'); font-weight:900; font-display:swap; }
+    @font-face { font-family:'RelationshipOfMelodrame'; src:url('relationship_of_melodrame/Relationship%20of%20m%C3%87lodrame.ttf') format('truetype'); font-display:swap; }
+
+    /* ─── RESET & BASE ───────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+    html { scroll-behavior:smooth; overflow-x:hidden; }
+    body {
+      position:relative;
+      font-family:'Satoshi', sans-serif;
+      background:#ffffff;
+      color:#0a0a0a;
+      line-height:1.6;
+    }
+    body::before {
+      content:''; position:fixed; inset:0;
+      background-image:url('../assets/DOT%20BLACK%20NEW.png');
+      background-repeat:repeat; background-size:1440px auto;
+      opacity:0.25; pointer-events:none; z-index:0;
+    }
+    body > * { position:relative; z-index:1; }
+
+    ::-webkit-scrollbar { width:6px; }
+    ::-webkit-scrollbar-track { background:#ffffff; }
+    ::-webkit-scrollbar-thumb { background:rgba(248,129,78,0.4); border-radius:3px; }
+    ::selection { background:rgba(255, 32, 7, 0.707); color:#fff; }
+    body { cursor: url('https://i.imgur.com/SK4K9Z3.png') 16 0, auto !important; }
+
+    .logo { font-size:18px; font-weight:300; color:#0a0a0a; text-decoration:none; letter-spacing:0.01em; display:inline-block; }
+    .logo .dot { color:#e02020; }
+
+    /* ═══════════════════════════════════════════════════════════════
+       NAVBAR
+    ═══════════════════════════════════════════════════════════════ */
+    #navbar {
+      position:fixed; top:0; left:0; right:0; z-index:1000;
+      display:flex; align-items:center; justify-content:space-between;
+      background:rgba(255,255,255,0.20); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px);
+      border-bottom:1px solid rgba(0,0,0,0.06);
+      padding:14px 60px; white-space:nowrap; transition:background 0.3s;
+    }
+    #navbar.scrolled { background:rgba(255,255,255,0.85); }
+    .nav-pill { display:flex; align-items:center; gap:8px; background:none; border:none; padding:0; }
+    .nav-pill a { color:#0a0a0a; text-decoration:none; font-size:15px; font-weight:500; padding:8px 18px; transition:opacity 0.2s; }
+    .nav-pill a:hover { opacity:0.55; }
+    .nav-btn {
+      position:relative; display:inline-flex; align-items:center; justify-content:center;
+      background:#fff; border:none; border-radius:999px; padding:8px 22px;
+      font-size:14px; font-weight:600; color:#000; cursor:pointer;
+      font-family:'Satoshi', sans-serif; text-decoration:none; overflow:hidden;
+      box-shadow:0 5px 15px rgba(0,0,0,0.4); transition:box-shadow 0.35s ease;
+    }
+    .nav-btn::before { content:''; position:absolute; inset:-2px; border-radius:999px; background:linear-gradient(105deg, #FFA96C 0%, rgba(255,169,108,0.3) 50%, transparent 100%); z-index:-1; pointer-events:none; }
+    .nav-btn::after { content:''; position:absolute; inset:0; border-radius:999px; background:radial-gradient(ellipse at 15% 50%, rgba(255,180,100,0.35) 0%, transparent 65%); opacity:0; transition:opacity 0.4s ease; pointer-events:none; }
+    .nav-btn:hover::after { opacity:1; }
+    .nav-btn:hover { box-shadow:0 5px 15px rgba(0,0,0,0.4), 0 0 20px rgba(255,169,108,0.4); }
+
+    .hamburger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:4px; }
+    .hamburger span { display:block; width:24px; height:2px; background:#0a0a0a; border-radius:2px; transition:transform 0.3s, opacity 0.3s; }
+    .hamburger.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity:0; }
+    .hamburger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+
+    #mobile-menu { display:none; position:fixed; inset:0; background:rgba(255,255,255,0.97); z-index:999; flex-direction:column; align-items:center; justify-content:center; gap:32px; }
+    #mobile-menu.open { display:flex; }
+    #mobile-menu a { color:#0a0a0a; text-decoration:none; font-size:28px; font-weight:500; transition:opacity 0.2s; }
+    #mobile-menu a:hover { opacity:0.6; }
+
+    /* ═══════════════════════════════════════════════════════════════
+       HERO
+    ═══════════════════════════════════════════════════════════════ */
+    .fg-hero {
+      padding:160px 20px 48px;
+      text-align:center;
+      max-width:800px;
+      margin:0 auto;
+    }
+    .fg-hero-label {
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-size:14px;
+      font-weight:600;
+      color:#FFA96C;
+      text-transform:uppercase;
+      letter-spacing:0.08em;
+      margin-bottom:20px;
+    }
+    .fg-hero-label svg { flex-shrink:0; }
+    .fg-hero h1 {
+      font-family:'RelationshipOfMelodrame', 'Satoshi', sans-serif;
+      font-size:52px;
+      font-weight:900;
+      line-height:1.05;
+      color:#0a0a0a;
+      margin-bottom:18px;
+    }
+    .fg-hero h1 span { color:#FFA96C; }
+    .fg-hero p {
+      font-size:18px;
+      color:#555;
+      max-width:560px;
+      margin:0 auto;
+      line-height:1.6;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       SEARCH & FILTERS
+    ═══════════════════════════════════════════════════════════════ */
+    .fg-controls {
+      max-width:900px;
+      margin:0 auto 40px;
+      padding:0 20px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:20px;
+    }
+    .fg-search-wrap {
+      position:relative;
+      width:100%;
+      max-width:480px;
+    }
+    .fg-search-icon {
+      position:absolute;
+      left:18px;
+      top:50%;
+      transform:translateY(-50%);
+      color:rgba(0,0,0,0.3);
+      pointer-events:none;
+    }
+    .fg-search {
+      width:100%;
+      padding:14px 20px 14px 48px;
+      border-radius:12px;
+      border:1px solid rgba(0,0,0,0.1);
+      background:#f0f0f0;
+      color:#0a0a0a;
+      font-family:'Satoshi', sans-serif;
+      font-size:16px;
+      outline:none;
+      transition:border-color 0.2s, box-shadow 0.2s;
+    }
+    .fg-search::placeholder { color:rgba(0,0,0,0.35); }
+    .fg-search:focus {
+      border-color:rgba(255,169,108,0.5);
+      box-shadow:0 0 0 3px rgba(255,169,108,0.1);
+    }
+
+    .fg-filters {
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      justify-content:center;
+    }
+    .fg-filter-btn {
+      padding:8px 20px;
+      border-radius:999px;
+      border:1px solid rgba(0,0,0,0.1);
+      background:rgba(0,0,0,0.03);
+      color:rgba(0,0,0,0.5);
+      font-family:'Satoshi', sans-serif;
+      font-size:14px;
+      font-weight:500;
+      cursor:pointer;
+      transition:all 0.25s;
+    }
+    .fg-filter-btn:hover {
+      background:rgba(0,0,0,0.06);
+      color:#0a0a0a;
+    }
+    .fg-filter-btn.active {
+      background:#FFA96C;
+      color:#000;
+      border-color:#FFA96C;
+      font-weight:700;
+      box-shadow:0 0 16px rgba(255,169,108,0.25);
+    }
+    .fg-filter-count {
+      font-size:12px;
+      opacity:0.7;
+      margin-left:4px;
+    }
+
+    .fg-results-count {
+      text-align:center;
+      font-size:14px;
+      color:rgba(0,0,0,0.35);
+      margin-bottom:8px;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       CARDS GRID
+    ═══════════════════════════════════════════════════════════════ */
+    .fg-grid {
+      max-width:1100px;
+      margin:0 auto;
+      padding:0 20px 100px;
+      display:grid;
+      grid-template-columns:repeat(auto-fill, minmax(320px, 1fr));
+      gap:20px;
+    }
+    .fg-card {
+      background:#f8f8f8;
+      border:1px solid rgba(0,0,0,0.07);
+      border-radius:16px;
+      padding:28px 24px;
+      transition:all 0.3s ease;
+      text-decoration:none;
+      color:#0a0a0a;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+    .fg-card:hover {
+      transform:translateY(-4px);
+      border-color:rgba(255,169,108,0.4);
+      box-shadow:0 0 24px rgba(255,169,108,0.08);
+    }
+
+    /* Card header: category + type */
+    .fg-card-header {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .fg-card-cat {
+      display:inline-block;
+      font-size:11px;
+      font-weight:700;
+      text-transform:uppercase;
+      letter-spacing:0.07em;
+      padding:5px 12px;
+      border-radius:999px;
+      background:rgba(255,169,108,0.12);
+      color:#b85c00;
+    }
+
+    .fg-card-type {
+      font-size:12px;
+      color:rgba(0,0,0,0.35);
+      display:flex;
+      align-items:center;
+      gap:5px;
+    }
+
+    .fg-card h2 {
+      font-size:19px;
+      font-weight:700;
+      line-height:1.35;
+      color:#0a0a0a;
+      display:-webkit-box;
+      -webkit-line-clamp:2;
+      -webkit-box-orient:vertical;
+      overflow:hidden;
+      transition:color 0.2s;
+    }
+    .fg-card:hover h2 { color:#FFA96C; }
+
+    .fg-card .fg-card-desc {
+      font-size:15px;
+      color:#555;
+      line-height:1.55;
+      display:-webkit-box;
+      -webkit-line-clamp:2;
+      -webkit-box-orient:vertical;
+      overflow:hidden;
+    }
+
+    /* Card footer: time + tags */
+    .fg-card-footer {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      margin-top:auto;
+      padding-top:8px;
+    }
+    .fg-card-time {
+      display:flex;
+      align-items:center;
+      gap:5px;
+      font-size:13px;
+      color:rgba(0,0,0,0.35);
+    }
+    .fg-card-time svg { flex-shrink:0; }
+    .fg-card-tags {
+      display:flex;
+      flex-wrap:wrap;
+      gap:5px;
+    }
+    .fg-card-tags span {
+      font-size:11px;
+      padding:3px 9px;
+      border-radius:999px;
+      background:rgba(0,0,0,0.06);
+      color:rgba(0,0,0,0.4);
+    }
+
+    .fg-empty {
+      grid-column:1/-1;
+      text-align:center;
+      padding:80px 20px;
+      display:none;
+    }
+    .fg-empty p:first-child {
+      font-size:20px;
+      font-weight:700;
+      color:rgba(0,0,0,0.5);
+      margin-bottom:8px;
+    }
+    .fg-empty p:last-child {
+      font-size:15px;
+      color:rgba(0,0,0,0.3);
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════════════════════════════════ */
+    #footer-outer { background:#0a0a0a; padding:0; }
+    .footer-inner { background:#0a0a0a; border-radius:0; padding:56px 80px 80px; overflow:hidden; position:relative; }
+    .footer-watermark { position:absolute; bottom:0; left:50%; transform:translateX(-50%); width:100%; max-width:800px; pointer-events:none; user-select:none; }
+    .footer-watermark img { width:100%; display:block; }
+    .footer-hr { border:none; border-top:1px solid rgba(255,255,255,0.12); margin-bottom:40px; }
+    .footer-top { display:flex; align-items:flex-start; justify-content:space-between; gap:40px; margin-bottom:40px; position:relative; z-index:1; }
+    .footer-social-label { font-size:14px; opacity:0.6; margin-bottom:16px; }
+    .footer-social-icons { display:flex; gap:20px; align-items:center; }
+    .footer-social-icons a { color:#fff; opacity:0.75; transition:opacity 0.2s; display:flex; align-items:center; }
+    .footer-social-icons a:hover { opacity:1; }
+    .footer-legal-label { font-size:15px; font-weight:500; color:#fff; margin-bottom:16px; }
+    .footer-legal-links { display:flex; flex-direction:column; gap:8px; }
+    .footer-legal-links a { font-size:14px; color:#fff; text-decoration:none; opacity:0.75; transition:opacity 0.2s; }
+    .footer-legal-links a:hover { opacity:0.6; }
+    .footer-copy { text-align:center; font-size:14px; color:rgba(255,255,255,0.5); position:relative; z-index:1; }
+    .footer-inner .logo { color:#fff; }
+    .footer-inner .footer-social-label { color:#fff; }
+
+    /* ═══════════════════════════════════════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════════════════════════════════════ */
+    @media (max-width:768px) {
+      body::before { background-size:250vw auto; opacity:0.26; background-repeat:repeat; }
+      #navbar { gap:16px; padding:8px 16px; }
+      .nav-pill { display:none; }
+      .nav-btn { display:none; }
+      .hamburger { display:flex; }
+
+      .fg-hero { padding:100px 20px 36px; }
+      .fg-hero h1 { font-size:34px; }
+      .fg-hero p { font-size:16px; }
+      .fg-grid { grid-template-columns:1fr; }
+
+      .footer-inner { padding:40px 24px 80px; border-radius:0; }
+      .footer-top { flex-direction:column; gap:32px; align-items:center; }
+      .footer-social-icons { justify-content:center; }
+      .footer-legal-links { text-align:center; }
+      #footer-outer { padding:0; }
+    }
+
+    @media (max-width:480px) {
+      .fg-hero h1 { font-size:28px; }
+      .fg-grid { padding:0 12px 60px; }
+      .fg-card { padding:22px 18px; }
+      .footer-inner { padding:32px 16px 60px; border-radius:0; }
+      #footer-outer { padding:0; }
+      .footer-copy { font-size:12px; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Formation Gratuite Miniamaker — Techniques Photoshop & Business",
+    "url": "https://www.minia-pro.com/formation-gratuite/",
+    "description": "Apprends \u00e0 cr\u00e9er des miniatures YouTube et \u00e0 trouver tes premiers clients. Les techniques de Bitchi, 3 ans d'exp\u00e9rience, 100% gratuit.",
+    "mainEntity": {
+      "@type": "ItemList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "url": "https://www.minia-pro.com/formation-gratuite/photoshop-debutant.html", "name": "Photoshop pour d\u00e9butant" },
+        { "@type": "ListItem", "position": 2, "url": "https://www.minia-pro.com/formation-gratuite/trouver-premiers-clients.html", "name": "Comment trouver tes premiers clients" },
+        { "@type": "ListItem", "position": 3, "url": "https://www.minia-pro.com/formation-gratuite/miniature-qui-clique.html", "name": "Les 5 r\u00e8gles d'une miniature qui fait cliquer" },
+        { "@type": "ListItem", "position": 4, "url": "https://www.minia-pro.com/formation-gratuite/miniature-sans-experience.html", "name": "Miniature YouTube sans exp\u00e9rience" },
+        { "@type": "ListItem", "position": 5, "url": "https://www.minia-pro.com/formation-gratuite/combien-facturer-miniature.html", "name": "Combien facturer une miniature YouTube" },
+        { "@type": "ListItem", "position": 6, "url": "https://www.minia-pro.com/formation-gratuite/meilleur-logiciel-miniature.html", "name": "Meilleur logiciel pour miniatures YouTube" },
+        { "@type": "ListItem", "position": 7, "url": "https://www.minia-pro.com/formation-gratuite/demarcher-youtubeurs.html", "name": "Comment d\u00e9marcher des YouTubeurs" },
+        { "@type": "ListItem", "position": 8, "url": "https://www.minia-pro.com/formation-gratuite/miniature-youtube-freelance.html", "name": "Miniature YouTube freelance" }
+      ]
+    },
+    "author": { "@type": "Person", "name": "Bitchi", "url": "https://minia-pro.com" },
+    "publisher": { "@type": "Organization", "name": "minia.pro", "url": "https://minia-pro.com" }
+  }
+  </script>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════
+     MOBILE MENU
+═══════════════════════════════════════════════════════════ -->
+<div id="mobile-menu" role="dialog" aria-modal="true" aria-label="Navigation mobile">
+  <a href="/" class="mobile-link">Accueil</a>
+  <a href="/#modules" class="mobile-link">Modules</a>
+  <a href="/#offre" class="mobile-link">Offre</a>
+  <a href="/#avis-simple" class="mobile-link">Avis</a>
+  <a href="/#bonus" class="mobile-link">Bonus</a>
+  <a href="/#faq" class="mobile-link">FAQ</a>
+  <a href="/formation-gratuite/" class="mobile-link" style="color:#FFA96C;">Formation Gratuite</a>
+  <a href="https://pay.minia-pro.com/-paiement" class="mobile-link" target="_blank" rel="noopener noreferrer" style="color:#f8814e;">Rejoindre</a>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     NAVBAR
+═══════════════════════════════════════════════════════════ -->
+<nav id="navbar" role="navigation" aria-label="Navigation principale">
+  <a href="/" class="logo" aria-label="minia.pro accueil">minia<span class="dot">.</span>pro</a>
+
+  <div class="nav-pill">
+    <a href="/">Accueil</a>
+    <a href="/#modules">Modules</a>
+    <a href="/#offre">Offre</a>
+    <a href="/#avis-simple">Avis</a>
+    <a href="/#bonus">Bonus</a>
+    <a href="/#faq">FAQ</a>
+    <a href="/formation-gratuite/" style="color:#FFA96C;">Formation Gratuite</a>
+  </div>
+
+  <a class="nav-btn" href="https://pay.minia-pro.com/-paiement" target="_blank" rel="noopener noreferrer">Rejoindre</a>
+
+  <button class="hamburger" id="hamburger" aria-label="Ouvrir le menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════════════════════ -->
+<header class="fg-hero">
+  <div class="fg-hero-label">
+    &#128214;
+    La ressource gratuite pour les Miniamakers
+  </div>
+  <h1><span>Formation Gratuite</span></h1>
+  <p>Les techniques que j'utilise depuis 3 ans pour facturer des miniatures YouTube. Gratuitement. Sans bullshit.</p>
+</header>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SEARCH & FILTERS
+═══════════════════════════════════════════════════════════ -->
+<div class="fg-controls">
+  <div class="fg-search-wrap">
+    <svg class="fg-search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <input type="text" class="fg-search" id="fg-search" placeholder="Chercher une technique, un sujet..." autocomplete="off" />
+  </div>
+  <div class="fg-filters" id="fg-filters">
+    <button class="fg-filter-btn active" data-filter="all">Tous<span class="fg-filter-count">(8)</span></button>
+    <button class="fg-filter-btn" data-filter="photoshop">Photoshop<span class="fg-filter-count">(2)</span></button>
+    <button class="fg-filter-btn" data-filter="trouver-clients">Trouver des clients<span class="fg-filter-count">(2)</span></button>
+    <button class="fg-filter-btn" data-filter="miniatures-cliquent">Miniatures qui cliquent<span class="fg-filter-count">(1)</span></button>
+    <button class="fg-filter-btn" data-filter="freelance">Freelance<span class="fg-filter-count">(2)</span></button>
+    <button class="fg-filter-btn" data-filter="outils">Outils<span class="fg-filter-count">(1)</span></button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     ARTICLES GRID
+═══════════════════════════════════════════════════════════ -->
+<div class="fg-grid" id="fg-grid">
+
+  <!-- Card 1 -->
+  <a href="/formation-gratuite/photoshop-debutant.html" class="fg-card" data-cat="photoshop" data-title="Photoshop pour debutant tout ce qu'il faut savoir avant de creer ta premiere miniature" data-tags="photoshop calques raccourcis 1280x720 export debutant interface">
+    <div class="fg-card-header">
+      <span class="fg-card-cat" data-cat="photoshop">Photoshop</span>
+      <span class="fg-card-type">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        Guide
+      </span>
+    </div>
+    <h2>Photoshop pour d&eacute;butant : tout ce qu'il faut savoir avant de cr&eacute;er ta premi&egrave;re miniature</h2>
+    <p class="fg-card-desc">T'ouvres Photoshop et c'est le bordel. Normal. Voici les 20% du logiciel qui font 80% du taf d'un Miniamaker.</p>
+    <div class="fg-card-footer">
+      <span class="fg-card-time">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        8 min de lecture
+      </span>
+      <div class="fg-card-tags">
+        <span>Photoshop</span>
+        <span>Calques</span>
+        <span>Export</span>
+      </div>
+    </div>
+  </a>
+
+  <!-- Card 2 -->
+  <a href="/formation-gratuite/trouver-premiers-clients.html" class="fg-card" data-cat="trouver-clients" data-title="Comment trouver tes premiers clients en miniatures YouTube meme avec 0 experience" data-tags="clients demarchage twitter dm portfolio pricing freelance prospection">
+    <div class="fg-card-header">
+      <span class="fg-card-cat" data-cat="trouver-clients">Trouver des clients</span>
+      <span class="fg-card-type">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        Guide
+      </span>
+    </div>
+    <h2>Comment trouver tes premiers clients en miniatures YouTube (m&ecirc;me avec 0 exp&eacute;rience)</h2>
+    <p class="fg-card-desc">Z&eacute;ro portfolio, z&eacute;ro r&eacute;putation, z&eacute;ro client. La m&eacute;thode exacte pour signer ton premier contrat en partant de rien.</p>
+    <div class="fg-card-footer">
+      <span class="fg-card-time">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        10 min de lecture
+      </span>
+      <div class="fg-card-tags">
+        <span>Clients</span>
+        <span>DM</span>
+        <span>Pricing</span>
+      </div>
+    </div>
+  </a>
+
+  <!-- Card 3 -->
+  <a href="/formation-gratuite/miniature-qui-clique.html" class="fg-card" data-cat="miniatures-cliquent" data-title="Les 5 regles d'une miniature YouTube qui fait cliquer utilisees par les plus grandes chaines" data-tags="miniature ctr contraste visage texte couleurs composition design">
+    <div class="fg-card-header">
+      <span class="fg-card-cat" data-cat="miniatures-cliquent">Miniatures qui cliquent</span>
+      <span class="fg-card-type">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        Guide
+      </span>
+    </div>
+    <h2>Les 5 r&egrave;gles d'une miniature YouTube qui fait cliquer (utilis&eacute;es par les plus grandes cha&icirc;nes)</h2>
+    <p class="fg-card-desc">Pourquoi tu cliques sur certaines vid&eacute;os et pas d'autres ? C'est pas du hasard. Voici les 5 principes derri&egrave;re chaque miniature qui performe.</p>
+    <div class="fg-card-footer">
+      <span class="fg-card-time">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        7 min de lecture
+      </span>
+      <div class="fg-card-tags">
+        <span>CTR</span>
+        <span>Composition</span>
+        <span>Couleurs</span>
+      </div>
+    </div>
+  </a>
+
+  <!-- Card 4 -->
+  <a href="/formation-gratuite/miniature-sans-experience.html" class="fg-card" data-cat="photoshop" data-title="Comment faire une miniature YouTube sans experience guide complet de A a Z" data-tags="miniature debutant photoshop premiere miniature sans experience tutoriel">
+    <div class="fg-card-header">
+      <span class="fg-card-cat" data-cat="photoshop">Photoshop</span>
+      <span class="fg-card-type">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        Guide
+      </span>
+    </div>
+    <h2>Comment faire une miniature YouTube sans exp&eacute;rience : le guide de A &agrave; Z</h2>
+    <p class="fg-card-desc">T'as jamais touch&eacute; Photoshop ? Pas grave. Voici comment cr&eacute;er ta premi&egrave;re miniature en partant de z&eacute;ro absolu.</p>
+    <div class="fg-card-footer">
+      <span class="fg-card-time">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        9 min de lecture
+      </span>
+      <div class="fg-card-tags">
+        <span>D&eacute;butant</span>
+        <span>Premi&egrave;re minia</span>
+        <span>Photoshop</span>
+      </div>
+    </div>
+  </a>
+
+  <!-- Card 5 -->
+  <a href="/formation-gratuite/combien-facturer-miniature.html" class="fg-card" data-cat="freelance" data-title="Combien facturer une miniature YouTube en 2026 grille de prix realiste" data-tags="prix tarif facturer miniature freelance argent grille revenus">
+    <div class="fg-card-header">
+      <span class="fg-card-cat" data-cat="freelance">Freelance</span>
+      <span class="fg-card-type">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        Guide
+      </span>
+    </div>
+    <h2>Combien facturer une miniature YouTube en 2026 ? La grille de prix r&eacute;aliste</h2>
+    <p class="fg-card-desc">De 30&euro; &agrave; 300&euro; par miniature : comment fixer ton tarif selon ton niveau et ta valeur ajout&eacute;e.</p>
+    <div class="fg-card-footer">
+      <span class="fg-card-time">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        8 min de lecture
+      </span>
+      <div class="fg-card-tags">
+        <span>Pricing</span>
+        <span>Tarifs</span>
+        <span>Freelance</span>
+      </div>
+    </div>
+  </a>
+
+  <!-- Card 6 -->
+  <a href="/formation-gratuite/meilleur-logiciel-miniature.html" class="fg-card" data-cat="outils" data-title="Meilleur logiciel pour creer des miniatures YouTube en 2026 comparatif" data-tags="logiciel photoshop canva photopea gimp comparatif outils ia">
+    <div class="fg-card-header">
+      <span class="fg-card-cat" data-cat="outils">Outils</span>
+      <span class="fg-card-type">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        Comparatif
+      </span>
+    </div>
+    <h2>Quel est le meilleur logiciel pour cr&eacute;er des miniatures YouTube en 2026 ?</h2>
+    <p class="fg-card-desc">Photoshop, Canva, Photopea, GIMP ? Comparatif honn&ecirc;te par un Miniamaker pro qui les a tous test&eacute;s.</p>
+    <div class="fg-card-footer">
+      <span class="fg-card-time">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        7 min de lecture
+      </span>
+      <div class="fg-card-tags">
+        <span>Photoshop</span>
+        <span>Canva</span>
+        <span>IA</span>
+      </div>
+    </div>
+  </a>
+
+  <!-- Card 7 -->
+  <a href="/formation-gratuite/demarcher-youtubeurs.html" class="fg-card" data-cat="trouver-clients" data-title="Comment demarcher des YouTubeurs pour vendre tes miniatures scripts DM portfolio" data-tags="demarchage youtubeurs dm scripts portfolio prospection clients vente">
+    <div class="fg-card-header">
+      <span class="fg-card-cat" data-cat="trouver-clients">Trouver des clients</span>
+      <span class="fg-card-type">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        Guide
+      </span>
+    </div>
+    <h2>Comment d&eacute;marcher des YouTubeurs pour vendre tes miniatures</h2>
+    <p class="fg-card-desc">Scripts de DM, o&ugrave; trouver des cr&eacute;ateurs, comment pr&eacute;senter ton portfolio : le guide d&eacute;marchage complet.</p>
+    <div class="fg-card-footer">
+      <span class="fg-card-time">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        10 min de lecture
+      </span>
+      <div class="fg-card-tags">
+        <span>DM</span>
+        <span>Portfolio</span>
+        <span>Prospection</span>
+      </div>
+    </div>
+  </a>
+
+  <!-- Card 8 -->
+  <a href="/formation-gratuite/miniature-youtube-freelance.html" class="fg-card" data-cat="freelance" data-title="Miniature YouTube freelance comment en vivre en 2026 guide complet" data-tags="freelance miniature youtube carriere revenus auto-entrepreneur miniamaker">
+    <div class="fg-card-header">
+      <span class="fg-card-cat" data-cat="freelance">Freelance</span>
+      <span class="fg-card-type">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        Guide
+      </span>
+    </div>
+    <h2>Miniature YouTube freelance : le guide pour en vivre en 2026</h2>
+    <p class="fg-card-desc">De 0 &agrave; 1500&euro;/mois en cr&eacute;ant des miniatures YouTube. Le parcours concret pour devenir Miniamaker freelance.</p>
+    <div class="fg-card-footer">
+      <span class="fg-card-time">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        11 min de lecture
+      </span>
+      <div class="fg-card-tags">
+        <span>Carri&egrave;re</span>
+        <span>Revenus</span>
+        <span>Freelance</span>
+      </div>
+    </div>
+  </a>
+
+  <div class="fg-empty" id="fg-empty">
+    <p>Aucun article trouv&eacute;</p>
+    <p>Essaie un autre mot-cl&eacute; ou change de cat&eacute;gorie.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════════════════ -->
+<footer id="footer-outer">
+  <div class="footer-inner">
+    <hr class="footer-hr" />
+    <div class="footer-top">
+      <a href="/" class="logo" aria-label="minia.pro">minia<span class="dot">.</span>pro</a>
+      <div>
+        <p class="footer-social-label">Vous pouvez me suivre sur :</p>
+        <div class="footer-social-icons">
+          <a href="https://x.com/Bitchiskk" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.258 5.63 5.906-5.63Zm-1.161 17.52h1.833L7.084 4.126H5.117Z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/bitchi_92/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.7" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@bitchiskk" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <svg width="24" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-legal-label">L&eacute;gales :</p>
+        <div class="footer-legal-links">
+          <a href="/mentions-legales.html">Mentions l&eacute;gales</a>
+          <a href="/cgv.html">Conditions de vente</a>
+          <a href="/politique-confidentialite.html">Politique de confidentialit&eacute;</a>
+          <a href="/formation-gratuite/">Formation Gratuite</a>
+        </div>
+      </div>
+    </div>
+    <p class="footer-copy">&copy; www.minia-pro.com | Tous droits r&eacute;serv&eacute;s</p>
+    <div class="footer-watermark" aria-hidden="true">
+      <img src="../assets/minia.pro.png" alt="" loading="lazy" />
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════════════════
+     JAVASCRIPT
+═══════════════════════════════════════════════════════════ -->
+<script>
+  /* ── Hamburger / Mobile menu ── */
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-expanded', String(isOpen));
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+
+  document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    });
+  });
+
+  /* ── Navbar scroll effect ── */
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+
+  /* ── Search & Filter ── */
+  const searchInput = document.getElementById('fg-search');
+  const filterBtns = document.querySelectorAll('.fg-filter-btn');
+  const cards = document.querySelectorAll('.fg-card');
+  const emptyMsg = document.getElementById('fg-empty');
+  let activeFilter = 'all';
+
+  function filterCards() {
+    const query = searchInput.value.toLowerCase().trim();
+    let visible = 0;
+
+    cards.forEach(card => {
+      const cat = card.dataset.cat;
+      const title = (card.dataset.title || '').toLowerCase();
+      const tags = (card.dataset.tags || '').toLowerCase();
+      const text = title + ' ' + tags;
+
+      const matchCat = activeFilter === 'all' || cat === activeFilter;
+      const matchSearch = !query || text.includes(query);
+
+      if (matchCat && matchSearch) {
+        card.style.display = '';
+        visible++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    emptyMsg.style.display = visible === 0 ? '' : 'none';
+  }
+
+  searchInput.addEventListener('input', filterCards);
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeFilter = btn.dataset.filter;
+      filterCards();
+    });
+  });
+</script>
+
+</body>
+</html>
