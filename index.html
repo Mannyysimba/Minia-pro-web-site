@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="google-site-verification" content="l9qBAl9egACkAux_fM5eGRHdtBcrnHglrMVOQMJDcW8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>minia.pro — Deviens Miniamaker en 30 jours | Formation miniatures YouTube</title>
+  <title>minia.pro - Deviens Miniamaker en 30 jours | Formation miniatures YouTube</title>
   <meta name="description" content="Forme-toi à la création de miniatures YouTube avec Photoshop en 30 jours. Signe tes premiers clients, génère 500 à 2000€/mois. +35 membres accompagnés. Formation minia.pro par Bitchi." />
   <meta name="keywords" content="miniatures YouTube, formation miniatures, Photoshop, miniamaker, freelance miniatures, création miniatures YouTube, gagner argent miniatures, thumbnail YouTube, devenir miniamaker, formation thumbnail, créer miniatures YouTube freelance, revenu complémentaire créatif" />
   <link rel="canonical" href="https://www.minia-pro.com/" />
@@ -17,7 +17,7 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.minia-pro.com/" />
-  <meta property="og:title" content="minia.pro — Deviens Miniamaker en 30 jours" />
+  <meta property="og:title" content="minia.pro - Deviens Miniamaker en 30 jours" />
   <meta property="og:description" content="Forme-toi à la création de miniatures YouTube avec Photoshop en 30 jours. Signe tes premiers clients, génère 500 à 2000€/mois." />
   <meta property="og:image" content="https://www.minia-pro.com/assets/images/Video miniapro miniature.jpg" />
   <meta property="og:image:width" content="1200" />
@@ -28,7 +28,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@Bitchiskk" />
-  <meta name="twitter:title" content="minia.pro — Deviens Miniamaker en 30 jours" />
+  <meta name="twitter:title" content="minia.pro - Deviens Miniamaker en 30 jours" />
   <meta name="twitter:description" content="Forme-toi à la création de miniatures YouTube avec Photoshop en 30 jours. Signe tes premiers clients, génère 500 à 2000€/mois." />
   <meta name="twitter:image" content="https://www.minia-pro.com/assets/images/Video miniapro miniature.jpg" />
 
@@ -105,7 +105,7 @@
     [data-theme="light"] {
       --bg: #ffffff;
       --bg-rgb: 255,255,255;
-      --text: #0a0a0a;
+      --text: #121212;
       --text-rgb: 10,10,10;
       --text-inv: #fff;
       --text-inv-rgb: 255,255,255;
@@ -120,11 +120,11 @@
       --overlay-bg: rgba(0,0,0,0.15);
       --subtitle-color: #555;
       --faq-bg: #f5f5f5;
-      --faq-text: #0a0a0a;
+      --faq-text: #121212;
       --faq-answer: #555;
       --faq-border: #ddd;
       --footer-outer-bg: #f5f5f5;
-      --footer-inner-bg: #0a0a0a;
+      --footer-inner-bg: #121212;
       --footer-text: #fff;
       --price-card-bg: rgba(255,255,255,0.6);
       --scrollbar-track: #f5f5f5;
@@ -134,7 +134,7 @@
       --light-blend: normal;
       --shadow-color: rgba(0,0,0,0.12);
       --brand-pill-border: rgba(0,0,0,0.15);
-      --hero-btn-bg: #0a0a0a;
+      --hero-btn-bg: #121212;
       --hero-btn-color: #fff;
       --avis-quote: rgba(10,10,10,0.8);
       --avis-cursor-border: rgba(0,0,0,0.3);
@@ -163,14 +163,11 @@
       animation: none;
     }
     [data-theme="light"] .card-btn {
-      background: #0a0a0a;
+      background: #121212;
       color: #fff;
     }
     [data-theme="light"] .card-btn:hover {
-      background: #1a1a1a;
-    }
-    [data-theme="light"] .card-btn::after {
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+      background: #121212;
     }
     [data-theme="light"] .mod-card {
       background: #fff;
@@ -182,7 +179,7 @@
     }
     [data-theme="light"] .mod-card-body {
       background: #f8f8f8;
-      color: #0a0a0a;
+      color: #121212;
     }
     [data-theme="light"] .mod-card-desc {
       color: #555;
@@ -213,7 +210,7 @@
       background: #f5f5f5;
     }
     [data-theme="light"] .footer-inner {
-      background: #0a0a0a;
+      background: #121212;
     }
     [data-theme="light"] .hero-light-wrap,
     [data-theme="light"] .hero-dots,
@@ -491,7 +488,8 @@
       z-index:3;
       max-width:1200px;
       margin:0 auto;
-      padding:0 40px 0 40px;
+      padding:0 40px;
+      text-align:center;
     }
 
     .hero-content h1 {
@@ -509,12 +507,43 @@
       display:inline;
     }
 
+    /* ── Hero text reveal ── */
+    .hero-line {
+      display:block;
+      overflow:hidden;
+    }
+    .hero-line-inner {
+      display:block;
+      transform:translateY(110%);
+      animation:heroReveal 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+    .hero-line:nth-child(1) .hero-line-inner { animation-delay:0.15s; }
+    .hero-line:nth-child(2) .hero-line-inner { animation-delay:0.35s; }
+
+    @keyframes heroReveal {
+      to { transform:translateY(0); }
+    }
+
     .hero-subtitle {
       font-size:20px;
       color: var(--subtitle-color);
       max-width:480px;
-      margin-bottom:44px;
+      margin:0 auto 44px;
       font-weight:400;
+      opacity:0;
+      animation:heroFade 0.6s ease 0.6s forwards;
+    }
+
+    .hero-btns {
+      opacity:0;
+      animation:heroFade 0.6s ease 0.7s forwards;
+    }
+
+    @keyframes heroFade {
+      to { opacity:1; }
+    }
+    @keyframes heroVideoIn {
+      to { opacity:1; transform:none; }
     }
 
  /* BOUTON 1 — Blanc pur, border gradient, glow externe au hover */
@@ -534,6 +563,7 @@
   border: none;
   cursor: pointer;
   text-decoration: none;
+  overflow: hidden;
   box-shadow: 0 5px 15px rgba(0,0,0,0.4);
   transition: box-shadow 0.35s ease;
 }
@@ -542,11 +572,23 @@
   position: absolute;
   inset: -2.5px;
   border-radius: 89px;
-  background: linear-gradient(105deg, #FFA96C 0%, rgba(255,169,108,0.4) 50%, transparent 100%);
+  background: linear-gradient(105deg, #FFA96C 0%, rgba(255,169,108,0.3) 50%, transparent 100%);
   z-index: -1;
+  pointer-events: none;
 }
+.hero-btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 86px;
+  background: radial-gradient(ellipse at 15% 50%, rgba(255,180,100,0.35) 0%, transparent 65%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+.hero-btn:hover::after { opacity: 1; }
 .hero-btn:hover {
-  box-shadow: 0 5px 15px rgba(0,0,0,0.4), 0 0 24px rgba(255,169,108,0.5), 0 0 50px rgba(255,169,108,0.2);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.4), 0 0 20px rgba(255,169,108,0.4);
 }
 
     /* Video card */
@@ -557,6 +599,9 @@
       max-width:1200px;
       margin:60px auto 0;
       padding:0;
+      opacity:0;
+      transform:translateY(30px) scale(0.98);
+      animation:heroVideoIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0s forwards;
     }
     .video-card {
       position:relative;
@@ -566,11 +611,15 @@
       max-height:75vh;
       cursor:pointer;
       background:transparent;
+      border:none;
+      outline:none;
+      box-shadow:0 8px 30px rgba(0,0,0,0.25);
     }
     .video-card img.vid-thumb {
       display:block;
-      width:100%;
-      height:100%;
+      width:calc(100% + 2px);
+      height:calc(100% + 2px);
+      margin:-1px;
       object-fit:cover;
     }
     .video-card .play-overlay {
@@ -609,7 +658,7 @@
     }
     #clients .section-header h2 {
       font-size:48px;
-      font-weight:700;
+      font-weight:900;
       line-height:1.05;
       margin-bottom:16px;
     }
@@ -692,14 +741,12 @@
     ═══════════════════════════════════════════════════════════════ */
     #modules {
       background: var(--bg);
-      padding:100px 0 80px;
+      padding:100px 60px;
       position:relative;
       transition: background 0.4s;
     }
 
-    /* ── Lumière modules — Modules.png centrée ──
-       Pour ajuster : top (haut/bas), left (gauche/droite), width (taille)
-    ── */
+    /* ── Lumière modules — Modules.png centrée ── */
     .modules-light {
       position: absolute;
       top: 50%;
@@ -710,41 +757,157 @@
       mix-blend-mode: var(--light-blend);
       z-index: 2;
     }
-    #modules .section-header {
-      text-align:center;
-      padding:0 20px;
-      margin-bottom:56px;
-    }
-    #modules .section-header h2 { font-size:48px; font-weight:700; }
 
     .modules-grid {
       display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:20px;
+      grid-template-columns:1fr 1fr;
+      gap:64px;
+      align-items:start;
       max-width:1200px;
       margin:0 auto;
-      padding:0 120px;
+    }
+
+    /* ── Colonne gauche : sticky ── */
+    .modules-left {
+      position:sticky;
+      top:120px;
+    }
+    .modules-left h2 {
+      font-size:44px;
+      font-weight:900;
+      line-height:1.15;
+      margin-bottom:48px;
+      color:var(--text);
+    }
+    .pour-qui h3 {
+      font-size:20px;
+      font-weight:600;
+      margin-bottom:24px;
+      color:var(--text);
+      opacity:0.7;
+      text-transform:uppercase;
+      letter-spacing:0.05em;
+    }
+    .pour-qui-list {
+      list-style:none;
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+    }
+    .pour-qui-list li {
+      display:flex;
+      align-items:flex-start;
+      gap:14px;
+      font-size:15px;
+      line-height:1.6;
+      color:var(--text);
+    }
+    .pour-qui-list li .check-icon {
+      flex-shrink:0;
+      width:20px;
+      height:20px;
+      color:#FFA96C;
+      margin-top:3px;
+    }
+    .pour-qui-note {
+      margin-top:24px;
+      font-size:13px;
+      color:rgba(255,255,255,0.45);
+      line-height:1.5;
+    }
+    [data-theme="light"] .pour-qui-note {
+      color:rgba(0,0,0,0.4);
+    }
+
+    /* ── Colonne droite : wrapper ── */
+    .modules-right-wrapper {
+      position:relative;
+      display:flex;
+      flex-direction:column;
+    }
+
+    /* Boutons navigation — en haut à droite */
+    .modules-nav {
+      display:flex;
+      justify-content:flex-end;
+      gap:8px;
+      margin-bottom:16px;
+    }
+    .modules-nav button {
+      width:40px;
+      height:40px;
+      border-radius:50%;
+      background:rgba(255,255,255,0.08);
+      border:1px solid rgba(255,255,255,0.15);
+      color:#fff;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      transition:background 0.2s;
+    }
+    .modules-nav button:hover {
+      background:rgba(255,255,255,0.15);
+    }
+    .modules-nav button svg {
+      width:18px;
+      height:18px;
+      stroke:currentColor;
+      fill:none;
+      stroke-width:2;
+      stroke-linecap:round;
+      stroke-linejoin:round;
+    }
+    [data-theme="light"] .modules-nav button {
+      background:rgba(0,0,0,0.06);
+      border-color:rgba(0,0,0,0.12);
+      color:#121212;
+    }
+    [data-theme="light"] .modules-nav button:hover {
+      background:rgba(0,0,0,0.12);
+    }
+
+    /* Carrousel vertical */
+    .modules-carousel {
+      display:flex;
+      flex-direction:column;
+      gap:24px;
+      max-height:600px;
+      overflow-y:auto;
+      padding-bottom:100px;
+      scrollbar-width:none;
+    }
+    .modules-carousel::-webkit-scrollbar { display:none; }
+
+    /* Dégradé "il y a plus bas" */
+    .modules-fade {
+      position:absolute;
+      bottom:0;
+      left:0;
+      right:0;
+      height:100px;
+      background:linear-gradient(to top, var(--bg) 0%, transparent 100%);
+      pointer-events:none;
+      z-index:3;
     }
 
     .mod-card {
-      border-radius:14px;
+      border-radius:16px;
       overflow:hidden;
-      height:260px;
       background: var(--card-bg);
       border:1px solid var(--card-border);
       backdrop-filter:blur(10px);
       box-shadow:0 8px 24px var(--shadow-color);
-      transition:transform 0.25s, box-shadow 0.25s, border-color 0.25s, background 0.4s;
-      display:flex;
-      flex-direction:column;
+      transition:transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s ease, border-color 0.4s ease, background 0.4s;
+      flex-shrink:0;
     }
     .mod-card:hover {
-      transform:translateY(-4px);
-      box-shadow:0 16px 40px rgba(0,0,0,0.6);
+      transform:translateY(-3px);
+      box-shadow:0 12px 32px rgba(0,0,0,0.35);
       border-color: var(--card-border-hover);
     }
     .mod-card-img {
-      flex:0 0 65%;
+      aspect-ratio:16/9;
       overflow:hidden;
     }
     .mod-card-img img {
@@ -754,18 +917,17 @@
       display:block;
     }
     .mod-card-body {
-      flex:1;
       background: var(--card-body-bg);
-      padding:14px 20px;
+      padding:18px 24px;
     }
     .mod-card-row {
       display:flex;
       align-items:center;
       justify-content:space-between;
       gap:8px;
-      margin-bottom:6px;
+      margin-bottom:8px;
     }
-    .mod-card-name { font-size:16px; font-weight:700; }
+    .mod-card-name { font-size:18px; font-weight:700; }
     .mod-badge {
       display:flex;
       align-items:center;
@@ -791,7 +953,7 @@
       0%, 100% { opacity:0.6; transform:scale(1); }
       50% { opacity:1; transform:scale(1.3); }
     }
-    .mod-card-desc { font-size:11px; opacity:0.85; line-height:1.45; }
+    .mod-card-desc { font-size:13px; opacity:0.85; line-height:1.5; }
 
     .modules-cta {
       text-align:center;
@@ -870,7 +1032,7 @@
     }
     .offre-header h2 {
       font-size:48px;
-      font-weight:700;
+      font-weight:900;
       max-width:645px;
       margin:0 auto 16px;
       line-height:1.1;
@@ -1006,36 +1168,41 @@
       font-weight:500;
       height:52px;
       padding:0 14px;
-      border-radius:42px;
-      border:1px solid rgba(255,255,255,0.25);
+      border-radius:86px;
+      border:none;
       cursor:pointer;
       font-family:'Satoshi', sans-serif;
       text-decoration:none;
       width:40%;
       margin:0 auto;
-      backdrop-filter:blur(12px) saturate(1.4) brightness(1.2);
-      -webkit-backdrop-filter:blur(12px) saturate(1.4) brightness(1.2);
-      box-shadow:inset 0 1px 1px rgba(255,255,255,0.3), inset 0 -1px 1px rgba(0,0,0,0.1), 0 2px 8px rgba(0,0,0,0.15);
-      transition:background 0.3s ease, transform 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s ease;
+      box-shadow:0 5px 15px rgba(0,0,0,0.4);
+      transition:box-shadow 0.35s ease;
       z-index:0;
       position:relative;
       overflow:hidden;
     }
+    .card-btn::before {
+      content:'';
+      position:absolute;
+      inset:-2.5px;
+      border-radius:89px;
+      background:linear-gradient(105deg, #FFA96C 0%, rgba(255,169,108,0.3) 50%, transparent 100%);
+      z-index:-1;
+      pointer-events:none;
+    }
     .card-btn::after {
       content:'';
       position:absolute;
-      top:0;
-      left:-100%;
-      width:60%;
-      height:100%;
-      background:linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-      animation:cardBtnShine 4s ease-in-out infinite;
+      inset:0;
+      border-radius:86px;
+      background:radial-gradient(ellipse at 15% 50%, rgba(255,180,100,0.35) 0%, transparent 65%);
+      opacity:0;
+      transition:opacity 0.4s ease;
       pointer-events:none;
     }
+    .card-btn:hover::after { opacity:1; }
     .card-btn:hover {
-      background:rgba(255,255,255,1);
-      transform:scale(1.05);
-      box-shadow:inset 0 1px 1px rgba(255,255,255,0.3), inset 0 -1px 1px rgba(0,0,0,0.1), 0 8px 24px rgba(0,0,0,0.25);
+      box-shadow:0 5px 15px rgba(0,0,0,0.4), 0 0 20px rgba(255,169,108,0.4);
     }   /* ═══════════════════════════════════════════════════════════════
        BONUS
     ═══════════════════════════════════════════════════════════════ */
@@ -1194,7 +1361,7 @@
       opacity:0.6;
       margin-bottom:12px;
     }
-    #bonus .section-header h2 { font-size:48px; font-weight:700; }
+    #bonus .section-header h2 { font-size:48px; font-weight:900; }
 
     .bonus-grid {
       display:grid;
@@ -1342,7 +1509,7 @@
     }
     #faq .section-header h2 {
       font-size: 48px;
-      font-weight: 700;
+      font-weight: 900;
       color: var(--faq-text);
       line-height: 1.1;
     }
@@ -1645,14 +1812,14 @@
       .thumb-row-wrap-fade { display:none; }
 
       /* Modules */
-      #modules { padding:80px 0 60px; }
-      #modules .section-header h2 { font-size:32px; }
+      #modules { padding:80px 24px 60px; }
       .modules-grid {
-        grid-template-columns:repeat(2, 1fr);
-        padding:0 24px;
-        gap:14px;
+        grid-template-columns:1fr;
+        gap:40px;
       }
-      .mod-card { height:auto; }
+      .modules-left { position:static; }
+      .modules-left h2 { font-size:32px; margin-bottom:32px; }
+      .modules-carousel { max-height:500px; }
       .modules-light { display:none; }
 
       /* Offre */
@@ -1747,13 +1914,15 @@
       .avatar-carousel-wrap { margin-bottom:40px; }
 
       /* Modules */
-      #modules { padding:60px 0 40px; }
-      #modules .section-header h2 { font-size:26px; }
-      .modules-grid {
-        grid-template-columns:1fr;
-        padding:0 16px;
-        gap:12px;
-      }
+      #modules { padding:60px 16px 40px; }
+      .modules-grid { gap:32px; }
+      .modules-left h2 { font-size:26px; margin-bottom:24px; }
+      .pour-qui h3 { font-size:16px; }
+      .pour-qui-list li { font-size:14px; }
+      .modules-carousel { gap:20px; }
+      .mod-card-body { padding:14px 18px; }
+      .mod-card-name { font-size:16px; }
+      .mod-card-desc { font-size:12px; }
       .modules-cta { padding:40px 0; }
 
       /* Offre */
@@ -1838,7 +2007,7 @@
     .hero-btns {
       display: flex;
       align-items: center;
-      justify-content: flex-start;
+      justify-content: center;
       gap: 16px;
       flex-wrap: wrap;
     }
@@ -1919,7 +2088,7 @@
   {
     "@context": "https://schema.org",
     "@type": "Course",
-    "name": "minia.pro — Formation Miniamaker",
+    "name": "minia.pro - Formation Miniamaker",
     "alternateName": "Formation miniatures YouTube minia.pro",
     "description": "Formation complète à la création de miniatures YouTube avec Photoshop. 6 modules, +30h de vidéos, accompagnement WhatsApp personnel par Bitchi. De zéro à ton premier client en 30 jours. +35 membres accompagnés.",
     "provider": {
@@ -1942,12 +2111,12 @@
       "courseWorkload": "PT30H"
     },
     "syllabusSections": [
-      "Module 1 : Les Bases — De zéro à autonome sur Photoshop",
-      "Module 2 : La Théorie — Les principes de design qui font la différence",
-      "Module 3 : Les Miniatures — Techniques pro pour créer des minias vendables",
-      "Module 4 : Maîtriser l'IA — Produire 2x plus vite",
-      "Module 5 : Ta carrière Freelance — Personal branding et présence en ligne",
-      "Module 6 : Les Clients — Signer, fidéliser et générer du revenu récurrent"
+      "Module 1 : Les Bases - De zéro à autonome sur Photoshop",
+      "Module 2 : La Théorie - Les principes de design qui font la différence",
+      "Module 3 : Les Miniatures - Techniques pro pour créer des minias vendables",
+      "Module 4 : Maîtriser l'IA - Produire 2x plus vite",
+      "Module 5 : Ta carrière Freelance - Personal branding et présence en ligne",
+      "Module 6 : Les Clients - Signer, fidéliser et générer du revenu récurrent"
     ],
     "teaches": ["Création de miniatures YouTube", "Photoshop", "Intelligence artificielle pour le design", "Freelance créatif", "Démarchage clients YouTubeurs", "Personal branding"],
     "aggregateRating": {
@@ -1995,7 +2164,7 @@
   {
     "@context": "https://schema.org",
     "@type": "VideoObject",
-    "name": "minia.pro — La formation miniatures YouTube n°1 en France",
+    "name": "minia.pro - La formation miniatures YouTube n°1 en France",
     "description": "Présentation de la formation minia.pro pour devenir Miniamaker freelance. Apprends à créer des miniatures YouTube pro avec Photoshop et signe tes premiers clients en 30 jours.",
     "thumbnailUrl": "https://www.minia-pro.com/assets/images/Video miniapro miniature.jpg",
     "uploadDate": "2024-01-01",
@@ -2010,7 +2179,7 @@
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "minia.pro — Deviens Miniamaker en 30 jours | Formation miniatures YouTube",
+    "name": "minia.pro - Deviens Miniamaker en 30 jours | Formation miniatures YouTube",
     "description": "Forme-toi à la création de miniatures YouTube avec Photoshop en 30 jours. Signe tes premiers clients, génère 500 à 2000€/mois. +35 membres accompagnés.",
     "url": "https://www.minia-pro.com/",
     "inLanguage": "fr",
@@ -2090,7 +2259,7 @@
         "name": "Est-ce que minia.pro aide à trouver des clients pour les miniatures YouTube ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Oui. Les modules 5 et 6 sont entièrement dédiés au business : démarchage, pricing, personal branding, fidélisation. Et tu as le WhatsApp perso de Bitchi — si tu bloques, il est là."
+          "text": "Oui. Les modules 5 et 6 sont entièrement dédiés au business : démarchage, pricing, personal branding, fidélisation. Et tu as le WhatsApp perso de Bitchi - si tu bloques, il est là."
         }
       },
       {
@@ -2195,9 +2364,10 @@
   <div class="hero-dots" aria-hidden="true"></div>
   <div class="hero-dots-2" aria-hidden="true"></div>
 
-  <div class="hero-content fi">
+  <div class="hero-content">
     <h1>
-      30 jours pour devenir<br><span class="komika">MINIAMAKER</span> &agrave; succ&egrave;s
+      <span class="hero-line"><span class="hero-line-inner">30 jours pour devenir</span></span>
+      <span class="hero-line"><span class="hero-line-inner"><span class="komika">MINIAMAKER</span> &agrave; succ&egrave;s</span></span>
     </h1>
     <p class="hero-subtitle">
       Je t'accompagne sur Photoshop jusqu'&agrave; signer tes premiers clients&nbsp;!
@@ -2209,9 +2379,9 @@
   </div>
 
   <!-- Video card -->
-  <div class="video-wrap fi">
+  <div class="video-wrap">
     <div class="video-card" id="video-card">
-      <img src="assets/images/Video miniapro miniature.jpg" alt="Aperçu vidéo de la formation minia.pro — devenir Miniamaker freelance en 30 jours avec Photoshop" class="vid-thumb" loading="lazy" />
+      <img src="assets/images/Video miniapro miniature.webp" alt="Aperçu vidéo de la formation minia.pro - devenir Miniamaker freelance en 30 jours avec Photoshop" class="vid-thumb" loading="lazy" />
       <div class="play-overlay" id="play-overlay" role="button" aria-label="Lire la vid&eacute;o" tabindex="0">
         <div class="play-btn-circle">
           <svg width="28" height="32" viewBox="0 0 28 32" fill="none" aria-hidden="true">
@@ -2278,84 +2448,84 @@
     <!-- Row 1 – scrollLeft -->
 <div class="thumb-row-wrap">
   <div class="thumb-track row1">
-    <img src="assets/images/minia/68b15a2b61b0b_MINIAPOURMANGER1915 1.jpg" alt="" loading="lazy" />
-    <img src="assets/images/minia/68b15b1f02e8b_MINIAPOURMANGER1828 1.jpg" alt="" loading="lazy" />
-    <img src="assets/images/minia/68b15b24e08cd_MINIAPOURMANGER1823 1.jpg" alt="" loading="lazy" />
-    <img src="assets/images/minia/68b15b2b54e9e_MINIAPOURMANGER1812 1.jpg" alt="" loading="lazy" />
-    <img src="assets/images/minia/68b86ac16f0d3_MINIAPOURMANGER1970 1.jpg" alt="" loading="lazy" />
-    <img src="assets/images/minia/68b86afabcfcc_MINIAPOURMANGER1973 1.jpg" alt="" loading="lazy" />
-    <img src="assets/images/minia/68bb976ea70c6_MINIAPOURMANGER1430 1.jpg" alt="" loading="lazy" />
+    <img src="assets/images/minia/68b15a2b61b0b_MINIAPOURMANGER1915 1.webp" alt="" loading="lazy" />
+    <img src="assets/images/minia/68b15b1f02e8b_MINIAPOURMANGER1828 1.webp" alt="" loading="lazy" />
+    <img src="assets/images/minia/68b15b24e08cd_MINIAPOURMANGER1823 1.webp" alt="" loading="lazy" />
+    <img src="assets/images/minia/68b15b2b54e9e_MINIAPOURMANGER1812 1.webp" alt="" loading="lazy" />
+    <img src="assets/images/minia/68b86ac16f0d3_MINIAPOURMANGER1970 1.webp" alt="" loading="lazy" />
+    <img src="assets/images/minia/68b86afabcfcc_MINIAPOURMANGER1973 1.webp" alt="" loading="lazy" />
+    <img src="assets/images/minia/68bb976ea70c6_MINIAPOURMANGER1430 1.webp" alt="" loading="lazy" />
     <!-- Duplicate -->
-    <img src="assets/images/minia/68b15a2b61b0b_MINIAPOURMANGER1915 1.jpg" alt="" loading="lazy" />
-    <img src="assets/images/minia/68b15b1f02e8b_MINIAPOURMANGER1828 1.jpg" alt="" loading="lazy" />
-    <img src="assets/images/minia/68b15b24e08cd_MINIAPOURMANGER1823 1.jpg" alt="" loading="lazy" />
-    <img src="assets/images/minia/68b15b2b54e9e_MINIAPOURMANGER1812 1.jpg" alt="" loading="lazy" />
-    <img src="assets/images/minia/68b86ac16f0d3_MINIAPOURMANGER1970 1.jpg" alt="" loading="lazy" />
-    <img src="assets/images/minia/68b86afabcfcc_MINIAPOURMANGER1973 1.jpg" alt="" loading="lazy" />
-    <img src="assets/images/minia/68bb976ea70c6_MINIAPOURMANGER1430 1.jpg" alt="" loading="lazy" />
+    <img src="assets/images/minia/68b15a2b61b0b_MINIAPOURMANGER1915 1.webp" alt="" loading="lazy" />
+    <img src="assets/images/minia/68b15b1f02e8b_MINIAPOURMANGER1828 1.webp" alt="" loading="lazy" />
+    <img src="assets/images/minia/68b15b24e08cd_MINIAPOURMANGER1823 1.webp" alt="" loading="lazy" />
+    <img src="assets/images/minia/68b15b2b54e9e_MINIAPOURMANGER1812 1.webp" alt="" loading="lazy" />
+    <img src="assets/images/minia/68b86ac16f0d3_MINIAPOURMANGER1970 1.webp" alt="" loading="lazy" />
+    <img src="assets/images/minia/68b86afabcfcc_MINIAPOURMANGER1973 1.webp" alt="" loading="lazy" />
+    <img src="assets/images/minia/68bb976ea70c6_MINIAPOURMANGER1430 1.webp" alt="" loading="lazy" />
   </div>
 </div>
 
 <!-- Row 2 – scrollRight -->
 <div class="thumb-row-wrap">
   <div class="thumb-track row2">
-    <img src="assets/images/minia/68bb978d312cf_MINIAPOURMANGER1447 1.jpg" alt="" loading="lazy" />
-    <img src="assets/images/minia/68bb98126bc17_MINIAPOURMANGER1474 1.jpg" alt="" loading="lazy" />
-    <img src="assets/images/minia/68bce48ae2624_MINIAPOURMANGER1715 1.jpg" alt="" loading="lazy" />
-    <img src="assets/images/minia/68bcebe5f08ea_MINIAPOURMANGER1377 1.jpg" alt="" loading="lazy" />
-    <img src="assets/images/minia/ARABIE SAOUDITE 1.jpg" alt="" loading="lazy" />
-    <img src="assets/images/minia/EMPLOYE TO MILLIONAIRE 1.jpg" alt="" loading="lazy" />
-    <img src="assets/images/minia/image 25.jpg" alt="" loading="lazy" />
+    <img src="assets/images/minia/68bb978d312cf_MINIAPOURMANGER1447 1.webp" alt="" loading="lazy" />
+    <img src="assets/images/minia/68bb98126bc17_MINIAPOURMANGER1474 1.webp" alt="" loading="lazy" />
+    <img src="assets/images/minia/68bce48ae2624_MINIAPOURMANGER1715 1.webp" alt="" loading="lazy" />
+    <img src="assets/images/minia/68bcebe5f08ea_MINIAPOURMANGER1377 1.webp" alt="" loading="lazy" />
+    <img src="assets/images/minia/ARABIE SAOUDITE 1.webp" alt="" loading="lazy" />
+    <img src="assets/images/minia/EMPLOYE TO MILLIONAIRE 1.webp" alt="" loading="lazy" />
+    <img src="assets/images/minia/image 25.webp" alt="" loading="lazy" />
     <!-- Duplicate -->
-    <img src="assets/images/minia/68bb978d312cf_MINIAPOURMANGER1447 1.jpg" alt="" loading="lazy" />
-    <img src="assets/images/minia/68bb98126bc17_MINIAPOURMANGER1474 1.jpg" alt="" loading="lazy" />
-    <img src="assets/images/minia/68bce48ae2624_MINIAPOURMANGER1715 1.jpg" alt="" loading="lazy" />
-    <img src="assets/images/minia/68bcebe5f08ea_MINIAPOURMANGER1377 1.jpg" alt="" loading="lazy" />
-    <img src="assets/images/minia/ARABIE SAOUDITE 1.jpg" alt="" loading="lazy" />
-    <img src="assets/images/minia/EMPLOYE TO MILLIONAIRE 1.jpg" alt="" loading="lazy" />
-    <img src="assets/images/minia/image 25.jpg" alt="" loading="lazy" />
+    <img src="assets/images/minia/68bb978d312cf_MINIAPOURMANGER1447 1.webp" alt="" loading="lazy" />
+    <img src="assets/images/minia/68bb98126bc17_MINIAPOURMANGER1474 1.webp" alt="" loading="lazy" />
+    <img src="assets/images/minia/68bce48ae2624_MINIAPOURMANGER1715 1.webp" alt="" loading="lazy" />
+    <img src="assets/images/minia/68bcebe5f08ea_MINIAPOURMANGER1377 1.webp" alt="" loading="lazy" />
+    <img src="assets/images/minia/ARABIE SAOUDITE 1.webp" alt="" loading="lazy" />
+    <img src="assets/images/minia/EMPLOYE TO MILLIONAIRE 1.webp" alt="" loading="lazy" />
+    <img src="assets/images/minia/image 25.webp" alt="" loading="lazy" />
   </div>
 </div>
 
 <!-- Row 3 – scrollLeft -->
 <div class="thumb-row-wrap">
   <div class="thumb-track row3">
-    <img src="assets/images/minia/MINIA POUR MANGER 2107 1.jpg" alt="" loading="lazy" />
-    <img src="assets/images/minia/MINIA POUR MANGER 2128 1.jpg" alt="" loading="lazy" />
-    <img src="assets/images/minia/MINIA POUR MANGER 2162 1.jpg" alt="" loading="lazy" />
-    <img src="assets/images/minia/MINIA POUR MANGER 2171 1.jpg" alt="" loading="lazy" />
-    <img src="assets/images/minia/MINIA POUR MANGER 2190 1.jpg" alt="" loading="lazy" />
-    <img src="assets/images/minia/MINIA POUR MANGER 2194 1.jpg" alt="" loading="lazy" />
-    <img src="assets/images/minia/MINIA POUR MANGER 2195 1.jpg" alt="" loading="lazy" />
+    <img src="assets/images/minia/MINIA POUR MANGER 2107 1.webp" alt="" loading="lazy" />
+    <img src="assets/images/minia/MINIA POUR MANGER 2128 1.webp" alt="" loading="lazy" />
+    <img src="assets/images/minia/MINIA POUR MANGER 2162 1.webp" alt="" loading="lazy" />
+    <img src="assets/images/minia/MINIA POUR MANGER 2171 1.webp" alt="" loading="lazy" />
+    <img src="assets/images/minia/MINIA POUR MANGER 2190 1.webp" alt="" loading="lazy" />
+    <img src="assets/images/minia/MINIA POUR MANGER 2194 1.webp" alt="" loading="lazy" />
+    <img src="assets/images/minia/MINIA POUR MANGER 2195 1.webp" alt="" loading="lazy" />
     <!-- Duplicate -->
-    <img src="assets/images/minia/MINIA POUR MANGER 2107 1.jpg" alt="" loading="lazy" />
-    <img src="assets/images/minia/MINIA POUR MANGER 2128 1.jpg" alt="" loading="lazy" />
-    <img src="assets/images/minia/MINIA POUR MANGER 2162 1.jpg" alt="" loading="lazy" />
-    <img src="assets/images/minia/MINIA POUR MANGER 2171 1.jpg" alt="" loading="lazy" />
-    <img src="assets/images/minia/MINIA POUR MANGER 2190 1.jpg" alt="" loading="lazy" />
-    <img src="assets/images/minia/MINIA POUR MANGER 2194 1.jpg" alt="" loading="lazy" />
-    <img src="assets/images/minia/MINIA POUR MANGER 2195 1.jpg" alt="" loading="lazy" />
+    <img src="assets/images/minia/MINIA POUR MANGER 2107 1.webp" alt="" loading="lazy" />
+    <img src="assets/images/minia/MINIA POUR MANGER 2128 1.webp" alt="" loading="lazy" />
+    <img src="assets/images/minia/MINIA POUR MANGER 2162 1.webp" alt="" loading="lazy" />
+    <img src="assets/images/minia/MINIA POUR MANGER 2171 1.webp" alt="" loading="lazy" />
+    <img src="assets/images/minia/MINIA POUR MANGER 2190 1.webp" alt="" loading="lazy" />
+    <img src="assets/images/minia/MINIA POUR MANGER 2194 1.webp" alt="" loading="lazy" />
+    <img src="assets/images/minia/MINIA POUR MANGER 2195 1.webp" alt="" loading="lazy" />
   </div>
 </div>
 
 <!-- Row 4 – scrollRight — quasi invisible, fondu vers le bas -->
 <div class="thumb-row-wrap-fade">
   <div class="thumb-track row4">
-    <img src="assets/images/minia/MINIA POUR MANGER 2202 1.jpg" alt="" loading="lazy" />
-    <img src="assets/images/minia/MINIA POUR MANGER 2207 1.jpg" alt="" loading="lazy" />
-    <img src="assets/images/minia/MINIA POUR MANGER 2209 1.jpg" alt="" loading="lazy" />
-    <img src="assets/images/minia/MINIA POUR SANS PERMISSION 99 1.jpg" alt="" loading="lazy" />
-    <img src="assets/images/minia/MINIA POUR YOMI 515 1.jpg" alt="" loading="lazy" />
-    <img src="assets/images/minia/MINIA POUR YOMI 520 V3 1.jpg" alt="" loading="lazy" />
-    <img src="assets/images/minia/MINIA POUR YOMI 533 V2 1.jpg" alt="" loading="lazy" />
+    <img src="assets/images/minia/MINIA POUR MANGER 2202 1.webp" alt="" loading="lazy" />
+    <img src="assets/images/minia/MINIA POUR MANGER 2207 1.webp" alt="" loading="lazy" />
+    <img src="assets/images/minia/MINIA POUR MANGER 2209 1.webp" alt="" loading="lazy" />
+    <img src="assets/images/minia/MINIA POUR SANS PERMISSION 99 1.webp" alt="" loading="lazy" />
+    <img src="assets/images/minia/MINIA POUR YOMI 515 1.webp" alt="" loading="lazy" />
+    <img src="assets/images/minia/MINIA POUR YOMI 520 V3 1.webp" alt="" loading="lazy" />
+    <img src="assets/images/minia/MINIA POUR YOMI 533 V2 1.webp" alt="" loading="lazy" />
     <!-- Duplicate -->
-    <img src="assets/images/minia/MINIA POUR MANGER 2202 1.jpg" alt="" loading="lazy" />
-    <img src="assets/images/minia/MINIA POUR MANGER 2207 1.jpg" alt="" loading="lazy" />
-    <img src="assets/images/minia/MINIA POUR MANGER 2209 1.jpg" alt="" loading="lazy" />
-    <img src="assets/images/minia/MINIA POUR SANS PERMISSION 99 1.jpg" alt="" loading="lazy" />
-    <img src="assets/images/minia/MINIA POUR YOMI 515 1.jpg" alt="" loading="lazy" />
-    <img src="assets/images/minia/MINIA POUR YOMI 520 V3 1.jpg" alt="" loading="lazy" />
-    <img src="assets/images/minia/MINIA POUR YOMI 533 V2 1.jpg" alt="" loading="lazy" />
+    <img src="assets/images/minia/MINIA POUR MANGER 2202 1.webp" alt="" loading="lazy" />
+    <img src="assets/images/minia/MINIA POUR MANGER 2207 1.webp" alt="" loading="lazy" />
+    <img src="assets/images/minia/MINIA POUR MANGER 2209 1.webp" alt="" loading="lazy" />
+    <img src="assets/images/minia/MINIA POUR SANS PERMISSION 99 1.webp" alt="" loading="lazy" />
+    <img src="assets/images/minia/MINIA POUR YOMI 515 1.webp" alt="" loading="lazy" />
+    <img src="assets/images/minia/MINIA POUR YOMI 520 V3 1.webp" alt="" loading="lazy" />
+    <img src="assets/images/minia/MINIA POUR YOMI 533 V2 1.webp" alt="" loading="lazy" />
   </div>
 </div>
 
@@ -2368,14 +2538,50 @@
 ═══════════════════════════════════════════════════════════ -->
 <section id="modules">
 
-  <!-- Lumière modules — ajuste top/left/width dans .modules-light dans le CSS -->
+  <!-- Lumière modules -->
   <img class="modules-light" src="assets/images/hero/Modules.png" alt="" aria-hidden="true">
 
-  <div class="section-header fi">
+  <div class="modules-grid">
+
+  <!-- Colonne gauche : texte sticky -->
+  <div class="modules-left fi">
     <h2>6 modules, 1 seul objectif&nbsp;: ton premier client</h2>
+
+    <div class="pour-qui">
+      <h3>Pour qui ?</h3>
+      <ul class="pour-qui-list">
+        <li>
+          <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Tu n'as jamais ouvert Photoshop de ta vie
+        </li>
+        <li>
+          <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Tu fais d&eacute;j&agrave; des minias mais tu gal&egrave;res &agrave; les vendre
+        </li>
+        <li>
+          <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Tu veux une m&eacute;thode structur&eacute;e, pas juste des tutos YouTube &eacute;pars
+        </li>
+        <li>
+          <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Tu veux d&eacute;crocher ton premier client en moins de 30 jours
+        </li>
+      </ul>
+      <p class="pour-qui-note">Le Module 1 est con&ccedil;u pour les vrais d&eacute;butants  - z&eacute;ro pr&eacute;requis.</p>
+    </div>
   </div>
 
-  <div class="modules-grid">
+  <!-- Colonne droite : wrapper -->
+  <div class="modules-right-wrapper">
+  <div class="modules-nav">
+    <button id="mod-prev" aria-label="Module pr&eacute;c&eacute;dent">
+      <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+    </button>
+    <button id="mod-next" aria-label="Module suivant">
+      <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
+  </div>
+  <div class="modules-carousel" id="modules-carousel">
 
     <!-- Module 1 -->
     <div class="mod-card fi">
@@ -2387,7 +2593,7 @@
           <span class="mod-card-name">Les Bases</span>
           <div class="mod-badge"><span class="dot-pulse"></span>Module 1</div>
         </div>
-        <p class="mod-card-desc">De z&eacute;ro &agrave; autonome sur Photoshop en quelques jours, m&ecirc;me si tu n&rsquo;as jamais ouvert le logiciel</p>
+        <p class="mod-card-desc">De z&eacute;ro &agrave; autonome sur Photoshop en quelques jours, m&ecirc;me si tu n'as jamais ouvert le logiciel</p>
       </div>
     </div>
 
@@ -2401,7 +2607,7 @@
           <span class="mod-card-name">La Th&eacute;orie</span>
           <div class="mod-badge"><span class="dot-pulse"></span>Module 2</div>
         </div>
-        <p class="mod-card-desc">Les principes de design qui font qu&rsquo;un cr&eacute;ateur facture 80&euro; et un autre 300&euro; pour la m&ecirc;me minia</p>
+        <p class="mod-card-desc">Les principes de design qui font qu'un cr&eacute;ateur facture 80&euro; et un autre 300&euro; pour la m&ecirc;me minia</p>
       </div>
     </div>
 
@@ -2415,7 +2621,7 @@
           <span class="mod-card-name">Les Miniatures</span>
           <div class="mod-badge"><span class="dot-pulse"></span>Module 3</div>
         </div>
-        <p class="mod-card-desc">Cr&eacute;e des minias que les YouTubeurs veulent acheter, les techniques exactes que j&rsquo;utilise pour mes propres clients</p>
+        <p class="mod-card-desc">Cr&eacute;e des minias que les YouTubeurs veulent acheter, les techniques exactes que j'utilise pour mes propres clients</p>
       </div>
     </div>
 
@@ -2426,10 +2632,10 @@
       </div>
       <div class="mod-card-body">
         <div class="mod-card-row">
-          <span class="mod-card-name">Ma&icirc;triser l&rsquo;IA</span>
+          <span class="mod-card-name">Ma&icirc;triser l'IA</span>
           <div class="mod-badge"><span class="dot-pulse"></span>Module 4</div>
         </div>
-        <p class="mod-card-desc">Produis 2x plus vite gr&acirc;ce &agrave; l&rsquo;IA, plus de minias livr&eacute;es = plus de revenus chaque mois</p>
+        <p class="mod-card-desc">Produis 2x plus vite gr&acirc;ce &agrave; l'IA, plus de minias livr&eacute;es = plus de revenus chaque mois</p>
       </div>
     </div>
 
@@ -2461,7 +2667,11 @@
       </div>
     </div>
 
-  </div>
+  </div><!-- .modules-carousel -->
+  <div class="modules-fade" aria-hidden="true"></div>
+  </div><!-- .modules-right-wrapper -->
+
+  </div><!-- .modules-grid -->
 
   <div class="modules-cta fi">
     <a href="https://pay.minia-pro.com/-paiement" class="hero-btn" target="_blank" rel="noopener noreferrer">Rejoindre<span class="hero-btn-glow"></span></a>
@@ -2477,21 +2687,21 @@
 
   <!-- Light beams – left (Figma PNGs, plus-lighter blend) -->
   <div class="light-group" aria-hidden="true">
-    <img src="assets/images/lights/1 Plus lighter.png" alt="" />
-    <img src="assets/images/lights/2 Plus lighter.png" alt="" />
-    <img src="assets/images/lights/3 Plus lighter.png" alt="" />
-    <img src="assets/images/lights/4 Plus lighter.png" alt="" />
-    <img src="assets/images/lights/5 Plus lighter.png" alt="" />
-    <img src="assets/images/lights/6 Plus lighter.png" alt="" />
+    <img src="assets/images/lights/1 Plus lighter.webp" alt="" />
+    <img src="assets/images/lights/2 Plus lighter.webp" alt="" />
+    <img src="assets/images/lights/3 Plus lighter.webp" alt="" />
+    <img src="assets/images/lights/4 Plus lighter.webp" alt="" />
+    <img src="assets/images/lights/5 Plus lighter.webp" alt="" />
+    <img src="assets/images/lights/6 Plus lighter.webp" alt="" />
   </div>
   <!-- Light beams – right (mirrored) -->
   <div class="light-group right" aria-hidden="true">
-    <img src="assets/images/lights/1 Plus lighter.png" alt="" />
-    <img src="assets/images/lights/2 Plus lighter.png" alt="" />
-    <img src="assets/images/lights/3 Plus lighter.png" alt="" />
-    <img src="assets/images/lights/4 Plus lighter.png" alt="" />
-    <img src="assets/images/lights/5 Plus lighter.png" alt="" />
-    <img src="assets/images/lights/6 Plus lighter.png" alt="" />
+    <img src="assets/images/lights/1 Plus lighter.webp" alt="" />
+    <img src="assets/images/lights/2 Plus lighter.webp" alt="" />
+    <img src="assets/images/lights/3 Plus lighter.webp" alt="" />
+    <img src="assets/images/lights/4 Plus lighter.webp" alt="" />
+    <img src="assets/images/lights/5 Plus lighter.webp" alt="" />
+    <img src="assets/images/lights/6 Plus lighter.webp" alt="" />
   </div>
 
   <div class="offre-inner">
@@ -2547,7 +2757,7 @@
     <div class="avis-simple-item fi">
       <p class="avis-simple-quote"><span class="typewriter-inner" data-text="&quot;960€ contractés en une semaine, 1 client signé, 1 deal à +500€/mois en cours. Et j'étais à 50% de forme.&quot;"></span></p>
       <div class="avis-simple-author">
-        <img src="assets/images/PDP/Centre.jpg" alt="Evan" class="avis-simple-avatar" />
+        <img src="assets/images/PDP/Centre.webp" alt="Evan" class="avis-simple-avatar" />
         <span class="avis-simple-name">Evan</span>
         <span class="avis-simple-sep">|</span>
         <span class="avis-simple-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
@@ -2558,7 +2768,7 @@
     <div class="avis-simple-item fi">
       <p class="avis-simple-quote"><span class="typewriter-inner" data-text="&quot;Grâce au mentorat j'ai eu mon premier client pendant la formation. Aujourd'hui je travaille avec une chaîne de 380K. Sans Bitchi j'aurais pas imaginé commencer aussi bien.&quot;"></span></p>
       <div class="avis-simple-author">
-        <img src="assets/images/PDP/Malasse.jpg" alt="Malass" class="avis-simple-avatar" />
+        <img src="assets/images/PDP/Malasse.webp" alt="Malass" class="avis-simple-avatar" />
         <span class="avis-simple-name">Malass</span>
         <span class="avis-simple-sep">|</span>
         <span class="avis-simple-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
@@ -2569,7 +2779,7 @@
     <div class="avis-simple-item fi">
       <p class="avis-simple-quote"><span class="typewriter-inner" data-text="&quot;10 jours de mentorat et j'ai déjà fait 500€. Je m'étais engagé à 1500€/mois en 6 mois, j'ai fait le tiers en 10 jours.&quot;"></span></p>
       <div class="avis-simple-author">
-        <img src="assets/images/PDP/smokoue.jpg" alt="Smokoue" class="avis-simple-avatar" />
+        <img src="assets/images/PDP/smokoue.webp" alt="Smokoue" class="avis-simple-avatar" />
         <span class="avis-simple-name">Smokoue</span>
         <span class="avis-simple-sep">|</span>
         <span class="avis-simple-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
@@ -2602,7 +2812,7 @@
 
     <!-- Bonus 1 -->
     <div class="bonus-card fi">
-      <img src="assets/images/Bonus 1.jpg" alt="Bonus 1 minia.pro : Uncut stream — création de miniatures YouTube en direct" loading="lazy" />
+      <img src="assets/images/Bonus 1.webp" alt="Bonus 1 minia.pro : Uncut stream - création de miniatures YouTube en direct" loading="lazy" />
       <div class="bonus-overlay">
         <div class="bonus-title-row">
           <span class="bonus-title">Uncut stream minia</span>
@@ -2614,7 +2824,7 @@
 
     <!-- Bonus 2 -->
     <div class="bonus-card fi">
-      <img src="assets/images/Bonus 2.jpg" alt="Bonus 2 minia.pro : Tricks Photoshop pour améliorer tes miniatures" loading="lazy" />
+      <img src="assets/images/Bonus 2.webp" alt="Bonus 2 minia.pro : Tricks Photoshop pour améliorer tes miniatures" loading="lazy" />
       <div class="bonus-overlay">
         <div class="bonus-title-row">
           <span class="bonus-title">Tricks pour les nuls</span>
@@ -2626,7 +2836,7 @@
 
     <!-- Bonus 3 -->
     <div class="bonus-card fi">
-      <img src="assets/images/Bonus 3.jpg" alt="Bonus 3 minia.pro : Critiques personnalisées de tes miniatures" loading="lazy" />
+      <img src="assets/images/Bonus 3.webp" alt="Bonus 3 minia.pro : Critiques personnalisées de tes miniatures" loading="lazy" />
       <div class="bonus-overlay">
         <div class="bonus-title-row">
           <span class="bonus-title">Critiques personnalis&eacute;es</span>
@@ -2638,7 +2848,7 @@
 
     <!-- Bonus 4 -->
     <div class="bonus-card fi">
-      <img src="assets/images/Bonus 4.jpg" alt="Bonus 4 minia.pro : L'actualité du Miniamaker et tendances YouTube" loading="lazy" />
+      <img src="assets/images/Bonus 4.webp" alt="Bonus 4 minia.pro : L'actualité du Miniamaker et tendances YouTube" loading="lazy" />
       <div class="bonus-overlay">
         <div class="bonus-title-row">
           <span class="bonus-title">L&rsquo;actu du Miniamaker</span>
@@ -2805,7 +3015,7 @@
     videoCard.innerHTML = `
       <iframe
         src="https://www.youtube.com/embed/XUtLB_a4wmI?autoplay=1&rel=0&modestbranding=1&color=white"
-        title="minia.pro — La formation miniatures YouTube n°1 en France"
+        title="minia.pro - La formation miniatures YouTube n°1 en France"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen
@@ -2865,23 +3075,14 @@
     });
   });
 
-  /* ── 4. Effet 3D sur les mod-cards ── */
-  let _3dRaf = null;
-  document.querySelectorAll('.mod-card').forEach(card => {
-    card.addEventListener('mousemove', e => {
-      if (_3dRaf) cancelAnimationFrame(_3dRaf);
-      _3dRaf = requestAnimationFrame(() => {
-        const r = card.getBoundingClientRect();
-        const x = (e.clientX - r.left) / r.width - 0.5;
-        const y = (e.clientY - r.top) / r.height - 0.5;
-        card.style.transform = `perspective(700px) rotateY(${x * 8}deg) rotateX(${-y * 8}deg) translateZ(4px)`;
-      });
-    });
-    card.addEventListener('mouseleave', () => {
-      if (_3dRaf) cancelAnimationFrame(_3dRaf);
-      card.style.transform = '';
-    });
-  });
+  /* ── 4. Modules carousel nav ── */
+  const modCarousel = document.getElementById('modules-carousel');
+  const modPrev = document.getElementById('mod-prev');
+  const modNext = document.getElementById('mod-next');
+  if (modCarousel && modPrev && modNext) {
+    modNext.addEventListener('click', () => modCarousel.scrollBy({ top: 300, behavior: 'smooth' }));
+    modPrev.addEventListener('click', () => modCarousel.scrollBy({ top: -300, behavior: 'smooth' }));
+  }
 
   /* ── 5. Carousel miniatures — ralentissement au hover ── */
   const thumbRows = document.querySelector('.thumb-rows');
@@ -3040,7 +3241,6 @@
     });
   }
   if (window.matchMedia('(pointer:fine)').matches) {
-    initTilt('.mod-card', 6);
     initTilt('.bonus-card', 8);
   }
 
