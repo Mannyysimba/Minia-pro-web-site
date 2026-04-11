@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio de Miniamaker sans client, comment le construire en partant de zéro | minia.pro</title>
+  <meta name="description" content="T'as z&eacute;ro client, z&eacute;ro miniature livr&eacute;e, personne te conna&icirc;t. Voici la m&eacute;thode exacte pour construire un portfolio qui fait signer, en partant de rien." />
+  <link rel="canonical" href="https://www.minia-pro.com/formation-gratuite/portfolio-sans-client.html" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Bitchi" />
+  <meta name="theme-color" content="#ffffff" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Portfolio de Miniamaker sans client, comment le construire" />
+  <meta property="og:description" content="La m&eacute;thode exacte pour b&acirc;tir un portfolio qui fait signer quand t'as z&eacute;ro client et z&eacute;ro exp&eacute;rience." />
+  <meta property="og:url" content="https://www.minia-pro.com/formation-gratuite/portfolio-sans-client.html" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:site_name" content="minia.pro" />
+
+  <link rel="icon" type="image/png" href="../assets/images/faviconV2.png" />
+  <link rel="apple-touch-icon" href="../assets/images/faviconV2.png" />
+
+  <meta property="og:image" content="https://www.minia-pro.com/assets/images/faviconV2.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Portfolio de Miniamaker sans client, comment le construire en partant de zéro",
+    "author": { "@type": "Person", "name": "Bitchi", "url": "https://minia-pro.com" },
+    "publisher": { "@type": "Organization", "name": "minia.pro", "url": "https://minia-pro.com", "logo": { "@type": "ImageObject", "url": "https://www.minia-pro.com/assets/images/faviconV2.png" } },
+    "datePublished": "2026-04-12",
+    "dateModified": "2026-04-12",
+    "url": "https://www.minia-pro.com/formation-gratuite/portfolio-sans-client.html",
+    "mainEntityOfPage": "https://www.minia-pro.com/formation-gratuite/portfolio-sans-client.html",
+    "image": "https://www.minia-pro.com/assets/images/faviconV2.png",
+    "description": "Comment b\u00e2tir un portfolio de Miniamaker en partant de z\u00e9ro, sans client et sans exp\u00e9rience."
+  }
+  </script>
+
+  <style>
+    @font-face { font-family:'Satoshi'; src:url('../assets/fonts/Satoshi/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Light.woff2') format('woff2'); font-weight:300; font-display:swap; }
+    @font-face { font-family:'Satoshi'; src:url('../assets/fonts/Satoshi/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Regular.woff2') format('woff2'); font-weight:400; font-display:swap; }
+    @font-face { font-family:'Satoshi'; src:url('../assets/fonts/Satoshi/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Medium.woff2') format('woff2'); font-weight:500; font-display:swap; }
+    @font-face { font-family:'Satoshi'; src:url('../assets/fonts/Satoshi/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Bold.woff2') format('woff2'); font-weight:700; font-display:swap; }
+    @font-face { font-family:'Satoshi'; src:url('../assets/fonts/Satoshi/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Black.woff2') format('woff2'); font-weight:900; font-display:swap; }
+
+    *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+    html { scroll-behavior:smooth; overflow-x:hidden; }
+    body { position:relative; font-family:'Satoshi', sans-serif; background:#ffffff; color:#0a0a0a; line-height:1.7; }
+    body::before { content:''; position:fixed; inset:0; background-image:url('../assets/DOT%20BLACK%20NEW.png'); background-repeat:repeat; background-size:600px auto; opacity:0.7; pointer-events:none; z-index:0; }
+    body > * { position:relative; z-index:1; }
+    ::-webkit-scrollbar { width:6px; }
+    ::-webkit-scrollbar-track { background:#ffffff; }
+    ::-webkit-scrollbar-thumb { background:rgba(248,129,78,0.4); border-radius:3px; }
+    ::selection { background:rgba(255, 32, 7, 0.707); color:#fff; }
+    body { cursor: url('https://i.imgur.com/SK4K9Z3.png') 16 0, auto !important; }
+
+    .logo { font-size:18px; font-weight:300; color:#0a0a0a; text-decoration:none; letter-spacing:0.01em; display:inline-block; }
+    .logo .dot { color:#e02020; }
+
+    #navbar { position:fixed; top:0; left:0; right:0; z-index:1000; display:flex; align-items:center; justify-content:space-between; background:rgba(255,255,255,0.20); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border-bottom:1px solid rgba(0,0,0,0.06); padding:14px 60px; white-space:nowrap; transition:background 0.3s; }
+    #navbar.scrolled { background:rgba(255,255,255,0.85); }
+    .nav-pill { display:flex; align-items:center; gap:8px; background:none; border:none; padding:0; }
+    .nav-pill a { color:#0a0a0a; text-decoration:none; font-size:15px; font-weight:500; padding:8px 18px; transition:opacity 0.2s; }
+    .nav-pill a:hover { opacity:0.55; }
+    .nav-btn { position:relative; display:inline-flex; align-items:center; justify-content:center; background:#fff; border:none; border-radius:999px; padding:8px 22px; font-size:14px; font-weight:600; color:#000; cursor:pointer; font-family:'Satoshi', sans-serif; text-decoration:none; overflow:hidden; box-shadow:0 5px 15px rgba(0,0,0,0.4); transition:box-shadow 0.35s ease; }
+    .nav-btn::before { content:''; position:absolute; inset:-2px; border-radius:999px; background:linear-gradient(105deg, #FFA96C 0%, rgba(255,169,108,0.3) 50%, transparent 100%); z-index:-1; pointer-events:none; }
+    .nav-btn::after { content:''; position:absolute; inset:0; border-radius:999px; background:radial-gradient(ellipse at 15% 50%, rgba(255,180,100,0.35) 0%, transparent 65%); opacity:0; transition:opacity 0.4s ease; pointer-events:none; }
+    .nav-btn:hover::after { opacity:1; }
+    .nav-btn:hover { box-shadow:0 5px 15px rgba(0,0,0,0.4), 0 0 20px rgba(255,169,108,0.4); }
+    .hamburger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:4px; }
+    .hamburger span { display:block; width:24px; height:2px; background:#0a0a0a; border-radius:2px; transition:transform 0.3s, opacity 0.3s; }
+    .hamburger.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity:0; }
+    .hamburger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+    #mobile-menu { display:none; position:fixed; inset:0; background:rgba(255,255,255,0.97); z-index:999; flex-direction:column; align-items:center; justify-content:center; gap:32px; }
+    #mobile-menu.open { display:flex; }
+    #mobile-menu a { color:#0a0a0a; text-decoration:none; font-size:28px; font-weight:500; transition:opacity 0.2s; }
+    #mobile-menu a:hover { opacity:0.6; }
+
+    .article-hero { padding:160px 20px 60px; text-align:center; max-width:800px; margin:0 auto; }
+    .article-hero h1 { font-size:42px; font-weight:900; line-height:1.15; margin-bottom:20px; color:#0a0a0a; }
+    .article-hero h1 span { color:#FFA96C; }
+    .article-meta { font-size:15px; color:rgba(0,0,0,0.5); display:flex; align-items:center; justify-content:center; gap:16px; }
+    .article-meta .sep { width:4px; height:4px; border-radius:50%; background:rgba(0,0,0,0.3); }
+
+    .article-body { max-width:720px; margin:0 auto; padding:0 24px 80px; }
+    .article-body p { font-size:17px; color:rgba(0,0,0,0.75); margin-bottom:24px; }
+    .article-body h2 { font-size:28px; font-weight:700; margin:56px 0 20px; color:#0a0a0a; border-left:3px solid #FFA96C; padding-left:16px; }
+    .article-body h3 { font-size:20px; font-weight:600; margin:32px 0 12px; color:#FFA96C; }
+    .article-body ul { margin:0 0 24px 24px; color:rgba(0,0,0,0.75); font-size:17px; }
+    .article-body ul li { margin-bottom:8px; }
+    .article-body strong { color:#0a0a0a; font-weight:700; }
+    .article-body em { color:#FFA96C; font-style:normal; font-weight:600; }
+    .article-body blockquote { border-left:3px solid #FFA96C; padding:16px 24px; margin:0 0 24px; background:rgba(255,169,108,0.06); border-radius:0 12px 12px 0; font-size:16px; color:rgba(0,0,0,0.7); font-style:italic; }
+    .article-body a { color:#FFA96C; text-decoration:underline; font-weight:600; }
+    .article-body a:hover { opacity:0.8; }
+
+    .article-cta { text-align:center; padding:60px 24px 100px; max-width:720px; margin:0 auto; }
+    .article-cta p { font-size:18px; color:rgba(0,0,0,0.6); margin-bottom:32px; }
+    .cta-btn { display:inline-flex; align-items:center; justify-content:center; background:#FFA96C; color:#131414; font-family:'Satoshi', sans-serif; font-size:18px; font-weight:700; padding:16px 48px; border-radius:999px; text-decoration:none; transition:transform 0.2s, box-shadow 0.3s; box-shadow:0 4px 24px rgba(255,169,108,0.3); }
+    .cta-btn:hover { transform:translateY(-2px); box-shadow:0 8px 32px rgba(255,169,108,0.5); }
+
+    .mid-cta {
+      text-align:center;
+      margin:48px 0;
+      padding:36px 24px;
+      background:rgba(255,169,108,0.06);
+      border:1px solid rgba(255,169,108,0.15);
+      border-radius:16px;
+    }
+    .mid-cta p { font-size:16px; color:rgba(0,0,0,0.6); margin-bottom:16px; }
+    .mid-cta .cta-btn { font-size:15px; padding:12px 32px; }
+
+    .back-link { display:inline-block; margin-bottom:40px; color:#FFA96C; text-decoration:none; font-size:15px; font-weight:500; transition:opacity 0.2s; }
+    .back-link:hover { opacity:0.7; }
+
+    #footer-outer { background:#0a0a0a; padding:0; }
+    .footer-inner { background:#0a0a0a; border-radius:0; padding:56px 80px 80px; overflow:hidden; position:relative; }
+    .footer-watermark { position:absolute; bottom:0; left:50%; transform:translateX(-50%); width:100%; max-width:800px; pointer-events:none; user-select:none; }
+    .footer-watermark img { width:100%; display:block; }
+    .footer-hr { border:none; border-top:1px solid rgba(255,255,255,0.12); margin-bottom:40px; }
+    .footer-top { display:flex; align-items:flex-start; justify-content:space-between; gap:40px; margin-bottom:40px; position:relative; z-index:1; }
+    .footer-social-label { font-size:14px; opacity:0.6; margin-bottom:16px; }
+    .footer-social-icons { display:flex; gap:20px; align-items:center; }
+    .footer-social-icons a { color:#fff; opacity:0.75; transition:opacity 0.2s; display:flex; align-items:center; }
+    .footer-social-icons a:hover { opacity:1; }
+    .footer-legal-label { font-size:15px; font-weight:500; color:#fff; margin-bottom:16px; }
+    .footer-legal-links { display:flex; flex-direction:column; gap:8px; }
+    .footer-legal-links a { font-size:14px; color:#fff; text-decoration:none; opacity:0.75; transition:opacity 0.2s; }
+    .footer-legal-links a:hover { opacity:0.6; }
+    .footer-copy { text-align:center; font-size:14px; color:rgba(255,255,255,0.5); position:relative; z-index:1; }
+
+    @media (max-width:768px) {
+      body::before { background-size:200vw auto; background-repeat:repeat; }
+      #navbar { gap:16px; padding:8px 16px; }
+      .nav-pill { display:none; }
+      .nav-btn { display:none; }
+      .hamburger { display:flex; }
+      .article-hero { padding:100px 20px 40px; }
+      .article-hero h1 { font-size:28px; }
+      .article-body h2 { font-size:22px; }
+      .article-body p, .article-body ul { font-size:16px; }
+      .footer-inner { padding:40px 24px 80px; border-radius:0; }
+      .footer-top { flex-direction:column; gap:32px; align-items:center; }
+      .footer-social-icons { justify-content:center; }
+      .footer-legal-links { text-align:center; }
+      #footer-outer { padding:0; }
+    }
+    @media (max-width:480px) {
+      .article-hero h1 { font-size:24px; }
+      .article-body { padding:0 16px 60px; }
+      .article-cta { padding:40px 16px 80px; }
+      .cta-btn { font-size:16px; padding:14px 36px; }
+      .mid-cta { padding:28px 16px; }
+      .footer-inner { padding:32px 16px 60px; border-radius:0; }
+      #footer-outer { padding:0; }
+      .footer-copy { font-size:12px; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="mobile-menu" role="dialog" aria-modal="true" aria-label="Navigation mobile">
+  <a href="/" class="mobile-link">Accueil</a>
+  <a href="/formation-gratuite/" class="mobile-link" style="color:#FFA96C;">Formation Gratuite</a>
+  <a href="https://pay.minia-pro.com/-paiement" class="mobile-link" target="_blank" rel="noopener noreferrer" style="color:#f8814e;">Rejoindre</a>
+</div>
+
+<nav id="navbar" role="navigation" aria-label="Navigation principale">
+  <a href="/" class="logo" aria-label="minia.pro accueil">minia<span class="dot">.</span>pro</a>
+  <div class="nav-pill">
+    <a href="/">Accueil</a>
+    <a href="/#modules">Modules</a>
+    <a href="/#offre">Offre</a>
+    <a href="/#avis-simple">Avis</a>
+    <a href="/#faq">FAQ</a>
+    <a href="/formation-gratuite/" style="color:#FFA96C;">Formation Gratuite</a>
+  </div>
+  <a class="nav-btn" href="https://pay.minia-pro.com/-paiement" target="_blank" rel="noopener noreferrer">Rejoindre</a>
+  <button class="hamburger" id="hamburger" aria-label="Ouvrir le menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<main data-article-id="portfolio-sans-client">
+
+<header class="article-hero">
+  <h1>Portfolio de Miniamaker <span>sans client</span>, comment le construire en partant de z&eacute;ro</h1>
+  <div class="article-meta">
+    <time datetime="2026-04-12">12 avril 2026</time>
+    <span class="sep"></span>
+    <span>8 min de lecture</span>
+  </div>
+</header>
+
+<article class="article-body">
+
+  <a href="/formation-gratuite/" class="back-link">&larr; Retour &agrave; la formation gratuite</a>
+
+  <p>Le truc le plus frustrant quand tu d&eacute;marres, c'est ce cercle vicieux. Tu veux un client, mais le client veut voir ton travail. Tu veux montrer ton travail, mais t'as aucun client pour qui bosser. R&eacute;sultat, tu tournes en rond et tu fais rien pendant 6 mois.</p>
+
+  <p>Je vais te donner la m&eacute;thode exacte que j'ai utilis&eacute;e, que Malass a utilis&eacute;e, que Smokoue a utilis&eacute;e. Tu vas construire un portfolio qui convertit, sans avoir besoin de signer quoi que ce soit en premier.</p>
+
+  <h2>Le paradoxe du premier client</h2>
+
+  <p>Ton futur client, un YouTubeur &agrave; 50k ou 200k abonn&eacute;s, il s'en fout que tu sois d&eacute;butant ou pas. Ce qu'il veut savoir c'est une chose : <strong>est-ce que t'es capable de produire une miniature qui correspond &agrave; sa cha&icirc;ne</strong>. Rien d'autre. Il veut une preuve.</p>
+
+  <p>Le probl&egrave;me c'est que tu lui envoies trois miniatures g&eacute;n&eacute;riques qui n'ont rien &agrave; voir avec son contenu, et &eacute;videmment il r&eacute;pond pas. Parce que ce qu'il voit c'est un random sur internet qui fait des minias al&eacute;atoires. Pas un professionnel qui a compris son univers.</p>
+
+  <p>La solution, c'est pas d'attendre qu'un client te tombe dessus. C'est de <em>fabriquer la preuve</em> avant d'en avoir besoin.</p>
+
+  <h2>La technique du portfolio ciblé</h2>
+
+  <p>Voil&agrave; comment je m'y prends, et comment je conseille &agrave; tous les membres de minia.pro de le faire.</p>
+
+  <p>Tu choisis <strong>5 cha&icirc;nes YouTube</strong> que tu aimerais avoir comme clients. Pas 50, pas 100. Cinq. Des cha&icirc;nes o&ugrave; tu vois que les miniatures sont moyennes, o&ugrave; tu penses pouvoir apporter quelque chose. Pas des monstres &agrave; 5M d'abonn&eacute;s, ils ont d&eacute;j&agrave; une &eacute;quipe. Pas des mini-cha&icirc;nes &agrave; 2k, elles paieront pas. La zone sweet spot, c'est <em>entre 30k et 500k abonn&eacute;s</em>.</p>
+
+  <p>Pour chaque cha&icirc;ne, tu choisis une vid&eacute;o r&eacute;cente et tu refais sa miniature &agrave; ta sauce. Tu respectes son identit&eacute;, ses couleurs, sa vibe, mais tu proposes une version am&eacute;lior&eacute;e. Le titre, tu le gardes identique pour que le client comprenne imm&eacute;diatement de quoi tu parles.</p>
+
+  <h2>Ce qui fait la diff&eacute;rence entre un portfolio moyen et un portfolio qui signe</h2>
+
+  <h3>1. La sp&eacute;cificit&eacute;</h3>
+
+  <p>Un portfolio g&eacute;n&eacute;rique avec 20 miniatures al&eacute;atoires sur des sujets random, c'est nul. &Ccedil;a dit rien. 5 miniatures cibl&eacute;es sur des vrais YouTubeurs fran&ccedil;ais qu'il conna&icirc;t peut-&ecirc;tre d&eacute;j&agrave;, &ccedil;a dit tout.</p>
+
+  <h3>2. La qualit&eacute;, jamais la quantit&eacute;</h3>
+
+  <p>5 miniatures excellentes valent mieux que 30 miniatures moyennes. Si t'as un doute sur une, tu la mets pas. Le premier coup d'&oelig;il de ton prospect d&eacute;termine tout. S'il voit une minia rat&eacute;e dans le tas, il ferme l'onglet.</p>
+
+  <h3>3. La mise en sc&egrave;ne</h3>
+
+  <p>Ne pr&eacute;sente pas tes miniatures comme une simple galerie d'images. Montre-les dans leur contexte, int&eacute;gr&eacute;es dans une interface YouTube avec le titre, les vues, le nom de la cha&icirc;ne. &Ccedil;a donne un contexte visuel imm&eacute;diat et &ccedil;a fait pro. Un mockup simple sur Figma suffit.</p>
+
+  <h3>4. L'&eacute;tude de cas</h3>
+
+  <p>Pour chaque minia, ajoute 3 lignes qui expliquent ta d&eacute;marche. &laquo; Pour cette vid&eacute;o, j'ai voulu exag&eacute;rer l'expression pour cr&eacute;er une tension &eacute;motionnelle, et j'ai utilis&eacute; un fond sombre pour faire ressortir le visage &raquo;. &Ccedil;a prouve que tu <em>r&eacute;fl&eacute;chis</em>, tu fais pas juste coller des images.</p>
+
+  <div class="mid-cta">
+    <p>Tu veux la m&eacute;thode compl&egrave;te pour construire un portfolio qui signe ton premier client en moins de 30 jours ?</p>
+    <a href="https://pay.minia-pro.com/-paiement?utm_source=formation-gratuite&utm_content=portfolio-sans-client" class="cta-btn" target="_blank" rel="noopener noreferrer">Rejoindre minia.pro</a>
+  </div>
+
+  <h2>O&ugrave; h&eacute;berger ton portfolio</h2>
+
+  <p>Pas besoin d'un site web avec un nom de domaine. Pas au d&eacute;but. Voici ce qui marche vraiment, class&eacute; par efficacit&eacute; pour notre m&eacute;tier :</p>
+
+  <ul>
+    <li><strong>Twitter / X.</strong> C'est l&agrave; que les YouTubeurs fran&ccedil;ais tra&icirc;nent. Tu postes tes miniatures avec un contexte, tu tagges le YouTubeur concern&eacute;, tu fais un thread explicatif. Gratuit, viral, direct. Mon compte <a href="https://x.com/Bitchiskk" target="_blank" rel="noopener noreferrer">@bitchiskk</a> est l&agrave;-dessus depuis le d&eacute;but, tu peux voir comment je pr&eacute;sente mes trucs si tu veux t'inspirer.</li>
+    <li><strong>Instagram.</strong> Moins efficace pour g&eacute;n&eacute;rer des leads B2B, mais bon pour construire une preuve sociale. Un feed propre avec 9 miniatures cibl&eacute;es et c'est d&eacute;j&agrave; solide.</li>
+    <li><strong>Behance / Dribbble.</strong> Utile si tu veux ressembler &agrave; un graphiste pro. Moins cibl&eacute; YouTube mais la credibilit&eacute; est l&agrave;.</li>
+    <li><strong>Un Notion public.</strong> &Ccedil;a para&icirc;t trop simple mais &ccedil;a marche super bien. Tu cr&eacute;es une page avec tes 5 &eacute;tudes de cas, tu partages le lien. Zero friction pour ton prospect.</li>
+  </ul>
+
+  <h2>L'erreur que tout le monde fait au d&eacute;but</h2>
+
+  <p>La plupart des gens, quand ils commencent, ils se lancent dans un portfolio &laquo; show off &raquo;. Des miniatures super techniques, avec 15 effets, des lumi&egrave;res partout, des mockups 3D. Des trucs qui crient &laquo; regardez comme je suis talentueux &raquo;.</p>
+
+  <p>Le YouTubeur qui regarde &ccedil;a, il pense pas &laquo; wow, quel talent &raquo;. Il pense <strong>&laquo; ok mais est-ce que &ccedil;a va fonctionner sur ma cha&icirc;ne &raquo;</strong>. Et souvent la r&eacute;ponse est non, parce que t'as fait du art book &agrave; la place d'un outil business.</p>
+
+  <p>Tes miniatures doivent ressembler &agrave; ce qui performe d&eacute;j&agrave; sur YouTube, pas &agrave; ce qui gagne des prix de design. La diff&eacute;rence est &eacute;norme.</p>
+
+  <blockquote>
+    Ton portfolio n'est pas l&agrave; pour prouver que t'es un artiste. Il est l&agrave; pour prouver que tu peux g&eacute;n&eacute;rer du clic sur une cha&icirc;ne YouTube. C'est deux m&eacute;tiers diff&eacute;rents.
+  </blockquote>
+
+  <h2>Comment utiliser ton portfolio pour signer</h2>
+
+  <p>Une fois que t'as tes 5 miniatures cibl&eacute;es, tu passes &agrave; l'attaque. Pas 10 jours plus tard, <em>le soir m&ecirc;me</em>.</p>
+
+  <p>Tu vas sur Twitter, tu DM les 5 YouTubeurs que tu as cibl&eacute;s. Un DM court, direct, sans bla-bla. Tu leur dis exactement : &laquo; Salut, j'ai refait ta miniature de [nom de la vid&eacute;o], voil&agrave; &raquo; et tu joins l'image. Pas de pitch commercial, pas de &laquo; je me pr&eacute;sente &raquo;, pas de CV. Juste le travail.</p>
+
+  <p>Sur 5 DM, tu vas avoir 1 ou 2 r&eacute;ponses int&eacute;ress&eacute;es. C'est un ratio normal. Et l&agrave;, la discussion commence.</p>
+
+  <p>Je parle de cette m&eacute;thode exacte dans une des vid&eacute;os de ma cha&icirc;ne YouTube <strong>Bitchi sensei</strong>, si tu veux voir comment je la d&eacute;cortique en r&eacute;el avec des exemples de DM que j'ai r&eacute;ellement envoy&eacute;s.</p>
+
+  <h2>Le cas Malass</h2>
+
+  <p>Malass a fait exactement &ccedil;a. Pendant sa formation &agrave; minia.pro, il a choisi 5 cha&icirc;nes, il a refait leurs miniatures, et il a DM. Une des cha&icirc;nes, 380k abonn&eacute;s, a r&eacute;pondu le jour m&ecirc;me. Il a commenc&eacute; &agrave; bosser avec eux dans la semaine.</p>
+
+  <p>Il avait z&eacute;ro exp&eacute;rience pro avant &ccedil;a. Rien. Z&eacute;ro client, z&eacute;ro miniature livr&eacute;e. Juste 5 miniatures refaites &agrave; la main, une m&eacute;thode, et le cran d'envoyer un DM.</p>
+
+  <h2>Ta mission cette semaine</h2>
+
+  <p>Arr&ecirc;te de lire, commence &agrave; faire. Voil&agrave; ton plan pour les 7 prochains jours :</p>
+
+  <ul>
+    <li>Lundi : tu choisis tes 5 cha&icirc;nes cibles.</li>
+    <li>Mardi &agrave; vendredi : une miniature refaite par jour, propre, cibl&eacute;e.</li>
+    <li>Samedi : tu montes ton Notion ou ta page Twitter avec les 5 &eacute;tudes de cas.</li>
+    <li>Dimanche : tu envoies les 5 DM.</li>
+  </ul>
+
+  <p>Dans 7 jours tu vas avoir un vrai portfolio, 5 approches commerciales envoy&eacute;es, et une bonne chance d'avoir d&eacute;j&agrave; une discussion lanc&eacute;e avec un client potentiel. C'est plus que ce que la plupart des gens font en 6 mois.</p>
+
+</article>
+
+<section class="article-cta">
+  <p>Un portfolio qui signe, c'est 20% du taff. Le reste, c'est la strat&eacute;gie de cha&icirc;ne, le pricing, la relation client. Tout &ccedil;a, on le voit en d&eacute;tail dans la formation.</p>
+  <a href="https://pay.minia-pro.com/-paiement?utm_source=formation-gratuite&utm_content=portfolio-sans-client" class="cta-btn" target="_blank" rel="noopener noreferrer">Rejoindre minia.pro</a>
+</section>
+
+</main>
+
+<footer id="footer-outer">
+  <div class="footer-inner">
+    <hr class="footer-hr" />
+    <div class="footer-top">
+      <a href="/" class="logo" style="color:#fff;" aria-label="minia.pro">minia<span class="dot">.</span>pro</a>
+      <div>
+        <p class="footer-social-label">Vous pouvez me suivre sur :</p>
+        <div class="footer-social-icons">
+          <a href="https://x.com/Bitchiskk" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.258 5.63 5.906-5.63Zm-1.161 17.52h1.833L7.084 4.126H5.117Z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/bitchi_92/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.7" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@bitchiskk" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <svg width="24" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-legal-label">L&eacute;gales :</p>
+        <div class="footer-legal-links">
+          <a href="/mentions-legales.html">Mentions l&eacute;gales</a>
+          <a href="/cgv.html">Conditions de vente</a>
+          <a href="/politique-confidentialite.html">Politique de confidentialit&eacute;</a>
+          <a href="/formation-gratuite/">Formation Gratuite</a>
+        </div>
+      </div>
+    </div>
+    <p class="footer-copy">&copy; www.minia-pro.com | Tous droits r&eacute;serv&eacute;s</p>
+    <div class="footer-watermark" aria-hidden="true">
+      <img src="../assets/minia.pro.png" alt="" loading="lazy" />
+    </div>
+  </div>
+</footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-expanded', String(isOpen));
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+  document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    });
+  });
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+</script>
+
+<script src="tracker.js"></script>
+</body>
+</html>

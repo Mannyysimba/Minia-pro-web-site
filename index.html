@@ -241,16 +241,17 @@
     }
 
     /* ─── HALOS ORANGE SITE-WIDE — light mode uniquement ─────────────
-       Couche absolue qui s'étend sur toute la hauteur du document.
-       mix-blend-mode:multiply teinte les sections blanches sans
-       surexposer les textes ni les zones sombres (footer reste noir).
+       Couche absolue qui s'étend sur toute la hauteur du document,
+       positionnée DERRIÈRE les sections (z-index:0). Les sections
+       deviennent transparentes en light mode pour laisser passer le fond
+       blanc + les halos.
     ────────────────────────────────────────────────────────────── */
     body > .site-glow-bg {
       position:absolute;
       inset:0;
       pointer-events:none;
       overflow:hidden;
-      z-index:9998;
+      z-index:0;
       opacity:0;
       transition:opacity 0.6s ease;
     }
@@ -261,7 +262,6 @@
       position:absolute;
       border-radius:50%;
       filter:blur(130px);
-      mix-blend-mode:multiply;
       will-change:transform;
       animation-timing-function:ease-in-out;
       animation-iteration-count:infinite;
@@ -281,65 +281,76 @@
     .site-glow.g1 {
       top:-4%; left:-5%;
       width:520px; height:520px;
-      background:radial-gradient(circle, rgba(255,165,100,0.7) 0%, rgba(255,133,71,0.25) 45%, transparent 72%);
+      background:radial-gradient(circle, rgba(255,165,100,0.45) 0%, rgba(255,133,71,0.15) 45%, transparent 72%);
       animation:glowDriftA 20s infinite;
     }
     .site-glow.g2 {
       top:6%; right:-6%;
       width:600px; height:600px;
-      background:radial-gradient(circle, rgba(255,180,120,0.65) 0%, rgba(255,140,75,0.22) 48%, transparent 74%);
+      background:radial-gradient(circle, rgba(255,180,120,0.42) 0%, rgba(255,140,75,0.14) 48%, transparent 74%);
       animation:glowDriftB 24s -5s infinite;
     }
     .site-glow.g3 {
       top:18%; left:8%;
       width:440px; height:440px;
-      background:radial-gradient(circle, rgba(255,170,105,0.6) 0%, rgba(255,140,70,0.2) 45%, transparent 72%);
+      background:radial-gradient(circle, rgba(255,170,105,0.4) 0%, rgba(255,140,70,0.13) 45%, transparent 72%);
       animation:glowDriftC 22s -8s infinite;
     }
     .site-glow.g4 {
       top:30%; right:4%;
       width:540px; height:540px;
-      background:radial-gradient(circle, rgba(255,160,90,0.62) 0%, rgba(255,130,65,0.22) 46%, transparent 73%);
+      background:radial-gradient(circle, rgba(255,160,90,0.42) 0%, rgba(255,130,65,0.14) 46%, transparent 73%);
       animation:glowDriftA 21s -3s infinite;
     }
     .site-glow.g5 {
       top:42%; left:-3%;
       width:480px; height:480px;
-      background:radial-gradient(circle, rgba(255,175,115,0.65) 0%, rgba(255,140,75,0.22) 47%, transparent 73%);
+      background:radial-gradient(circle, rgba(255,175,115,0.42) 0%, rgba(255,140,75,0.14) 47%, transparent 73%);
       animation:glowDriftB 23s -10s infinite;
     }
     .site-glow.g6 {
       top:52%; right:10%;
       width:500px; height:500px;
-      background:radial-gradient(circle, rgba(255,165,95,0.6) 0%, rgba(255,135,70,0.22) 45%, transparent 72%);
+      background:radial-gradient(circle, rgba(255,165,95,0.4) 0%, rgba(255,135,70,0.14) 45%, transparent 72%);
       animation:glowDriftC 25s -6s infinite;
     }
     .site-glow.g7 {
       top:64%; left:14%;
       width:460px; height:460px;
-      background:radial-gradient(circle, rgba(255,170,100,0.6) 0%, rgba(255,140,70,0.2) 46%, transparent 72%);
+      background:radial-gradient(circle, rgba(255,170,100,0.4) 0%, rgba(255,140,70,0.13) 46%, transparent 72%);
       animation:glowDriftA 19s -12s infinite;
     }
     .site-glow.g8 {
       top:74%; right:-4%;
       width:560px; height:560px;
-      background:radial-gradient(circle, rgba(255,180,115,0.6) 0%, rgba(255,140,75,0.22) 47%, transparent 73%);
+      background:radial-gradient(circle, rgba(255,180,115,0.4) 0%, rgba(255,140,75,0.14) 47%, transparent 73%);
       animation:glowDriftB 26s -9s infinite;
     }
     .site-glow.g9 {
       top:84%; left:6%;
       width:480px; height:480px;
-      background:radial-gradient(circle, rgba(255,170,105,0.58) 0%, rgba(255,135,70,0.2) 46%, transparent 72%);
+      background:radial-gradient(circle, rgba(255,170,105,0.38) 0%, rgba(255,135,70,0.13) 46%, transparent 72%);
       animation:glowDriftC 22s -14s infinite;
     }
     .site-glow.g10 {
       top:92%; right:18%;
       width:420px; height:420px;
-      background:radial-gradient(circle, rgba(255,165,95,0.55) 0%, rgba(255,130,65,0.18) 45%, transparent 72%);
+      background:radial-gradient(circle, rgba(255,165,95,0.36) 0%, rgba(255,130,65,0.12) 45%, transparent 72%);
       animation:glowDriftA 24s -7s infinite;
     }
     @media (prefers-reduced-motion: reduce) {
       .site-glow { animation:none !important; }
+    }
+
+    /* Sections transparentes en light mode pour laisser passer les halos */
+    [data-theme="light"] #hero,
+    [data-theme="light"] #clients,
+    [data-theme="light"] #modules,
+    [data-theme="light"] #offre,
+    [data-theme="light"] #avis-simple,
+    [data-theme="light"] #bonus,
+    [data-theme="light"] #faq {
+      background:transparent;
     }
 
     /* ─── SCROLLBAR ──────────────────────────────────────────────── */
