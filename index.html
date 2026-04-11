@@ -87,8 +87,7 @@
       --price-card-bg: rgba(0,0,0,0.25);
       --scrollbar-track: #131414;
       --selection-bg: rgba(255, 32, 7, 0.707);
-      --dot-blend: plus-lighter;
-      --dot-opacity: 0.25;
+      --dot-color: rgba(255,255,255,0.22);
       --light-blend: plus-lighter;
       --shadow-color: rgba(0,0,0,0.4);
       --brand-pill-border: rgba(255,255,255,0.3);
@@ -129,8 +128,7 @@
       --price-card-bg: rgba(255,255,255,0.6);
       --scrollbar-track: #f5f5f5;
       --selection-bg: rgba(255, 169, 108, 0.4);
-      --dot-blend: normal;
-      --dot-opacity: 0;
+      --dot-color: rgba(0,0,0,0.13);
       --light-blend: normal;
       --shadow-color: rgba(0,0,0,0.12);
       --brand-pill-border: rgba(0,0,0,0.15);
@@ -169,20 +167,28 @@
     [data-theme="light"] .card-btn:hover {
       background: #121212;
     }
-    [data-theme="light"] .mod-card {
+    [data-theme="light"] .module-image {
       background: #fff;
       border: 1px solid rgba(0,0,0,0.08);
-      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+      box-shadow: 0 12px 36px rgba(0,0,0,0.08);
     }
-    [data-theme="light"] .mod-card:hover {
-      box-shadow: 0 8px 28px rgba(0,0,0,0.1);
-    }
-    [data-theme="light"] .mod-card-body {
-      background: #f8f8f8;
+    [data-theme="light"] .modules-nav button {
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.1);
       color: #121212;
     }
-    [data-theme="light"] .mod-card-desc {
-      color: #555;
+    [data-theme="light"] .modules-nav button:hover {
+      background: #f5f5f5;
+    }
+    [data-theme="light"] .module-pill {
+      background: #fff;
+      border-color: rgba(0,0,0,0.1);
+      color: #121212;
+    }
+    [data-theme="light"] .module-pill.pill-number {
+      background: rgba(255,169,108,0.12);
+      border-color: rgba(255,169,108,0.4);
+      color: #d87130;
     }
     [data-theme="light"] .bonus-card {
       box-shadow: 0 4px 16px rgba(0,0,0,0.08);
@@ -193,12 +199,10 @@
     [data-theme="light"] .avis-simple-item:hover .avis-simple-avatar {
       box-shadow: 0 0 12px rgba(255,169,108,0.2);
     }
-    [data-theme="light"] .hero-btn,
     [data-theme="light"] .bonus-btn,
     [data-theme="light"] .nav-btn {
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
-    [data-theme="light"] .hero-btn:hover,
     [data-theme="light"] .bonus-btn:hover,
     [data-theme="light"] .nav-btn:hover {
       box-shadow: 0 4px 12px rgba(0,0,0,0.1), 0 0 16px rgba(255,169,108,0.25);
@@ -213,13 +217,9 @@
       background: #121212;
     }
     [data-theme="light"] .hero-light-wrap,
-    [data-theme="light"] .hero-dots,
-    [data-theme="light"] .hero-dots-2,
     [data-theme="light"] .modules-light,
     [data-theme="light"] .bonus-light,
-    [data-theme="light"] .bonus-dots,
     [data-theme="light"] .bonus-orb,
-    [data-theme="light"] .offre-dots,
     [data-theme="light"] .offre-mask,
     [data-theme="light"] .light-group,
     [data-theme="light"] .card-lights,
@@ -235,21 +235,111 @@
       position: relative;
       transition: background 0.4s ease, color 0.4s ease;
     }
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url('assets/Dot.png');
-      background-repeat: repeat;
-      background-size: 300px auto;
-      opacity: var(--dot-opacity);
-      pointer-events: none;
-      z-index: 0;
-      mix-blend-mode: var(--dot-blend);
-    }
     body > * {
       position: relative;
       z-index: 1;
+    }
+
+    /* ─── HALOS ORANGE SITE-WIDE — light mode uniquement ─────────────
+       Couche absolue qui s'étend sur toute la hauteur du document.
+       mix-blend-mode:multiply teinte les sections blanches sans
+       surexposer les textes ni les zones sombres (footer reste noir).
+    ────────────────────────────────────────────────────────────── */
+    body > .site-glow-bg {
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      overflow:hidden;
+      z-index:9998;
+      opacity:0;
+      transition:opacity 0.6s ease;
+    }
+    [data-theme="light"] body > .site-glow-bg {
+      opacity:1;
+    }
+    .site-glow {
+      position:absolute;
+      border-radius:50%;
+      filter:blur(130px);
+      mix-blend-mode:multiply;
+      will-change:transform;
+      animation-timing-function:ease-in-out;
+      animation-iteration-count:infinite;
+    }
+    @keyframes glowDriftA {
+      0%, 100% { transform:translate(0,0) scale(1); }
+      50%      { transform:translate(26px,-20px) scale(1.07); }
+    }
+    @keyframes glowDriftB {
+      0%, 100% { transform:translate(0,0) scale(1); }
+      50%      { transform:translate(-32px,24px) scale(0.95); }
+    }
+    @keyframes glowDriftC {
+      0%, 100% { transform:translate(0,0) scale(1); }
+      50%      { transform:translate(22px,28px) scale(1.05); }
+    }
+    .site-glow.g1 {
+      top:-4%; left:-5%;
+      width:520px; height:520px;
+      background:radial-gradient(circle, rgba(255,165,100,0.7) 0%, rgba(255,133,71,0.25) 45%, transparent 72%);
+      animation:glowDriftA 20s infinite;
+    }
+    .site-glow.g2 {
+      top:6%; right:-6%;
+      width:600px; height:600px;
+      background:radial-gradient(circle, rgba(255,180,120,0.65) 0%, rgba(255,140,75,0.22) 48%, transparent 74%);
+      animation:glowDriftB 24s -5s infinite;
+    }
+    .site-glow.g3 {
+      top:18%; left:8%;
+      width:440px; height:440px;
+      background:radial-gradient(circle, rgba(255,170,105,0.6) 0%, rgba(255,140,70,0.2) 45%, transparent 72%);
+      animation:glowDriftC 22s -8s infinite;
+    }
+    .site-glow.g4 {
+      top:30%; right:4%;
+      width:540px; height:540px;
+      background:radial-gradient(circle, rgba(255,160,90,0.62) 0%, rgba(255,130,65,0.22) 46%, transparent 73%);
+      animation:glowDriftA 21s -3s infinite;
+    }
+    .site-glow.g5 {
+      top:42%; left:-3%;
+      width:480px; height:480px;
+      background:radial-gradient(circle, rgba(255,175,115,0.65) 0%, rgba(255,140,75,0.22) 47%, transparent 73%);
+      animation:glowDriftB 23s -10s infinite;
+    }
+    .site-glow.g6 {
+      top:52%; right:10%;
+      width:500px; height:500px;
+      background:radial-gradient(circle, rgba(255,165,95,0.6) 0%, rgba(255,135,70,0.22) 45%, transparent 72%);
+      animation:glowDriftC 25s -6s infinite;
+    }
+    .site-glow.g7 {
+      top:64%; left:14%;
+      width:460px; height:460px;
+      background:radial-gradient(circle, rgba(255,170,100,0.6) 0%, rgba(255,140,70,0.2) 46%, transparent 72%);
+      animation:glowDriftA 19s -12s infinite;
+    }
+    .site-glow.g8 {
+      top:74%; right:-4%;
+      width:560px; height:560px;
+      background:radial-gradient(circle, rgba(255,180,115,0.6) 0%, rgba(255,140,75,0.22) 47%, transparent 73%);
+      animation:glowDriftB 26s -9s infinite;
+    }
+    .site-glow.g9 {
+      top:84%; left:6%;
+      width:480px; height:480px;
+      background:radial-gradient(circle, rgba(255,170,105,0.58) 0%, rgba(255,135,70,0.2) 46%, transparent 72%);
+      animation:glowDriftC 22s -14s infinite;
+    }
+    .site-glow.g10 {
+      top:92%; right:18%;
+      width:420px; height:420px;
+      background:radial-gradient(circle, rgba(255,165,95,0.55) 0%, rgba(255,130,65,0.18) 45%, transparent 72%);
+      animation:glowDriftA 24s -7s infinite;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .site-glow { animation:none !important; }
     }
 
     /* ─── SCROLLBAR ──────────────────────────────────────────────── */
@@ -455,32 +545,16 @@
   pointer-events: none;
 }
 
-    /* Dot texture 1 */
+    /* Dot texture 1 — pattern CSS + fade central */
     .hero-dots {
       position: absolute;
       inset: 0;
-      background-image: url('assets/Dot.png');
-      background-size: 80%;
-      background-position: center;
-      background-repeat: no-repeat;
-      mix-blend-mode: var(--dot-blend);
-      opacity: 0.8;
+      background-image: radial-gradient(circle, var(--dot-color) 0.9px, transparent 1.3px);
+      background-size: 14px 14px;
+      -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, #000 15%, transparent 78%);
+              mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, #000 15%, transparent 78%);
       pointer-events: none;
       z-index: 2;
-    }
-
-    /* Dot texture 2 — légère, au-dessus */
-    .hero-dots-2 {
-      position: absolute;
-      inset: 0;
-      background-image: url('assets/Dot.png');
-      background-size: 80%;
-      background-position: center top;
-      background-repeat: no-repeat;
-      mix-blend-mode: var(--dot-blend);
-      opacity: 0.35;
-      pointer-events: none;
-      z-index: 3;
     }
 
     .hero-content {
@@ -589,6 +663,38 @@
 .hero-btn:hover::after { opacity: 1; }
 .hero-btn:hover {
   box-shadow: 0 5px 15px rgba(0,0,0,0.4), 0 0 20px rgba(255,169,108,0.4);
+}
+
+/* ═══ VERSION NOIR (light mode) — v3: zéro orange, elastic bounce ═══
+   Plus aucune teinte orange autour ni dans le bouton.
+   Idle : dark shadow propre.
+   Hover : lift élastique + scale + letter-spacing + shadow plus profonde.
+   Active : micro-depress (feedback tactile). */
+[data-theme="light"] .hero-btn {
+  box-shadow: 0 10px 28px rgba(0,0,0,0.22);
+  transition:
+    transform 0.55s cubic-bezier(0.175, 0.885, 0.32, 1.4),
+    box-shadow 0.4s ease,
+    letter-spacing 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.4);
+}
+/* Coupe le ::before (gradient orange du border) et le ::after (radial orange) en light mode */
+[data-theme="light"] .hero-btn::before,
+[data-theme="light"] .hero-btn::after {
+  display: none;
+}
+[data-theme="light"] .hero-btn:hover {
+  transform: translateY(-5px) scale(1.035);
+  letter-spacing: 0.04em;
+  box-shadow: 0 22px 52px rgba(0,0,0,0.32);
+}
+[data-theme="light"] .hero-btn:active {
+  transform: translateY(-1px) scale(0.985);
+  transition: transform 0.15s ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-theme="light"] .hero-btn {
+    transition: none !important;
+  }
 }
 
     /* Video card */
@@ -758,206 +864,279 @@
       z-index: 2;
     }
 
-    .modules-grid {
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:64px;
-      align-items:start;
+    /* ── Header (titre centré) ── */
+    .modules-header {
       max-width:1200px;
-      margin:0 auto;
+      margin:0 auto 40px;
+      text-align:center;
+      position:relative;
+      z-index:3;
     }
-
-    /* ── Colonne gauche : sticky ── */
-    .modules-left {
-      position:sticky;
-      top:120px;
-    }
-    .modules-left h2 {
+    .modules-header h2 {
       font-size:44px;
       font-weight:900;
       line-height:1.15;
-      margin-bottom:48px;
       color:var(--text);
     }
+
+    /* ── Pour qui ? texte simple centré (pas de card) ── */
+    .pour-qui {
+      max-width:1000px;
+      margin:0 auto 64px;
+      text-align:center;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:14px;
+      position:relative;
+      z-index:3;
+    }
     .pour-qui h3 {
-      font-size:20px;
-      font-weight:600;
-      margin-bottom:24px;
-      color:var(--text);
-      opacity:0.7;
+      margin:0;
+      font-size:11px;
+      font-weight:800;
       text-transform:uppercase;
-      letter-spacing:0.05em;
+      letter-spacing:0.14em;
+      color:#FFA96C;
     }
     .pour-qui-list {
       list-style:none;
       display:flex;
-      flex-direction:column;
-      gap:18px;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:10px 28px;
+      margin:0;
+      padding:0;
     }
     .pour-qui-list li {
       display:flex;
-      align-items:flex-start;
-      gap:14px;
-      font-size:15px;
-      line-height:1.6;
+      align-items:center;
+      gap:8px;
+      font-size:14px;
+      line-height:1.4;
       color:var(--text);
+      opacity:0.82;
     }
     .pour-qui-list li .check-icon {
       flex-shrink:0;
-      width:20px;
-      height:20px;
+      width:14px;
+      height:14px;
       color:#FFA96C;
-      margin-top:3px;
     }
     .pour-qui-note {
-      margin-top:24px;
-      font-size:13px;
-      color:rgba(255,255,255,0.45);
+      margin:0;
+      font-size:12.5px;
+      color:rgba(255,255,255,0.5);
       line-height:1.5;
     }
     [data-theme="light"] .pour-qui-note {
-      color:rgba(0,0,0,0.4);
+      color:rgba(0,0,0,0.45);
     }
 
-    /* ── Colonne droite : wrapper ── */
-    .modules-right-wrapper {
+    /* ── Display : texte | nav | image ── */
+    .modules-display {
+      display:grid;
+      grid-template-columns:minmax(0, 1fr) auto minmax(0, 1.25fr);
+      gap:40px;
+      align-items:center;
+      max-width:1200px;
+      margin:0 auto;
       position:relative;
+      z-index:3;
+    }
+
+    /* Colonne gauche : info module actif */
+    .module-info {
       display:flex;
       flex-direction:column;
+      gap:24px;
     }
-
-    /* Boutons navigation — en haut à droite */
-    .modules-nav {
+    .module-items {
+      display:grid; /* tous superposés, 1 visible */
+    }
+    .module-item {
+      grid-area:1 / 1 / 2 / 2;
+      opacity:0;
+      transform:translateY(22px);
+      filter:blur(6px);
+      transition:opacity 0.32s ease, transform 0.45s cubic-bezier(0.3,0,0.2,1), filter 0.32s ease;
+      pointer-events:none;
+    }
+    .module-item.active {
+      opacity:1;
+      transform:translateY(0);
+      filter:blur(0);
+      pointer-events:auto;
+      transition-delay:0.05s;
+    }
+    .module-info-head {
       display:flex;
-      justify-content:flex-end;
-      gap:8px;
+      align-items:center;
+      gap:14px;
       margin-bottom:16px;
     }
-    .modules-nav button {
-      width:40px;
-      height:40px;
+    .module-icon-num {
+      width:46px;
+      height:46px;
+      border-radius:12px;
+      background:linear-gradient(135deg, #FFA96C 0%, #ff8547 100%);
+      color:#1a0d00;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:900;
+      font-size:20px;
+      flex-shrink:0;
+      box-shadow:0 6px 18px rgba(255,133,71,0.25);
+    }
+    .module-name {
+      font-size:28px;
+      font-weight:900;
+      color:var(--text);
+      line-height:1.1;
+      margin:0;
+    }
+    .module-pills {
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-bottom:18px;
+    }
+    .module-pill {
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:6px 12px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:500;
+      background:var(--card-bg);
+      border:1px solid var(--card-border);
+      color:var(--text);
+      white-space:nowrap;
+      backdrop-filter:blur(8px);
+    }
+    .module-pill.pill-number {
+      background:rgba(255,169,108,0.12);
+      border-color:rgba(255,169,108,0.4);
+      color:#FFA96C;
+      font-weight:700;
+    }
+    .module-pill.pill-number .dot-pulse {
+      width:6px;
+      height:6px;
       border-radius:50%;
-      background:rgba(255,255,255,0.08);
-      border:1px solid rgba(255,255,255,0.15);
-      color:#fff;
+      background:#FFA96C;
+      animation:dotPulse 1.8s ease-in-out infinite;
+    }
+    @keyframes dotPulse {
+      0%, 100% { opacity:0.6; transform:scale(1); }
+      50% { opacity:1; transform:scale(1.3); }
+    }
+    .module-desc {
+      font-size:14.5px;
+      line-height:1.65;
+      color:var(--text);
+      opacity:0.85;
+      margin:0;
+    }
+    .module-cta-btn {
+      align-self:flex-start;
+    }
+
+    /* Nav : vertical entre texte et image */
+    .modules-nav {
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      align-self:center;
+    }
+    .modules-nav button {
+      width:44px;
+      height:44px;
+      border-radius:50%;
+      background:var(--card-bg);
+      border:1px solid var(--card-border);
+      color:var(--text);
       cursor:pointer;
       display:flex;
       align-items:center;
       justify-content:center;
-      transition:background 0.2s;
+      transition:background 0.2s, border-color 0.2s, transform 0.2s;
+      backdrop-filter:blur(10px);
     }
     .modules-nav button:hover {
-      background:rgba(255,255,255,0.15);
+      background:var(--card-body-bg);
+      border-color:var(--card-border-hover);
+      transform:scale(1.05);
+    }
+    .modules-nav button:active {
+      transform:scale(0.95);
     }
     .modules-nav button svg {
       width:18px;
       height:18px;
       stroke:currentColor;
       fill:none;
-      stroke-width:2;
+      stroke-width:2.2;
       stroke-linecap:round;
       stroke-linejoin:round;
     }
-    [data-theme="light"] .modules-nav button {
-      background:rgba(0,0,0,0.06);
-      border-color:rgba(0,0,0,0.12);
-      color:#121212;
-    }
-    [data-theme="light"] .modules-nav button:hover {
-      background:rgba(0,0,0,0.12);
-    }
 
-    /* Carrousel vertical */
-    .modules-carousel {
-      display:flex;
-      flex-direction:column;
-      gap:24px;
-      max-height:600px;
-      overflow-y:auto;
-      padding-bottom:100px;
-      scrollbar-width:none;
+    /* Colonne droite : image viewer avec peek haut/bas */
+    .module-image {
+      position:relative;
+      aspect-ratio:16/12;
+      overflow:hidden;
+      border-radius:22px;
     }
-    .modules-carousel::-webkit-scrollbar { display:none; }
-
-    /* Dégradé "il y a plus bas" */
-    .modules-fade {
+    /* Fondus haut/bas pour que les images voisines apparaissent "floutées" aux bords */
+    .module-image::before,
+    .module-image::after {
+      content:'';
       position:absolute;
-      bottom:0;
       left:0;
       right:0;
-      height:100px;
-      background:linear-gradient(to top, var(--bg) 0%, transparent 100%);
-      pointer-events:none;
+      height:18%;
       z-index:3;
+      pointer-events:none;
     }
-
-    .mod-card {
-      border-radius:16px;
-      overflow:hidden;
-      background: var(--card-bg);
-      border:1px solid var(--card-border);
-      backdrop-filter:blur(10px);
-      box-shadow:0 8px 24px var(--shadow-color);
-      transition:transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s ease, border-color 0.4s ease, background 0.4s;
-      flex-shrink:0;
+    .module-image::before {
+      top:0;
+      background:linear-gradient(to bottom, var(--bg) 0%, transparent 100%);
     }
-    .mod-card:hover {
-      transform:translateY(-3px);
-      box-shadow:0 12px 32px rgba(0,0,0,0.35);
-      border-color: var(--card-border-hover);
+    .module-image::after {
+      bottom:0;
+      background:linear-gradient(to top, var(--bg) 0%, transparent 100%);
     }
-    .mod-card-img {
-      aspect-ratio:16/9;
-      overflow:hidden;
+    .module-image-track {
+      position:absolute;
+      left:0;
+      right:0;
+      top:0;
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+      transition:transform 0.7s cubic-bezier(0.65,0,0.35,1);
+      will-change:transform;
     }
-    .mod-card-img img {
+    .module-image-track img {
       width:100%;
-      height:100%;
+      aspect-ratio:16/9;
       object-fit:cover;
       display:block;
-    }
-    .mod-card-body {
-      background: var(--card-body-bg);
-      padding:18px 24px;
-    }
-    .mod-card-row {
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:8px;
-      margin-bottom:8px;
-    }
-    .mod-card-name { font-size:18px; font-weight:700; }
-    .mod-badge {
-      display:flex;
-      align-items:center;
-      gap:6px;
-      background:#4873ff;
-      border:1px solid rgba(45,60,200,0.6);
-      border-radius:999px;
-      padding:4px 10px;
-      font-size:11px;
-      color:#fff;
-      white-space:nowrap;
       flex-shrink:0;
+      border-radius:16px;
+      opacity:0.3;
+      transform:scale(0.92);
+      transition:opacity 0.5s ease, transform 0.5s ease, filter 0.5s ease;
+      filter:blur(2px);
+      box-shadow:0 12px 32px var(--shadow-color);
     }
-    .mod-badge .dot-pulse {
-      width:6px;
-      height:6px;
-      border-radius:50%;
-      background:#fff;
-      animation:dotPulse 1.8s ease-in-out infinite;
-      flex-shrink:0;
-    }
-    @keyframes dotPulse {
-      0%, 100% { opacity:0.6; transform:scale(1); }
-      50% { opacity:1; transform:scale(1.3); }
-    }
-    .mod-card-desc { font-size:13px; opacity:0.85; line-height:1.5; }
-
-    .modules-cta {
-      text-align:center;
-      padding:60px 0;
+    .module-image-track img.active {
+      opacity:1;
+      transform:scale(1);
+      filter:blur(0);
     }
 
       /* ═══════════════════════════════════════════════════════════════
@@ -974,12 +1153,10 @@
     .offre-dots {
       position:absolute;
       inset:0;
-      background-image:url('assets/Dot.png');
-      background-size:80%;
-      background-position:center;
-      background-repeat:no-repeat;
-      mix-blend-mode: var(--dot-blend);
-      opacity:0.8;
+      background-image: radial-gradient(circle, var(--dot-color) 0.9px, transparent 1.3px);
+      background-size: 15px 15px;
+      -webkit-mask-image: radial-gradient(ellipse 75% 60% at 50% 50%, #000 12%, transparent 78%);
+              mask-image: radial-gradient(ellipse 75% 60% at 50% 50%, #000 12%, transparent 78%);
       pointer-events:none;
       z-index:2;
     }
@@ -1313,18 +1490,16 @@
       z-index: 2;
     }
 
-    /* ── Texture dots bonus — par-dessus la lumière, sous le contenu ──
-       Pour ajuster : change opacity (ex: 0.5), background-size (ex: 60%)
+    /* ── Texture dots bonus — pattern CSS + fade vers le bas-droite ──
+       Pour ajuster : change var(--dot-color) ou background-size
     ── */
     .bonus-dots {
       position: absolute;
       inset: 0;
-      background-image: url('assets/Dot.png');
-      background-size: 90%;
-      background-position: 80% bottom; /* ← centré vers le bas comme la lumière */
-      background-repeat: no-repeat;
-      mix-blend-mode: var(--dot-blend);
-      opacity: 0.8;
+      background-image: radial-gradient(circle, var(--dot-color) 0.9px, transparent 1.3px);
+      background-size: 15px 15px;
+      -webkit-mask-image: radial-gradient(ellipse 70% 70% at 80% 100%, #000 8%, transparent 75%);
+              mask-image: radial-gradient(ellipse 70% 70% at 80% 100%, #000 8%, transparent 75%);
       pointer-events: none;
       z-index: 1; /* au-dessus de .bonus-light (z:0) mais sous le contenu */
     }
@@ -1685,13 +1860,10 @@
       50% { box-shadow: 0 0 0 2.5px #FFA96C, 0 0 18px rgba(255,169,108,0.7), 0 0 40px rgba(255,169,108,0.3); }
     }
 
-    /* 3. Staggered scroll delays — modules */
-    .mod-card:nth-child(1) { transition-delay:0s; }
-    .mod-card:nth-child(2) { transition-delay:0.08s; }
-    .mod-card:nth-child(3) { transition-delay:0.16s; }
-    .mod-card:nth-child(4) { transition-delay:0.08s; }
-    .mod-card:nth-child(5) { transition-delay:0.16s; }
-    .mod-card:nth-child(6) { transition-delay:0.24s; }
+    /* 3. Staggered scroll delays — modules section */
+    .modules-header { transition-delay:0s; }
+    .pour-qui { transition-delay:0.08s; }
+    .modules-display { transition-delay:0.16s; }
 
     /* Staggered scroll delays — bonus */
     .bonus-card:nth-child(1) { transition-delay:0s; }
@@ -1704,8 +1876,7 @@
     .avis-simple-item:nth-child(2) { transition-delay:0.1s; }
     .avis-simple-item:nth-child(3) { transition-delay:0.2s; }
 
-    /* 4. Empêcher le zoom image séparé sur les mod-cards (le 3D tilt bouge tout) */
-    .mod-card:hover .mod-card-img img { transform:none; }
+    /* 4. (supprimé — ancienne règle mod-card obsolète) */
 
     /* Staggered features list */
     .features-list li:nth-child(1) { transition-delay:0s; }
@@ -1796,7 +1967,7 @@
       .hero-subtitle { font-size:16px; max-width:100%; margin-left:auto; margin-right:auto; }
       .hero-btn { width:100%; justify-content:center; }
       .hero-light-wrap { display:none; }
-      .hero-dots, .hero-dots-2 { display:none; }
+      .hero-dots { display:none; }
 
       /* Video */
       .video-wrap { width:calc(100% - 32px); margin-top:48px; }
@@ -1813,13 +1984,14 @@
 
       /* Modules */
       #modules { padding:80px 24px 60px; }
-      .modules-grid {
+      .modules-header h2 { font-size:32px; }
+      .modules-display {
         grid-template-columns:1fr;
-        gap:40px;
+        gap:28px;
       }
-      .modules-left { position:static; }
-      .modules-left h2 { font-size:32px; margin-bottom:32px; }
-      .modules-carousel { max-height:500px; }
+      .module-info { order:3; }
+      .modules-nav { order:2; flex-direction:row; justify-content:center; gap:16px; }
+      .module-image { order:1; }
       .modules-light { display:none; }
 
       /* Offre */
@@ -1915,15 +2087,15 @@
 
       /* Modules */
       #modules { padding:60px 16px 40px; }
-      .modules-grid { gap:32px; }
-      .modules-left h2 { font-size:26px; margin-bottom:24px; }
-      .pour-qui h3 { font-size:16px; }
-      .pour-qui-list li { font-size:14px; }
-      .modules-carousel { gap:20px; }
-      .mod-card-body { padding:14px 18px; }
-      .mod-card-name { font-size:16px; }
-      .mod-card-desc { font-size:12px; }
-      .modules-cta { padding:40px 0; }
+      .modules-header h2 { font-size:26px; }
+      .modules-header { margin-bottom:28px; }
+      .pour-qui { padding:14px 18px; margin-bottom:32px; gap:10px 18px; }
+      .pour-qui-list { gap:8px 16px; }
+      .pour-qui-list li { font-size:12.5px; }
+      .module-name { font-size:22px; }
+      .module-icon-num { width:40px; height:40px; font-size:17px; }
+      .module-desc { font-size:13.5px; }
+      .modules-nav button { width:40px; height:40px; }
 
       /* Offre */
       #offre { padding:60px 16px 100px; }
@@ -2303,6 +2475,21 @@
   // Apply saved theme before paint to prevent flash
   (function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);})();
 </script>
+
+<!-- Halos orange site-wide (light mode uniquement) -->
+<div class="site-glow-bg" aria-hidden="true">
+  <div class="site-glow g1"></div>
+  <div class="site-glow g2"></div>
+  <div class="site-glow g3"></div>
+  <div class="site-glow g4"></div>
+  <div class="site-glow g5"></div>
+  <div class="site-glow g6"></div>
+  <div class="site-glow g7"></div>
+  <div class="site-glow g8"></div>
+  <div class="site-glow g9"></div>
+  <div class="site-glow g10"></div>
+</div>
+
 <div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
 
 <!-- ═══════════════════════════════════════════════════════════
@@ -2360,9 +2547,8 @@
     <img class="hero-light-img" src="assets/images/hero/Light Hero principale.png" alt="">
   </div>
 
-  <!-- Dot textures -->
+  <!-- Dot texture -->
   <div class="hero-dots" aria-hidden="true"></div>
-  <div class="hero-dots-2" aria-hidden="true"></div>
 
   <div class="hero-content">
     <h1>
@@ -2541,141 +2727,148 @@
   <!-- Lumière modules -->
   <img class="modules-light" src="assets/images/hero/Modules.png" alt="" aria-hidden="true">
 
-  <div class="modules-grid">
-
-  <!-- Colonne gauche : texte sticky -->
-  <div class="modules-left fi">
+  <!-- Titre -->
+  <div class="modules-header fi">
     <h2>6 modules, 1 seul objectif&nbsp;: ton premier client</h2>
-
-    <div class="pour-qui">
-      <h3>Pour qui ?</h3>
-      <ul class="pour-qui-list">
-        <li>
-          <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          Tu n'as jamais ouvert Photoshop de ta vie
-        </li>
-        <li>
-          <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          Tu fais d&eacute;j&agrave; des minias mais tu gal&egrave;res &agrave; les vendre
-        </li>
-        <li>
-          <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          Tu veux une m&eacute;thode structur&eacute;e, pas juste des tutos YouTube &eacute;pars
-        </li>
-        <li>
-          <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          Tu veux d&eacute;crocher ton premier client en moins de 30 jours
-        </li>
-      </ul>
-      <p class="pour-qui-note">Le Module 1 est con&ccedil;u pour les vrais d&eacute;butants  - z&eacute;ro pr&eacute;requis.</p>
-    </div>
   </div>
 
-  <!-- Colonne droite : wrapper -->
-  <div class="modules-right-wrapper">
-  <div class="modules-nav">
-    <button id="mod-prev" aria-label="Module pr&eacute;c&eacute;dent">
-      <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
-    </button>
-    <button id="mod-next" aria-label="Module suivant">
-      <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-    </button>
+  <!-- Pour qui ? (statique, au-dessus du display) -->
+  <div class="pour-qui fi">
+    <h3>Pour qui&nbsp;?</h3>
+    <ul class="pour-qui-list">
+      <li>
+        <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        Tu n'as jamais ouvert Photoshop de ta vie
+      </li>
+      <li>
+        <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        Tu fais d&eacute;j&agrave; des minias mais tu gal&egrave;res &agrave; les vendre
+      </li>
+      <li>
+        <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        Tu veux une m&eacute;thode structur&eacute;e, pas juste des tutos YouTube &eacute;pars
+      </li>
+      <li>
+        <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        Tu veux d&eacute;crocher ton premier client en moins de 30 jours
+      </li>
+    </ul>
+    <p class="pour-qui-note">Le Module 1 est con&ccedil;u pour les vrais d&eacute;butants - z&eacute;ro pr&eacute;requis.</p>
   </div>
-  <div class="modules-carousel" id="modules-carousel">
 
-    <!-- Module 1 -->
-    <div class="mod-card fi">
-      <div class="mod-card-img">
-        <img src="assets/images/MODULE 1 1.jpg" alt="Module 1 minia.pro : Les Bases de Photoshop pour miniatures YouTube" loading="lazy" />
-      </div>
-      <div class="mod-card-body">
-        <div class="mod-card-row">
-          <span class="mod-card-name">Les Bases</span>
-          <div class="mod-badge"><span class="dot-pulse"></span>Module 1</div>
-        </div>
-        <p class="mod-card-desc">De z&eacute;ro &agrave; autonome sur Photoshop en quelques jours, m&ecirc;me si tu n'as jamais ouvert le logiciel</p>
-      </div>
+  <!-- Display : texte | nav | image -->
+  <div class="modules-display fi">
+
+    <!-- Colonne gauche : info du module actif -->
+    <div class="module-info">
+      <div class="module-items">
+
+        <article class="module-item active" data-index="0">
+          <div class="module-info-head">
+            <div class="module-icon-num">1</div>
+            <h3 class="module-name">Les Bases</h3>
+          </div>
+          <div class="module-pills">
+            <span class="module-pill pill-number"><span class="dot-pulse"></span>Module 1</span>
+            <span class="module-pill">Photoshop</span>
+            <span class="module-pill">D&eacute;butant</span>
+          </div>
+          <p class="module-desc">De z&eacute;ro &agrave; autonome sur Photoshop en quelques jours, m&ecirc;me si tu n'as jamais ouvert le logiciel.</p>
+        </article>
+
+        <article class="module-item" data-index="1">
+          <div class="module-info-head">
+            <div class="module-icon-num">2</div>
+            <h3 class="module-name">La Th&eacute;orie</h3>
+          </div>
+          <div class="module-pills">
+            <span class="module-pill pill-number"><span class="dot-pulse"></span>Module 2</span>
+            <span class="module-pill">Design</span>
+            <span class="module-pill">Composition</span>
+          </div>
+          <p class="module-desc">Les principes de design qui font qu'un cr&eacute;ateur facture 80&euro; et un autre 300&euro; pour la m&ecirc;me minia.</p>
+        </article>
+
+        <article class="module-item" data-index="2">
+          <div class="module-info-head">
+            <div class="module-icon-num">3</div>
+            <h3 class="module-name">Les Miniatures</h3>
+          </div>
+          <div class="module-pills">
+            <span class="module-pill pill-number"><span class="dot-pulse"></span>Module 3</span>
+            <span class="module-pill">Photoshop</span>
+            <span class="module-pill">Techniques</span>
+          </div>
+          <p class="module-desc">Cr&eacute;e des minias que les YouTubeurs veulent acheter, les techniques exactes que j'utilise pour mes propres clients.</p>
+        </article>
+
+        <article class="module-item" data-index="3">
+          <div class="module-info-head">
+            <div class="module-icon-num">4</div>
+            <h3 class="module-name">Ma&icirc;triser l'IA</h3>
+          </div>
+          <div class="module-pills">
+            <span class="module-pill pill-number"><span class="dot-pulse"></span>Module 4</span>
+            <span class="module-pill">IA</span>
+            <span class="module-pill">Productivit&eacute;</span>
+          </div>
+          <p class="module-desc">Produis 2x plus vite gr&acirc;ce &agrave; l'IA, plus de minias livr&eacute;es = plus de revenus chaque mois.</p>
+        </article>
+
+        <article class="module-item" data-index="4">
+          <div class="module-info-head">
+            <div class="module-icon-num">5</div>
+            <h3 class="module-name">Ta carri&egrave;re Freelance</h3>
+          </div>
+          <div class="module-pills">
+            <span class="module-pill pill-number"><span class="dot-pulse"></span>Module 5</span>
+            <span class="module-pill">Branding</span>
+            <span class="module-pill">Mindset</span>
+          </div>
+          <p class="module-desc">Construis une pr&eacute;sence qui attire les clients &agrave; toi, fini de courir apr&egrave;s les DMs sans r&eacute;ponse.</p>
+        </article>
+
+        <article class="module-item" data-index="5">
+          <div class="module-info-head">
+            <div class="module-icon-num">6</div>
+            <h3 class="module-name">Les Clients</h3>
+          </div>
+          <div class="module-pills">
+            <span class="module-pill pill-number"><span class="dot-pulse"></span>Module 6</span>
+            <span class="module-pill">Business</span>
+            <span class="module-pill">D&eacute;marchage</span>
+          </div>
+          <p class="module-desc">Comment signer, fid&eacute;liser et transformer un premier client en revenu r&eacute;current chaque mois.</p>
+        </article>
+
+      </div><!-- .module-items -->
+
+      <a href="https://pay.minia-pro.com/-paiement" class="hero-btn module-cta-btn" target="_blank" rel="noopener noreferrer">Rejoindre<span class="hero-btn-glow"></span></a>
+    </div><!-- .module-info -->
+
+    <!-- Nav : entre texte et image -->
+    <div class="modules-nav">
+      <button id="mod-prev" aria-label="Module pr&eacute;c&eacute;dent">
+        <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+      </button>
+      <button id="mod-next" aria-label="Module suivant">
+        <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
     </div>
 
-    <!-- Module 2 -->
-    <div class="mod-card fi">
-      <div class="mod-card-img">
+    <!-- Colonne droite : image viewer -->
+    <div class="module-image">
+      <div class="module-image-track" id="module-image-track">
+        <img src="assets/images/MODULE 1 1.jpg" alt="Module 1 minia.pro : Les Bases de Photoshop pour miniatures YouTube" loading="eager" />
         <img src="assets/images/MODULE 1 2.jpg" alt="Module 2 minia.pro : La Théorie du design de miniatures" loading="lazy" />
-      </div>
-      <div class="mod-card-body">
-        <div class="mod-card-row">
-          <span class="mod-card-name">La Th&eacute;orie</span>
-          <div class="mod-badge"><span class="dot-pulse"></span>Module 2</div>
-        </div>
-        <p class="mod-card-desc">Les principes de design qui font qu'un cr&eacute;ateur facture 80&euro; et un autre 300&euro; pour la m&ecirc;me minia</p>
-      </div>
-    </div>
-
-    <!-- Module 3 -->
-    <div class="mod-card fi">
-      <div class="mod-card-img">
         <img src="assets/images/MODULE 1 3.jpg" alt="Module 3 minia.pro : Créer des miniatures YouTube professionnelles" loading="lazy" />
-      </div>
-      <div class="mod-card-body">
-        <div class="mod-card-row">
-          <span class="mod-card-name">Les Miniatures</span>
-          <div class="mod-badge"><span class="dot-pulse"></span>Module 3</div>
-        </div>
-        <p class="mod-card-desc">Cr&eacute;e des minias que les YouTubeurs veulent acheter, les techniques exactes que j'utilise pour mes propres clients</p>
-      </div>
-    </div>
-
-    <!-- Module 4 -->
-    <div class="mod-card fi">
-      <div class="mod-card-img">
         <img src="assets/images/MODULE 1 4.jpg" alt="Module 4 minia.pro : Maîtriser l'IA pour créer des miniatures plus vite" loading="lazy" />
-      </div>
-      <div class="mod-card-body">
-        <div class="mod-card-row">
-          <span class="mod-card-name">Ma&icirc;triser l'IA</span>
-          <div class="mod-badge"><span class="dot-pulse"></span>Module 4</div>
-        </div>
-        <p class="mod-card-desc">Produis 2x plus vite gr&acirc;ce &agrave; l'IA, plus de minias livr&eacute;es = plus de revenus chaque mois</p>
-      </div>
-    </div>
-
-    <!-- Module 5 -->
-    <div class="mod-card fi">
-      <div class="mod-card-img">
         <img src="assets/images/MODULE 1 5.jpg" alt="Module 5 minia.pro : Lancer ta carrière de Miniamaker freelance" loading="lazy" />
-      </div>
-      <div class="mod-card-body">
-        <div class="mod-card-row">
-          <span class="mod-card-name">Ta carri&egrave;re Freelance</span>
-          <div class="mod-badge"><span class="dot-pulse"></span>Module 5</div>
-        </div>
-        <p class="mod-card-desc">Construis une pr&eacute;sence qui attire les clients &agrave; toi, fini de courir apr&egrave;s les DMs sans r&eacute;ponse</p>
-      </div>
-    </div>
-
-    <!-- Module 6 -->
-    <div class="mod-card fi">
-      <div class="mod-card-img">
         <img src="assets/images/MODULE 1 6.jpg" alt="Module 6 minia.pro : Signer et fidéliser des clients YouTubeurs" loading="lazy" />
       </div>
-      <div class="mod-card-body">
-        <div class="mod-card-row">
-          <span class="mod-card-name">Les Clients</span>
-          <div class="mod-badge"><span class="dot-pulse"></span>Module 6</div>
-        </div>
-        <p class="mod-card-desc">Comment signer, fid&eacute;liser et transformer un premier client en revenu r&eacute;current chaque mois</p>
-      </div>
     </div>
 
-  </div><!-- .modules-carousel -->
-  <div class="modules-fade" aria-hidden="true"></div>
-  </div><!-- .modules-right-wrapper -->
-
-  </div><!-- .modules-grid -->
-
-  <div class="modules-cta fi">
-    <a href="https://pay.minia-pro.com/-paiement" class="hero-btn" target="_blank" rel="noopener noreferrer">Rejoindre<span class="hero-btn-glow"></span></a>
-  </div>
+  </div><!-- .modules-display -->
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
@@ -3075,13 +3268,51 @@
     });
   });
 
-  /* ── 4. Modules carousel nav ── */
-  const modCarousel = document.getElementById('modules-carousel');
+  /* ── 4. Modules display nav — texte fade out/in + image centrée avec peek ── */
+  const modItems = document.querySelectorAll('.module-item');
+  const modTrack = document.getElementById('module-image-track');
+  const modContainer = modTrack ? modTrack.parentElement : null;
+  const modImgs = modTrack ? modTrack.querySelectorAll('img') : [];
   const modPrev = document.getElementById('mod-prev');
   const modNext = document.getElementById('mod-next');
-  if (modCarousel && modPrev && modNext) {
-    modNext.addEventListener('click', () => modCarousel.scrollBy({ top: 300, behavior: 'smooth' }));
-    modPrev.addEventListener('click', () => modCarousel.scrollBy({ top: -300, behavior: 'smooth' }));
+  let modIdx = 0;
+
+  function layoutModuleImage() {
+    if (!modTrack || !modContainer || !modImgs.length) return;
+    const activeImg = modImgs[modIdx];
+    const containerH = modContainer.clientHeight;
+    const imgCenter = activeImg.offsetTop + activeImg.offsetHeight / 2;
+    const translateY = containerH / 2 - imgCenter;
+    modTrack.style.transform = `translateY(${translateY}px)`;
+    modImgs.forEach((img, i) => img.classList.toggle('active', i === modIdx));
+  }
+
+  function setActiveModule(i) {
+    const total = modItems.length;
+    if (!total) return;
+    modIdx = ((i % total) + total) % total;
+    // Texte : fade out total, puis fade in après délai
+    modItems.forEach(el => el.classList.remove('active'));
+    // Image : slide immédiat
+    layoutModuleImage();
+    // Réapparition texte après le fade out
+    setTimeout(() => {
+      modItems[modIdx].classList.add('active');
+    }, 280);
+  }
+
+  if (modItems.length && modTrack && modPrev && modNext) {
+    modPrev.addEventListener('click', () => setActiveModule(modIdx - 1));
+    modNext.addEventListener('click', () => setActiveModule(modIdx + 1));
+    // Layout initial + recalcul au resize
+    const initModLayout = () => layoutModuleImage();
+    window.addEventListener('resize', initModLayout);
+    // Premier calcul (images ont déjà leurs dimensions via aspect-ratio CSS)
+    initModLayout();
+    // Re-calcul après chargement des images (au cas où)
+    modImgs.forEach(img => {
+      if (!img.complete) img.addEventListener('load', initModLayout, { once: true });
+    });
   }
 
   /* ── 5. Carousel miniatures — ralentissement au hover ── */
@@ -3226,7 +3457,7 @@
   }, { threshold: 0.3 });
   if (priceMain) priceObserver.observe(priceMain);
 
-  /* ── 3D tilt on mod-cards & bonus-cards ── */
+  /* ── 3D tilt on bonus-cards ── */
   function initTilt(selector, intensity) {
     document.querySelectorAll(selector).forEach(card => {
       card.addEventListener('mousemove', e => {
