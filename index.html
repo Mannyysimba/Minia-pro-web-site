@@ -44,14 +44,11 @@
 
   <style>
     /* ─── FONTS ─────────────────────────────────────────────────── */
-    @font-face { font-family:'Satoshi'; src:url('assets/fonts/Satoshi/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Light.woff2') format('woff2'); font-weight:300; font-display:swap; }
     @font-face { font-family:'Satoshi'; src:url('assets/fonts/Satoshi/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Regular.woff2') format('woff2'); font-weight:400; font-display:swap; }
     @font-face { font-family:'Satoshi'; src:url('assets/fonts/Satoshi/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Medium.woff2') format('woff2'); font-weight:500; font-display:swap; }
     @font-face { font-family:'Satoshi'; src:url('assets/fonts/Satoshi/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Bold.woff2') format('woff2'); font-weight:700; font-display:swap; }
     @font-face { font-family:'Satoshi'; src:url('assets/fonts/Satoshi/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Black.woff2') format('woff2'); font-weight:900; font-display:swap; }
     @font-face { font-family:'Satoshi'; src:url('assets/fonts/Satoshi/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-BlackItalic.woff2') format('woff2'); font-weight:900; font-style:italic; font-display:swap; }
-    @font-face { font-family:'Satoshi'; src:url('assets/fonts/Satoshi/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-BoldItalic.woff2') format('woff2'); font-weight:700; font-style:italic; font-display:swap; }
-    @font-face { font-family:'Satoshi'; src:url('assets/fonts/Satoshi/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Italic.woff2') format('woff2'); font-weight:400; font-style:italic; font-display:swap; }
     @font-face { font-family:'Komika Axis'; src:url('assets/fonts/KomikaAxis/KOMIKAX_.ttf') format('truetype'); font-display:swap; }
 
     /* ─── RESET & BASE ───────────────────────────────────────────── */
@@ -216,6 +213,12 @@
     [data-theme="light"] .footer-inner {
       background: #121212;
     }
+    [data-theme="light"] .footer-inner .logo {
+      color: #fff;
+    }
+    [data-theme="light"] .footer-inner .footer-social-label {
+      color: #fff;
+    }
     [data-theme="light"] .hero-light-wrap,
     [data-theme="light"] .modules-light,
     [data-theme="light"] .bonus-light,
@@ -365,7 +368,7 @@
 
           /* Curseur par défaut sur tout le document (plus petit) */
           body {
-            cursor: url('https://i.imgur.com/SK4K9Z3.png') 16 0, auto !important;
+            cursor: url('assets/images/cursor.png') 16 0, auto !important;
           }
 
 
@@ -374,7 +377,7 @@
     .fi.vis { opacity:1; transform:none; }
 
     /* ─── LOGO ───────────────────────────────────────────────────── */
-    .logo { font-size:18px; font-weight:300; color: var(--text); text-decoration:none; letter-spacing:0.01em; display:inline-block; transition: color 0.3s; }
+    .logo { font-size:18px; font-weight:400; color: var(--text); text-decoration:none; letter-spacing:0.01em; display:inline-block; transition: color 0.3s; }
     .logo .dot { color:#e02020; }
 
     /* ═══════════════════════════════════════════════════════════════
@@ -2555,7 +2558,7 @@
   <!-- Image lumière unique — fond noir + mix-blend-mode: plus-lighter -->
   <!-- Pour ajuster : modifie --lx (position gauche/droite), --ly (haut/bas), --lw (taille) dans .hero-light-wrap -->
   <div class="hero-light-wrap" aria-hidden="true">
-    <img class="hero-light-img" src="assets/images/hero/Light Hero principale.png" alt="">
+    <img class="hero-light-img" src="assets/images/hero/Light Hero principale.webp" alt="" width="1300" height="800">
   </div>
 
   <!-- Dot texture -->
@@ -2736,7 +2739,7 @@
 <section id="modules">
 
   <!-- Lumière modules -->
-  <img class="modules-light" src="assets/images/hero/Modules.png" alt="" aria-hidden="true">
+  <img class="modules-light" src="assets/images/hero/Modules.webp" alt="" aria-hidden="true" width="1200" height="600" loading="lazy">
 
   <!-- Titre -->
   <div class="modules-header fi">
@@ -2891,21 +2894,21 @@
 
   <!-- Light beams – left (Figma PNGs, plus-lighter blend) -->
   <div class="light-group" aria-hidden="true">
-    <img src="assets/images/lights/1 Plus lighter.webp" alt="" />
-    <img src="assets/images/lights/2 Plus lighter.webp" alt="" />
-    <img src="assets/images/lights/3 Plus lighter.webp" alt="" />
-    <img src="assets/images/lights/4 Plus lighter.webp" alt="" />
-    <img src="assets/images/lights/5 Plus lighter.webp" alt="" />
-    <img src="assets/images/lights/6 Plus lighter.webp" alt="" />
+    <img src="assets/images/lights/1 Plus lighter.webp" alt="" loading="lazy" />
+    <img src="assets/images/lights/2 Plus lighter.webp" alt="" loading="lazy" />
+    <img src="assets/images/lights/3 Plus lighter.webp" alt="" loading="lazy" />
+    <img src="assets/images/lights/4 Plus lighter.webp" alt="" loading="lazy" />
+    <img src="assets/images/lights/5 Plus lighter.webp" alt="" loading="lazy" />
+    <img src="assets/images/lights/6 Plus lighter.webp" alt="" loading="lazy" />
   </div>
   <!-- Light beams – right (mirrored) -->
   <div class="light-group right" aria-hidden="true">
-    <img src="assets/images/lights/1 Plus lighter.webp" alt="" />
-    <img src="assets/images/lights/2 Plus lighter.webp" alt="" />
-    <img src="assets/images/lights/3 Plus lighter.webp" alt="" />
-    <img src="assets/images/lights/4 Plus lighter.webp" alt="" />
-    <img src="assets/images/lights/5 Plus lighter.webp" alt="" />
-    <img src="assets/images/lights/6 Plus lighter.webp" alt="" />
+    <img src="assets/images/lights/1 Plus lighter.webp" alt="" loading="lazy" />
+    <img src="assets/images/lights/2 Plus lighter.webp" alt="" loading="lazy" />
+    <img src="assets/images/lights/3 Plus lighter.webp" alt="" loading="lazy" />
+    <img src="assets/images/lights/4 Plus lighter.webp" alt="" loading="lazy" />
+    <img src="assets/images/lights/5 Plus lighter.webp" alt="" loading="lazy" />
+    <img src="assets/images/lights/6 Plus lighter.webp" alt="" loading="lazy" />
   </div>
 
   <div class="offre-inner">
@@ -2919,11 +2922,11 @@
     <div class="price-card fi">
       <!-- Card inner lights -->
       <div class="card-lights" aria-hidden="true">
-        <img src="assets/images/card-lights/Card 1.png" alt="" />
-        <img src="assets/images/card-lights/Card 2.png" alt="" />
-        <img src="assets/images/card-lights/Card 3.png" alt="" />
-        <img src="assets/images/card-lights/Card 4.png" alt="" />
-        <img src="assets/images/card-lights/Card 5.png" alt="" />
+        <img src="assets/images/card-lights/Card 1.webp" alt="" loading="lazy" />
+        <img src="assets/images/card-lights/Card 2.webp" alt="" loading="lazy" />
+        <img src="assets/images/card-lights/Card 3.webp" alt="" loading="lazy" />
+        <img src="assets/images/card-lights/Card 4.webp" alt="" loading="lazy" />
+        <img src="assets/images/card-lights/Card 5.webp" alt="" loading="lazy" />
       </div>
       <span class="brand-pill">minia<span class="dot">.</span>pro</span>
       <p class="card-tagline">Le raccourci vers tes premiers revenus en miniatures</p>
@@ -2999,7 +3002,7 @@
 <section id="bonus">
 
   <!-- ── Lumière BONUS.png — pour ajuster : modifie bottom / left / width dans .bonus-light dans le CSS ── -->
-  <img class="bonus-light" src="assets/images/hero/Bonus.png" alt="" aria-hidden="true">
+  <img class="bonus-light" src="assets/images/hero/Bonus.webp" alt="" aria-hidden="true" width="1200" height="600" loading="lazy">
 
   <!-- ── Texture dots bonus — par-dessus la lumière, sous le contenu — modifie opacity dans .bonus-dots ── -->
   <div class="bonus-dots" aria-hidden="true"></div>
